@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\thanhtoanphieudk.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\thanhtoanphieudk.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\thanhtoanphieugh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\thanhtoanphieugh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\xacnhanthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\xacnhanthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ThanhToanPhieuDK.Designer.cs",
+              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\ThanhToanPhieuDK.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\ThanhToanPhieuDK.Designer.cs",
+              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\ThanhToanPhieuDK.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\ThanhToanPhieuDK.Designer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwEgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T08:07:54.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThanhToanPhieuDK.cs [Design]",
+              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\ThanhToanPhieuDK.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\ThanhToanPhieuDK.cs",
+              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\ThanhToanPhieuDK.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\ThanhToanPhieuDK.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T08:05:15.63Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "XacNhanThanhToan.cs [Design]",
+              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\XacNhanThanhToan.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\XacNhanThanhToan.cs",
+              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\XacNhanThanhToan.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\XacNhanThanhToan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:59:09.747Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ThanhToanPhieuGH.cs [Design]",
+              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\ThanhToanPhieuGH.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\ThanhToanPhieuGH.cs",
+              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\ThanhToanPhieuGH.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\ThanhToanPhieuGH.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:52:30.493Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
