@@ -11,16 +11,9 @@ namespace WinFormsApp1.DAO
 {
     internal class HoaDonThanhToanDAO
     {
-        private SqlCommand AppConfig.Command;
-        private SqlConnection connection;
-        private SqlDataAppConfig.Adapter AppConfig.Adapter;
 
         public HoaDonThanhToanDAO()
         {
-            connection = new SqlConnection(AppConfig.ConnectionString);
-            command = new SqlCommand();
-            AppConfig.Command.Connection = connection;
-            AppConfig.Adapter = new SqlDataAppConfig.Adapter(); // Initialize the AppConfig.Adapter to avoid CS8618 warning
         }
 
         public void addHoaDonThanhToan(string maThanhToan, string loaiThanhToan, double soTien, float giamGia, DateTime ngayThanhToan,

@@ -10,7 +10,7 @@ namespace WinFormsApp1.DAO.Database
     {
         // Updated to enable trusted certification  
         public static string ConnectionString { get; set; } = "Server=localhost,1433;Database=pttk;User Id=sa;Password=Khanh076942542;TrustServerCertificate=True;";
-        private static SqlCommand AppConfig.Command;
+        private static SqlCommand command;
         private static SqlConnection connection;
         private static SqlDataAdapter adapter;
 
