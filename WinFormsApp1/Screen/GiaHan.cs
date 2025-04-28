@@ -82,6 +82,7 @@ namespace WinFormsApp1
             Debug.WriteLine("Selected Ma Phieu Du Thi: " + selectedMaPhieuDuThi);
             Debug.WriteLine("Selected Ma Ky Thi: " + selectedMaKyThi);
             Debug.WriteLine("Selected Ma Chung Chi: " + selectedMaChungChi);
+            Debug.WriteLine("Selected Ma Ky Thi Moi: " + selectedMaKyThiMoi);
         }
 
         private void HideAllUIElements()
@@ -203,22 +204,28 @@ namespace WinFormsApp1
             {
                 phieuGiaHanBUS.addPhieuGiaHan(selectedMaPhieuDuThi, selectedMaKyThi, 
                 selectedMaKyThiMoi, lyDo, selectedThoiGianBatDau, DangNhapBUS.Instance.TenDangNhap, chkTruongHopDBChecked, selectedMaChungChi);
+                MessageBox.Show("Lưu thông tin gia hạn thành công!");
+
             }
             // Show success message
-            MessageBox.Show("lưu thông tin thành công!");
+            else
+            {
+                MessageBox.Show("Không đủ điều kiện gia hạn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
-            // Reset visibility to allow re-selection
-            txtLyDo.Visible = false;
-            lblLichThiDaChon.Visible = false;
-            chkTruongHopDB.Visible = false;
-            btnCungCapLichThi.Visible = false;
-            btnXoaLichThiDaChon.Visible = false;
-            btnThanhToan.Visible = false;
-            btnLuuThongTin.Visible = false;
 
-            // Re-enable both tables for a new selection
-            dgvDSThiSinh.Enabled = true;
-            dgvDSPhieuDuThi.Enabled = true;
+            //// Reset visibility to allow re-selection
+            //txtLyDo.Visible = false;
+            //lblLichThiDaChon.Visible = false;
+            //chkTruongHopDB.Visible = false;
+            //btnCungCapLichThi.Visible = false;
+            //btnXoaLichThiDaChon.Visible = false;
+            //btnThanhToan.Visible = false;
+            //btnLuuThongTin.Visible = false;
+
+            //// Re-enable both tables for a new selection
+            //dgvDSThiSinh.Enabled = true;
+            //dgvDSPhieuDuThi.Enabled = true;
         }
 
         private void chkTruongHopDB_CheckedChanged(object sender, EventArgs e)

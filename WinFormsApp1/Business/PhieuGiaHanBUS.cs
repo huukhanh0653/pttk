@@ -133,9 +133,14 @@ namespace WinFormsApp1.Business
         public bool is2TimesAlready(string maPhieuDuThi)
         {
             DataTable table = this.getPhieuGiaHanByMaPhieuDuThi(maPhieuDuThi);
-            if (table.Rows.Count > 1 && int.Parse(table.Rows[0]["ma_thanh_toan"].ToString()) > 0 
-                && int.Parse(table.Rows[1]["ma_thanh_toan"].ToString()) > 0)
-                return true;
+            if (table.Rows.Count > 1)
+            {
+                if (int.TryParse(table.Rows[0]["ma_thanh_toan"]?.ToString(), out int value1) && value1 > 0 &&
+                    int.TryParse(table.Rows[1]["ma_thanh_toan"]?.ToString(), out int value2) && value2 > 0)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -143,7 +148,7 @@ namespace WinFormsApp1.Business
         {
             if (maPhieuDuThi.IsNullOrEmpty() || maKyThiHienTai.IsNullOrEmpty() || maKyThiMoi.IsNullOrEmpty())
             {
-                throw new ArgumentException("One or more required parameters are null or empty.");
+                return false;
             }
 
             KyThiBUS kythiMoi = new KyThiBUS(maKyThiMoi);
@@ -187,34 +192,22 @@ namespace WinFormsApp1.Business
             else if (table.Rows.Count < 2)
             {
                 string _maPhieu = phieuGiaHanDAO.getNextMaPhieuGiaHan().ToString();
-                Debug.WriteLine("_maPhieu: "+ _maPhieu);
-                //string _maThanhToan = "-1";
-                //Debug.WriteLine("_maThanhToan: " + _maThanhToan);
                 string _maPhieuDuThi = maPhieuDuThi;
-                Debug.WriteLine("_maPhieuDuThi: " + _maPhieuDuThi);
                 int _soLan = table.Rows.Count + 1;
-                Debug.WriteLine("_soLan: " + _soLan);
                 string _maKyThiCu = maKyThiCu;
-                Debug.WriteLine("_maKyThiCu: " + _maKyThiCu);
                 string _maKyThiMoi = maKyThiMoi;
-                Debug.WriteLine("_maKyThiMoi: " + _maKyThiMoi);
                 DateTime _thoiGianGiaHan = DateTime.Now;
-                Debug.WriteLine("_thoiGianGiaHan: " + _thoiGianGiaHan);
                 string _lyDo = lyDo;
-                Debug.WriteLine("_lyDo: " + _lyDo);
                 string _truongHopDB = dacBiet.ToString().ToLower();
-                Debug.WriteLine("_truongHopDB: " + _truongHopDB);
                 string _thoiGianThiMoi = thoiGianThiMoi;
-                Debug.WriteLine("_thoiGianThiMoi: " + _thoiGianThiMoi);
                 string _maNV = maNhanVienGiaHan;
-                Debug.WriteLine("_maNV: " + _maNV);
                 double _phiGiaHan = _truongHopDB == "true"? 
-                    0 : double.Parse(new DanhSachChungChiDAO().getChungChiByMaChungChi(Convert.ToInt32(maChungChi))["gia_tien"].ToString()) * 0.2;
-                Debug.WriteLine("_phiGiaHan: " + _phiGiaHan);
+                0 : double.Parse(new DanhSachChungChiDAO().getChungChiByMaChungChi(Convert.ToInt32(maChungChi))["gia_tien"].ToString()) * 0.2;
 
                 phieuGiaHanDAO.addPhieuGiaHan(_maPhieu, maPhieuDuThi, _soLan,
                     int.Parse(_maKyThiCu), int.Parse(_maKyThiMoi), _thoiGianGiaHan, _phiGiaHan,
                     false, _lyDo, bool.Parse(_truongHopDB), DateTime.Parse(_thoiGianThiMoi), int.Parse(_maNV));
+
             }
 
             else return;
