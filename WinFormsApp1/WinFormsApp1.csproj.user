@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="ChiTietPhieuDangKy.cs">
+    <Compile Update="Screen\ChiTietPhieuDangKy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="CungCapLichThi.cs">
+    <Compile Update="Screen\CungCapLichThi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="GiaHan.cs">
+    <Compile Update="Screen\GiaHan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Main.cs">
+    <Compile Update="Screen\Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="MainForm.cs">
+    <Compile Update="Screen\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Login.cs">
+    <Compile Update="Screen\DangNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="PhatHanhPhieuDuThi.cs">
+    <Compile Update="Screen\PhatHanhPhieuDuThi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Signup.cs">
+    <Compile Update="Screen\Signup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="NhapKetQua.cs">
+    <Compile Update="Screen\NhapKetQua.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ThanhToanPhieuDK.cs">
+    <Compile Update="Screen\ThanhToanPhieuDK.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="XacNhanThanhToan.cs">
+    <Compile Update="Screen\XacNhanThanhToan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ThanhToanPhieuGH.cs">
+    <Compile Update="Screen\ThanhToanPhieuGH.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

@@ -50,7 +50,6 @@ D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Login.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MainForm.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Signup.resources
@@ -72,3 +71,30 @@ D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuDK.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuGH.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.XacNhanThanhToan.resources
+D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ChiTietPhieuDangKy.resources
+D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.PhatHanhPhieuDuThi.resources
+D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
+D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.DangNhap.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ChiTietPhieuDangKy.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MHCungCapLichThi.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.DangNhap.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GiaHan.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Main.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MainForm.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.NhapKetQua.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.PhatHanhPhieuDuThi.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Signup.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuDK.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuGH.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.XacNhanThanhToan.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfo.cs
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinFormsApp1.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.pdb
