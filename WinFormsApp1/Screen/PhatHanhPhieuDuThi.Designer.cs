@@ -48,10 +48,11 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { MaPhieu, MaThiSinh, HoTen, Phone, Email, MaKyThi, MaChungChi, TenKyThi, NgayBD });
-            dataGridView1.Location = new Point(18, 132);
+            dataGridView1.Location = new Point(0, 114);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1179, 665);
+            dataGridView1.Size = new Size(1050, 465);
             dataGridView1.TabIndex = 0;
             // 
             // MaPhieu
@@ -119,40 +120,44 @@
             // 
             // button1
             // 
-            button1.Location = new Point(934, 58);
+            button1.Location = new Point(817, 44);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(263, 55);
+            button1.Size = new Size(230, 41);
             button1.TabIndex = 1;
             button1.Text = "Phát hành";
             button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(18, 72);
+            textBox1.Location = new Point(16, 54);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(754, 27);
+            textBox1.Size = new Size(660, 23);
             textBox1.TabIndex = 2;
             // 
             // button2
             // 
             button2.BackgroundImage = Properties.Resources.search;
             button2.BackgroundImageLayout = ImageLayout.Center;
-            button2.Location = new Point(778, 65);
+            button2.Location = new Point(681, 49);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(38, 41);
+            button2.Size = new Size(33, 31);
             button2.TabIndex = 3;
             button2.UseVisualStyleBackColor = true;
             // 
             // PhatHanhPhieuDuThi
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button2);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "PhatHanhPhieuDuThi";
-            Size = new Size(1200, 800);
+            Size = new Size(1050, 600);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

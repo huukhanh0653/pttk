@@ -31,5 +31,30 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void btnGiaHan_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.SwitchUserControl(new GiaHan());
+        }
+
+        private void btnCapPhatCC_Click(object sender, EventArgs e)
+        {
+            //MainForm.Instance.SwitchUserControl(new CapPhatCC());
+        }
+
+        private void btnPhatHanh_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.SwitchUserControl(new PhatHanhPhieuDuThi());
+        }
+
+        private void btnThanhToanPhieuDK_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.SwitchUserControl(new ThanhToanPhieuDK());
+        }
+
+        private void btnDangKyThi_Click(object sender, EventArgs e)
+        {
+            //MainForm.Instance.SwitchUserControl(new DangKyThi());
+        }
     }
 }

@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            button2 = new Button();
+            dgvDSPhieuDK = new DataGridView();
             MaPhieu = new DataGridViewTextBoxColumn();
             SoLanGiaHan = new DataGridViewTextBoxColumn();
             LichThiCu = new DataGridViewTextBoxColumn();
@@ -39,48 +36,24 @@
             LyDo = new DataGridViewTextBoxColumn();
             ThoiGianGH = new DataGridViewTextBoxColumn();
             PhiGH = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnKiemTra = new Button();
+            txtboxTimKiem = new TextBox();
+            btnThanhToan = new Button();
+            txtKyTu = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvDSPhieuDK).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDSPhieuDK
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { MaPhieu, SoLanGiaHan, LichThiCu, LichThiMoi, LyDo, ThoiGianGH, PhiGH });
-            dataGridView1.Location = new Point(62, 159);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(927, 551);
-            dataGridView1.TabIndex = 6;
-            //dataGridView1.CellContentClick += this.dataGridView1_CellContentClick;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(1031, 91);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 48);
-            button1.TabIndex = 5;
-            button1.Text = "Kiểm tra";
-            button1.UseVisualStyleBackColor = true;
-            //button1.Click += this.button1_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(62, 102);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(927, 27);
-            textBox1.TabIndex = 4;
-            //textBox1.TextChanged += this.textBox1_TextChanged;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(1031, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(108, 48);
-            button2.TabIndex = 7;
-            button2.Text = "Thanh toán";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            dgvDSPhieuDK.AllowUserToOrderColumns = true;
+            dgvDSPhieuDK.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSPhieuDK.Columns.AddRange(new DataGridViewColumn[] { MaPhieu, SoLanGiaHan, LichThiCu, LichThiMoi, LyDo, ThoiGianGH, PhiGH });
+            dgvDSPhieuDK.Location = new Point(67, 142);
+            dgvDSPhieuDK.Margin = new Padding(3, 2, 3, 2);
+            dgvDSPhieuDK.Name = "dgvDSPhieuDK";
+            dgvDSPhieuDK.RowHeadersWidth = 51;
+            dgvDSPhieuDK.Size = new Size(928, 413);
+            dgvDSPhieuDK.TabIndex = 6;
             // 
             // MaPhieu
             // 
@@ -131,27 +104,69 @@
             PhiGH.Name = "PhiGH";
             PhiGH.Width = 125;
             // 
+            // btnKiemTra
+            // 
+            btnKiemTra.Location = new Point(901, 50);
+            btnKiemTra.Margin = new Padding(3, 2, 3, 2);
+            btnKiemTra.Name = "btnKiemTra";
+            btnKiemTra.Size = new Size(94, 36);
+            btnKiemTra.TabIndex = 5;
+            btnKiemTra.Text = "Kiểm tra";
+            btnKiemTra.UseVisualStyleBackColor = true;
+            btnKiemTra.Click += btnKiemTra_Click;
+            // 
+            // txtboxTimKiem
+            // 
+            txtboxTimKiem.Location = new Point(67, 58);
+            txtboxTimKiem.Margin = new Padding(3, 2, 3, 2);
+            txtboxTimKiem.Name = "txtboxTimKiem";
+            txtboxTimKiem.Size = new Size(812, 23);
+            txtboxTimKiem.TabIndex = 4;
+            txtboxTimKiem.TextChanged += txtboxTimKiem_TextChanged;
+            // 
+            // btnThanhToan
+            // 
+            btnThanhToan.Location = new Point(901, 94);
+            btnThanhToan.Margin = new Padding(3, 2, 3, 2);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(94, 36);
+            btnThanhToan.TabIndex = 7;
+            btnThanhToan.Text = "Thanh toán";
+            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Click += btnThanhToan_Click;
+            // 
+            // txtKyTu
+            // 
+            txtKyTu.AutoSize = true;
+            txtKyTu.Location = new Point(67, 34);
+            txtKyTu.Name = "txtKyTu";
+            txtKyTu.Size = new Size(240, 15);
+            txtKyTu.TabIndex = 8;
+            txtKyTu.Text = "Tìm kiếm bằng số điện thoại hoặc mã phiếu";
+            // 
             // ThanhToanPhieuDK
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
+            Controls.Add(txtKyTu);
+            Controls.Add(dgvDSPhieuDK);
+            Controls.Add(btnKiemTra);
+            Controls.Add(txtboxTimKiem);
+            Controls.Add(btnThanhToan);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ThanhToanPhieuDK";
-            Size = new Size(1200, 800);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Size = new Size(1050, 600);
+            ((System.ComponentModel.ISupportInitialize)dgvDSPhieuDK).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button button1;
-        private TextBox textBox1;
-        private Button button2;
+        private DataGridView dgvDSPhieuDK;
+        private Button btnKiemTra;
+        private TextBox txtboxTimKiem;
+        private Button btnThanhToan;
         private DataGridViewTextBoxColumn MaPhieu;
         private DataGridViewTextBoxColumn SoLanGiaHan;
         private DataGridViewTextBoxColumn LichThiCu;
@@ -159,5 +174,6 @@
         private DataGridViewTextBoxColumn LyDo;
         private DataGridViewTextBoxColumn ThoiGianGH;
         private DataGridViewTextBoxColumn PhiGH;
+        private Label txtKyTu;
     }
 }

@@ -11,15 +11,36 @@ using System.Windows.Forms;
 namespace WinFormsApp1
 {
     public partial class ThanhToanPhieuDK : UserControl
-    {
+    {   
+
         public ThanhToanPhieuDK()
+        {
+            MH_ThanhToanPhieuDK_Load();
+        }
+
+        private void MH_ThanhToanPhieuDK_Load()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            string keyword = txtboxTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại hoặc mã phiếu để thanh toán.");
+                return;
+            }
+        }
+
+        private void btnKiemTra_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtboxTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

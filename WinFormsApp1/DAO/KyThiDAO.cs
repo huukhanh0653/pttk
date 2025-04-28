@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 namespace WinFormsApp1.DAO
 {
@@ -71,5 +72,24 @@ namespace WinFormsApp1.DAO
             }
         }
 
+        public DataRow getKyThiByMaKyThi(int maKyThi)
+        {
+            string query = "SELECT * FROM ky_thi where ma_ky_thi = @MaKyThi";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            } catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine($"Error during authentication: {ex.Message}");
+            }
+
+            return dataTable.Rows.Count > 0? dataTable.Rows[0] : null;
+
+        }
     }
 }

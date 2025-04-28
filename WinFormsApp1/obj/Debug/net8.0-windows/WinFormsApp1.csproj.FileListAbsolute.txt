@@ -1,80 +1,54 @@
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.exe
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.deps.json
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.runtimeconfig.json
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.pdb
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.ClientModel.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MainForm.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Signup.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.GenerateResource.cache
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfo.cs
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinForms.E4050A35.Up2Date
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinFormsApp1.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.pdb
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Main.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.NhapKetQua.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GiaHan.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MHCungCapLichThi.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuDK.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuGH.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.XacNhanThanhToan.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ChiTietPhieuDangKy.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.PhatHanhPhieuDuThi.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.DangNhap.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.exe
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.deps.json
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.runtimeconfig.json
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\WinFormsApp1.pdb
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\System.ClientModel.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ChiTietPhieuDangKy.resources
@@ -95,6 +69,9 @@ E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-window
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AssemblyInfo.cs
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinForms.E4050A35.Up2Date
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.dll
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\refint\WinFormsApp1.dll
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.pdb
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
