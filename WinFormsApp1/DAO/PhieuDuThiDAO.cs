@@ -11,29 +11,24 @@ namespace WinFormsApp1.DAO
 {
     internal class PhieuDuThiDAO
     {
-        private SqlCommand command;
-        private SqlConnection connection;
-        private SqlDataAdapter adapter;
+       
         public PhieuDuThiDAO()
         {
-            connection = new SqlConnection(AppConfig.ConnectionString);
-            command = new SqlCommand();
-            command.Connection = connection;
-            adapter = new SqlDataAdapter(); // Initialize the adapter to avoid CS8618 warning
+           
         }
         public void addPhieuDuThi(string maPhieu, string maKyThi, string maPhong, string maThiSinh)
         {
             string query = "INSERT INTO phieu_du_thi (ma_phieu_du_thi, ma_ky_thi, so_phong, ma_thi_sinh) VALUES (@MaPhieu, @MaKyThi, @MaPhong, @MaThiSinh)";
             try
             {
-                connection.Open();
+                
                 // Insert new record
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                command.Parameters.AddWithValue("@MaKyThi", maKyThi);
-                command.Parameters.AddWithValue("@MaPhong", maPhong);
-                command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
-                command.ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
+                AppConfig.Command.Parameters.AddWithValue("@MaPhong", maPhong);
+                AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -42,7 +37,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
         public DataTable getAllPhieuDuThi()
@@ -51,10 +46,10 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -63,7 +58,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
@@ -74,11 +69,11 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -87,7 +82,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
@@ -97,11 +92,11 @@ namespace WinFormsApp1.DAO
             string query = "DELETE FROM phieu_du_thi WHERE ma_phieu_du_thi = @MaPhieu";
             try
             {
-                connection.Open();
+                
                 // Delete record
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                command.ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -110,7 +105,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
 
@@ -120,11 +115,11 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaKyThi", maKyThi);
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -133,7 +128,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
@@ -144,11 +139,11 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -157,7 +152,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
         }

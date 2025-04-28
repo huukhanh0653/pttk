@@ -11,15 +11,9 @@ namespace WinFormsApp1.DAO
 {
     internal class PhieuGiaHanDAO
     {
-        private SqlCommand command;
-        private SqlConnection connection;
-        private SqlDataAdapter adapter;
         public PhieuGiaHanDAO()
         {
-            connection = new SqlConnection(AppConfig.ConnectionString);
-            command = new SqlCommand();
-            command.Connection = connection;
-            adapter = new SqlDataAdapter(); // Initialize the adapter to avoid CS8618 warning
+
         }
         public void addPhieuGiaHan(string maPhieu, string maThanhToan, string maPhieuDuThi, int soLan, int maKyThiCu, int maKyThiMoi,
             DateTime thoiGianGiahHan, Double PhiGiaHan, bool trangThai, string lyDo, bool THDacBiet, DateTime TGThiMoi, int MaNV)
@@ -28,23 +22,23 @@ namespace WinFormsApp1.DAO
                 "VALUES (@MaPhieu, @MaThanhToan, @MaPhieuDuThi, @SoLan, @MaKyThiCu, @MaKyThiMoi, @ThoiGianGiaHan, @PhiGiaHan, @TrangThai, @LyDo, @THDacBiet, @TGThiMoi, @MaNV)";
             try
             {
-                connection.Open();
+                
                 // Insert new record
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                command.Parameters.AddWithValue("@MaThanhToan", maThanhToan);
-                command.Parameters.AddWithValue("@MaPhieuDuThi", maPhieuDuThi);
-                command.Parameters.AddWithValue("@SoLan", soLan);
-                command.Parameters.AddWithValue("@MaKyThiCu", maKyThiCu);
-                command.Parameters.AddWithValue("@MaKyThiMoi", maKyThiMoi);
-                command.Parameters.AddWithValue("@ThoiGianGiaHan", thoiGianGiahHan);
-                command.Parameters.AddWithValue("@PhiGiaHan", PhiGiaHan);
-                command.Parameters.AddWithValue("@TrangThai", trangThai);
-                command.Parameters.AddWithValue("@LyDo", lyDo);
-                command.Parameters.AddWithValue("@THDacBiet", THDacBiet);
-                command.Parameters.AddWithValue("@TGThiMoi", TGThiMoi);
-                command.Parameters.AddWithValue("@MaNV", MaNV);
-                command.ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.Parameters.AddWithValue("@MaThanhToan", maThanhToan);
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieuDuThi", maPhieuDuThi);
+                AppConfig.Command.Parameters.AddWithValue("@SoLan", soLan);
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThiCu", maKyThiCu);
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThiMoi", maKyThiMoi);
+                AppConfig.Command.Parameters.AddWithValue("@ThoiGianGiaHan", thoiGianGiahHan);
+                AppConfig.Command.Parameters.AddWithValue("@PhiGiaHan", PhiGiaHan);
+                AppConfig.Command.Parameters.AddWithValue("@TrangThai", trangThai);
+                AppConfig.Command.Parameters.AddWithValue("@LyDo", lyDo);
+                AppConfig.Command.Parameters.AddWithValue("@THDacBiet", THDacBiet);
+                AppConfig.Command.Parameters.AddWithValue("@TGThiMoi", TGThiMoi);
+                AppConfig.Command.Parameters.AddWithValue("@MaNV", MaNV);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -53,7 +47,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
         public DataTable getAllPhieuGiaHan()
@@ -62,10 +56,10 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -74,7 +68,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
@@ -85,11 +79,11 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -98,7 +92,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }

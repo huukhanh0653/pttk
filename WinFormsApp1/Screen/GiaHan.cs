@@ -223,23 +223,23 @@ namespace WinFormsApp1
         //    //{
         //    //    using (OracleConnection connection = new OracleConnection(connectionString))
         //    //    {
-        //    //        connection.Open();
+        //    //        
         //    //        using (OracleCommand command = new OracleCommand(commandText, connection))
         //    //        {
-        //    //            command.CommandType = commandType;
+        //    //            AppConfig.Command.CommandType = commandType;
 
         //    //            // Nếu có tham số, thêm chúng vào command
         //    //            if (parameters != null)
         //    //            {
         //    //                foreach (var param in parameters)
         //    //                {
-        //    //                    command.Parameters.Add(new OracleParameter(param.Key, param.Value));
+        //    //                    AppConfig.Command.Parameters.Add(new OracleParameter(param.Key, param.Value));
         //    //                }
         //    //            }
 
-        //    //            using (OracleDataAdapter adapter = new OracleDataAdapter(command))
+        //    //            using (OracleDataAppConfig.Adapter AppConfig.Adapter = new OracleDataAppConfig.Adapter(command))
         //    //            {
-        //    //                adapter.Fill(resultTable);
+        //    //                AppConfig.Adapter.Fill(resultTable);
         //    //            }
         //    //        }
         //    //    }

@@ -11,29 +11,21 @@ namespace WinFormsApp1.DAO
 {
     internal class KyThiDAO
     {
-        private SqlCommand command;
-        private SqlConnection connection;
-        private SqlDataAdapter adapter;
+
 
         public KyThiDAO()
         {
-            connection = new SqlConnection(AppConfig.ConnectionString);
-            command = new SqlCommand();
-            command.Connection = connection;
-            adapter = new SqlDataAdapter(); // Initialize the adapter to avoid CS8618 warning
         }
 
         public static DataTable GetAllKyThi()
         {
            string query = "SELECT * FROM KyThi";
             DataTable dataTable = new DataTable();
-            SqlConnection connection = new SqlConnection(AppConfig.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
             try
             {
-                connection.Open();
-                adapter.Fill(dataTable);
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -42,7 +34,6 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
             }
             return dataTable;
         }
@@ -54,20 +45,20 @@ namespace WinFormsApp1.DAO
                 "VALUES (@maKyThi, @maChungChi, @maPhong, @diaDiem, @tenKyThi, @moTa, @TGBatDau, @soLuongToiDa, @soLuongDKHienTai)";
             SqlConnection connection = new SqlConnection(AppConfig.ConnectionString);
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@maKyThi", maKyThi);
-            command.Parameters.AddWithValue("@maChungChi", maChungChi);
-            command.Parameters.AddWithValue("@maPhong", maPhong);
-            command.Parameters.AddWithValue("@diaDiem", diaDiem);
-            command.Parameters.AddWithValue("@tenKyThi", tenKyThi);
-            command.Parameters.AddWithValue("@moTa", moTa);
-            command.Parameters.AddWithValue("@TGBatDau", TGBatDau);
-            command.Parameters.AddWithValue("@soLuongToiDa", soLuongToiDa);
-            command.Parameters.AddWithValue("@soLuongDKHienTai", soLuongDKHienTai);
+            AppConfig.Command.Parameters.AddWithValue("@maKyThi", maKyThi);
+            AppConfig.Command.Parameters.AddWithValue("@maChungChi", maChungChi);
+            AppConfig.Command.Parameters.AddWithValue("@maPhong", maPhong);
+            AppConfig.Command.Parameters.AddWithValue("@diaDiem", diaDiem);
+            AppConfig.Command.Parameters.AddWithValue("@tenKyThi", tenKyThi);
+            AppConfig.Command.Parameters.AddWithValue("@moTa", moTa);
+            AppConfig.Command.Parameters.AddWithValue("@TGBatDau", TGBatDau);
+            AppConfig.Command.Parameters.AddWithValue("@soLuongToiDa", soLuongToiDa);
+            AppConfig.Command.Parameters.AddWithValue("@soLuongDKHienTai", soLuongDKHienTai);
 
             try
             {
-                connection.Open();
-                command.ExecuteNonQuery();
+                
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -76,7 +67,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
 
