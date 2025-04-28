@@ -7,23 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.Business;
 
 namespace WinFormsApp1
 {
-        public partial class MHCungCapLichThi : UserControl
+        public partial class CungCapLichThi : UserControl
         {
-            private DataTable examTable;
-            private DataTable originalExamTable;
+            private DataTable table;
+            //private DataTable originalExamTable;
+            private string maChungChi;
+            private string SelectedExamSchedule = string.Empty;
+            private string SelectedMaKyThiMoi = string.Empty;
 
-            private string SelectedExamSchedule;
+            public event EventHandler<string> DataSelected;
 
 
-            public MHCungCapLichThi()
+            public CungCapLichThi(string maChungChi)
             {
                 InitializeComponent();
-                examTable = new DataTable();
-                originalExamTable = new DataTable();
+                this.maChungChi = maChungChi;
+                table = new DataTable();
+                //originalExamTable = new DataTable();
                 SelectedExamSchedule = string.Empty;
+
                 LoadExamData();
                 InitializeFilterOptions();
             }
@@ -57,6 +63,11 @@ namespace WinFormsApp1
             public string LuaChonLichThi()
             {
                 return SelectedExamSchedule;
+            }
+
+            public string LuaChonMaKyThiMoi()
+            {
+                return SelectedMaKyThiMoi;
             }
             private void InitializeFilterOptions()
             {
@@ -182,6 +193,7 @@ namespace WinFormsApp1
                 if (dgvDSLichThi.SelectedRows.Count > 0)
                 {
                     var selectedRow = dgvDSLichThi.SelectedRows[0];
+                    
                     SelectedExamSchedule = selectedRow.Cells["Mã Kỳ Thi"].Value.ToString() + " - " +
                                            selectedRow.Cells["Tên Kỳ Thi"].Value.ToString() + " - " +
                                            selectedRow.Cells["Mô Tả"].Value.ToString() + " - " +
@@ -192,10 +204,12 @@ namespace WinFormsApp1
                                            selectedRow.Cells["Thời Gian Bắt Đầu"].Value.ToString() + " - " +
                                            selectedRow.Cells["Số lượng"].Value.ToString();
 
-                    // Close the form and return OK result
-                    //this.DialogResult = DialogResult.OK;
-                    //this.Close();
-                }
+                   DataSelected?.Invoke(this, SelectedExamSchedule);
+
+                // Close the form and return OK result
+                //this.DialogResult = DialogResult.OK;
+                //this.Close();
+            }
                 else
                 {
                     MessageBox.Show("Vui lòng chọn một lịch thi.", "Thông báo");

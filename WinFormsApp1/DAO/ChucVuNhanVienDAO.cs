@@ -19,7 +19,6 @@ namespace WinFormsApp1.DAO
             string query = "INSERT INTO chuc_vu (ma_chuc_vu, ten_chuc_vu) VALUES (@MaChucVu, @TenChucVu)";
             try
             {
-                
                 // Insert new record
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.AddWithValue("@MaChucVu", maChucVu);
@@ -30,10 +29,6 @@ namespace WinFormsApp1.DAO
             {
                 // Handle exceptions
                 Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
             }
         }
         public DataTable getAllChucVu()
@@ -52,10 +47,7 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable;
         }
 
@@ -76,10 +68,7 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                 Console.WriteLine(ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
         }
     }

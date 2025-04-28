@@ -16,6 +16,7 @@ namespace WinFormsApp1
             ApplicationConfiguration.Initialize();
             AppConfig app = AppConfig.Instance;
             Application.Run(MainForm.Instance);
+
         }
     }
 }

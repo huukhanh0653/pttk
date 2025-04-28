@@ -67,7 +67,6 @@ D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Main.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.NhapKetQua.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GiaHan.resources
-D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MHCungCapLichThi.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuDK.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ThanhToanPhieuGH.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.XacNhanThanhToan.resources
@@ -75,3 +74,4 @@ D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.PhatHanhPhieuDuThi.resources
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
 D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.DangNhap.resources
+D:\HCMUS Code\Information System Analysis & Design\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.CungCapLichThi.resources
