@@ -25,10 +25,10 @@ namespace WinFormsApp1.DAO
             try
             {
                 // Insert new record
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@TaiKhoan", taiKhoan);
-                AppConfig.Command..Parameters.AddWithValue("@MatKhau", matKhau);
-                AppConfig.Command..ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@TaiKhoan", taiKhoan);
+                AppConfig.Command.Parameters.AddWithValue("@MatKhau", matKhau);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -47,8 +47,8 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                AppConfig.Command..CommandText = query;
-                AppConfig.Adapter.SelectCommand = AppConfig.Command.;
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
@@ -68,15 +68,15 @@ namespace WinFormsApp1.DAO
             {
                 Debug.WriteLine($"Attempting to log in with username: {taiKhoan} and password: {password}");
                 Debug.WriteLine("Opening Connection..");
-                AppConfig.Command..CommandText = query;
+                AppConfig.Command.CommandText = query;
 
                 // Clear parameters before adding new ones to avoid conflicts  
-                AppConfig.Command..Parameters.Clear();
-                AppConfig.Command..Parameters.AddWithValue("@TaiKhoan", taiKhoan);
-                AppConfig.Command..Parameters.AddWithValue("@MatKhau", password);
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@TaiKhoan", taiKhoan);
+                AppConfig.Command.Parameters.AddWithValue("@MatKhau", password);
 
                 Debug.WriteLine("Executing..");
-                int count = (int)AppConfig.Command..ExecuteScalar();
+                int count = (int)AppConfig.Command.ExecuteScalar();
                 Debug.WriteLine($"Count: {count}");
 
                 if (count > 0)

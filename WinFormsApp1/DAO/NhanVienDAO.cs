@@ -23,15 +23,15 @@ namespace WinFormsApp1.DAO
             try
             {
                 // Insert new record
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaNV", maNV);
-                AppConfig.Command..Parameters.AddWithValue("@HoTen", hoTen);
-                AppConfig.Command..Parameters.AddWithValue("@NgaySinh", ngaySinh);
-                AppConfig.Command..Parameters.AddWithValue("@DiaChi", diaChi);
-                AppConfig.Command..Parameters.AddWithValue("@SoDienThoai", soDienThoai);
-                AppConfig.Command..Parameters.AddWithValue("@Email", email);
-                AppConfig.Command..Parameters.AddWithValue("@ChucVu", chucVu);
-                AppConfig.Command..ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaNV", maNV);
+                AppConfig.Command.Parameters.AddWithValue("@HoTen", hoTen);
+                AppConfig.Command.Parameters.AddWithValue("@NgaySinh", ngaySinh);
+                AppConfig.Command.Parameters.AddWithValue("@DiaChi", diaChi);
+                AppConfig.Command.Parameters.AddWithValue("@SoDienThoai", soDienThoai);
+                AppConfig.Command.Parameters.AddWithValue("@Email", email);
+                AppConfig.Command.Parameters.AddWithValue("@ChucVu", chucVu);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -51,8 +51,8 @@ namespace WinFormsApp1.DAO
             try
             {
 
-                AppConfig.Command..CommandText = query;
-                AppConfig.Adapter.SelectCommand= AppConfig.Command.;
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand= AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
@@ -72,9 +72,9 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaNV", maNV);
-                AppConfig.Adapter.SelectCommand = AppConfig.Command.;
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaNV", maNV);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
@@ -95,11 +95,11 @@ namespace WinFormsApp1.DAO
             try
             {
                 Debug.WriteLine("Opening Connection..");
-                AppConfig.Command..CommandText = query;
+                AppConfig.Command.CommandText = query;
                 Debug.WriteLine("Executing..");
-                AppConfig.Command..Parameters.AddWithValue("@MaNV", maNV);
+                AppConfig.Command.Parameters.AddWithValue("@MaNV", maNV);
                 Debug.WriteLine("Executing Scalar..");
-                int chucVu = (int)AppConfig.Command..ExecuteScalar();
+                int chucVu = (int)AppConfig.Command.ExecuteScalar();
                 return chucVu;
             }
             catch (Exception ex)

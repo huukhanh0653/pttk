@@ -20,10 +20,10 @@ namespace WinFormsApp1.DAO
             try
             {
                 // Insert new record
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaPhieu", maPhieu);
-                AppConfig.Command..Parameters.AddWithValue("@MaThiSinh", maThiSinh);
-                AppConfig.Command..ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -41,8 +41,8 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                AppConfig.Command..CommandText = query;
-                AppConfig.Adapter.SelectCommand = AppConfig.Command.;
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
@@ -61,10 +61,10 @@ namespace WinFormsApp1.DAO
             string query = "DELETE FROM chi_tiet_phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu AND ma_thi_sinh = @MaThiSinh";
             try
             {
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaPhieu", maPhieu);
-                AppConfig.Command..Parameters.AddWithValue("@MaThiSinh", maThiSinh);
-                AppConfig.Command..ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -78,9 +78,9 @@ namespace WinFormsApp1.DAO
             string query = "DELETE FROM chi_tiet_phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu";
             try
             {
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaPhieu", maPhieu);
-                AppConfig.Command..ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -99,9 +99,9 @@ namespace WinFormsApp1.DAO
             try
             {
 
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaPhieu", maPhieu);
-                AppConfig.Adapter.SelectCommand = AppConfig.Command.;
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
@@ -124,9 +124,9 @@ namespace WinFormsApp1.DAO
             try
             {
 
-                AppConfig.Command..CommandText = query;
-                AppConfig.Command..Parameters.AddWithValue("@MaThiSinh", maThiSinh);
-                AppConfig.Adapter.SelectCommand = AppConfig.Command.;
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)

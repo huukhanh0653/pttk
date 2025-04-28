@@ -11,27 +11,20 @@ namespace WinFormsApp1.DAO
 {
     internal class ChucVuNhanVienDAO
     {
-        private SqlCommand command;
-        private SqlConnection connection;
-        private SqlDataAdapter adapter;
         public ChucVuNhanVienDAO()
         {
-            connection = new SqlConnection(AppConfig.ConnectionString);
-            command = new SqlCommand();
-            command.Connection = connection;
-            adapter = new SqlDataAdapter(); // Initialize the adapter to avoid CS8618 warning
         }
         public void addChucVu(string maChucVu, string tenChucVu)
         {
             string query = "INSERT INTO chuc_vu (ma_chuc_vu, ten_chuc_vu) VALUES (@MaChucVu, @TenChucVu)";
             try
             {
-                connection.Open();
+                
                 // Insert new record
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaChucVu", maChucVu);
-                command.Parameters.AddWithValue("@TenChucVu", tenChucVu);
-                command.ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaChucVu", maChucVu);
+                AppConfig.Command.Parameters.AddWithValue("@TenChucVu", tenChucVu);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -40,7 +33,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
         public DataTable getAllChucVu()
@@ -49,10 +42,10 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -61,7 +54,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
@@ -72,11 +65,11 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.AddWithValue("@MaCV", maCV);
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaCV", maCV);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -85,7 +78,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
         }

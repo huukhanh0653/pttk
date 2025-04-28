@@ -12,15 +12,8 @@ namespace WinFormsApp1.DAO
 {
     internal class NguoiDangKyDAO
     {
-        private SqlCommand command;
-        private SqlConnection connection;
-        private SqlDataAdapter adapter;
         public NguoiDangKyDAO()
         {
-            connection = new SqlConnection(AppConfig.ConnectionString);
-            command = new SqlCommand();
-            command.Connection = connection;
-            adapter = new SqlDataAdapter(); // Initialize the adapter to avoid CS8618 warning
         }
         public DataTable getAllNguoiDangKy()
         {
@@ -29,10 +22,10 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -41,7 +34,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
@@ -50,22 +43,22 @@ namespace WinFormsApp1.DAO
             string query = "INSERT INTO nguoi_dang_ky (ma_nguoi_dang_ky, ho_ten, ngay_sinh, so_dien_thoai, email, don_vi) VALUES (@HoTen, @NgaySinh, @SoDienThoai, @Email, @DonVi)";
             try
             {
-                connection.Open();
+                
 
                 // Create ID for new record
-                command.CommandText = "SELECT COUNT(*) FROM nguoi_dang_ky";
-                Int64 count = (Int64) command.ExecuteScalar() + 1;
+                AppConfig.Command.CommandText = "SELECT COUNT(*) FROM nguoi_dang_ky";
+                Int64 count = (Int64) AppConfig.Command.ExecuteScalar() + 1;
 
                 // Insert new record
-                command.CommandText = query;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@ma_nguoi_dang_ky", count);
-                command.Parameters.AddWithValue("@HoTen", HoTen);
-                command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
-                command.Parameters.AddWithValue("@SoDienThoai", SoDienThoai);
-                command.Parameters.AddWithValue("@Email", Email);
-                command.Parameters.AddWithValue("@DonVi", DonVi);
-                command.ExecuteNonQuery();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@ma_nguoi_dang_ky", count);
+                AppConfig.Command.Parameters.AddWithValue("@HoTen", HoTen);
+                AppConfig.Command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+                AppConfig.Command.Parameters.AddWithValue("@SoDienThoai", SoDienThoai);
+                AppConfig.Command.Parameters.AddWithValue("@Email", Email);
+                AppConfig.Command.Parameters.AddWithValue("@DonVi", DonVi);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -74,7 +67,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
 
@@ -84,12 +77,12 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@id", id);
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@id", id);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -98,7 +91,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             if (dataTable.Rows.Count > 0)
             {
@@ -112,16 +105,16 @@ namespace WinFormsApp1.DAO
             string query = "UPDATE nguoi_dang_ky SET ho_ten = @HoTen, ngay_sinh = @NgaySinh, so_dien_thoai = @SoDienThoai, email = @Email, don_vi = @DonVi WHERE ma_nguoi_dang_ky = @id";
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@HoTen", HoTen);
-                command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
-                command.Parameters.AddWithValue("@SoDienThoai", SoDienThoai);
-                command.Parameters.AddWithValue("@Email", Email);
-                command.Parameters.AddWithValue("@DonVi", DonVi);
-                command.ExecuteNonQuery();
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@id", id);
+                AppConfig.Command.Parameters.AddWithValue("@HoTen", HoTen);
+                AppConfig.Command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+                AppConfig.Command.Parameters.AddWithValue("@SoDienThoai", SoDienThoai);
+                AppConfig.Command.Parameters.AddWithValue("@Email", Email);
+                AppConfig.Command.Parameters.AddWithValue("@DonVi", DonVi);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -130,7 +123,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
 
@@ -139,11 +132,11 @@ namespace WinFormsApp1.DAO
             string query = "DELETE FROM nguoi_dang_ky WHERE ma_nguoi_dang_ky = @id";
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@id", id);
-                command.ExecuteNonQuery();
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@id", id);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -152,7 +145,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
         }
 
@@ -162,12 +155,12 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                connection.Open();
-                command.CommandText = query;
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
-                adapter.SelectCommand = command;
-                adapter.Fill(dataTable);
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -176,7 +169,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                connection.Close();
+                
             }
             return dataTable;
         }
