@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WinFormsApp1.DAO;
+using WinFormsApp1.DAO.Database;
 
 namespace WinFormsApp1.Business
 {
@@ -14,12 +15,6 @@ namespace WinFormsApp1.Business
         private string ten_dang_nhap;
         private string mat_khau;
         private int ma_chuc_vu;
-        public DangNhapBUS(string ten_dang_nhap, string mat_khau, int ma_nhan_vien)
-        {
-            this.ten_dang_nhap = ten_dang_nhap;
-            this.mat_khau = mat_khau;
-            this.ma_chuc_vu = ma_nhan_vien;
-        }
         public DangNhapBUS() { }
         public string TenDangNhap
         {
@@ -49,7 +44,8 @@ namespace WinFormsApp1.Business
             if (taiKhoanDAO.authenticate(tenDangNhap, matKhau))
             {
                 this.ma_chuc_vu = nhanVienDAO.getChucVuByMaNV(Convert.ToInt32(tenDangNhap));
-                this.ten_dang_nhap = tenDangNhap;                                           
+                this.ten_dang_nhap = tenDangNhap;
+                Debug.WriteLine($"Login successful for user: {tenDangNhap}");
                 this.mat_khau = matKhau;
                 return ma_chuc_vu;
             } else return -1; // Invalid login
@@ -61,6 +57,20 @@ namespace WinFormsApp1.Business
             this.ten_dang_nhap = null;
             this.mat_khau = null;
             this.ma_chuc_vu = -1; // Reset to an invalid state
+        }
+
+        private static DangNhapBUS instance;
+
+        public static DangNhapBUS Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DangNhapBUS();
+                }
+                return instance;
+            }
         }
     }
 }

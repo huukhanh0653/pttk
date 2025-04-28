@@ -36,7 +36,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -58,7 +58,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -80,7 +80,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -94,11 +94,8 @@ namespace WinFormsApp1.DAO
             string query = "SELECT chuc_vu FROM nhan_vien WHERE ma_nhan_vien = @MaNV";
             try
             {
-                Debug.WriteLine("Opening Connection..");
                 AppConfig.Command.CommandText = query;
-                Debug.WriteLine("Executing..");
                 AppConfig.Command.Parameters.AddWithValue("@MaNV", maNV);
-                Debug.WriteLine("Executing Scalar..");
                 int chucVu = (int)AppConfig.Command.ExecuteScalar();
                 return chucVu;
             }

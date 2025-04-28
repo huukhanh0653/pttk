@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -122,6 +123,10 @@ namespace WinFormsApp1.Business
 
         public DataTable getPhieuGiaHanByMaPhieuDuThi(string maPhieuDuThi)
         {
+            if (maPhieuDuThi.IsNullOrEmpty())
+            {
+                throw new ArgumentException("maPhieuDuThi is null or empty");
+            }
             return phieuGiaHanDAO.getPhieuGiaHanByMaPhieuDuThi(Convert.ToInt32(maPhieuDuThi));
         }
 
@@ -144,6 +149,8 @@ namespace WinFormsApp1.Business
             KyThiBUS kythiMoi = new KyThiBUS(maKyThiMoi);
             KyThiBUS kyThiHienTai = new KyThiBUS(maKyThiHienTai);
 
+            Debug.WriteLine("kiemTraDieuKienGiaHan");
+
             if (is2TimesAlready(maPhieuDuThi)) return false;
             if (kythiMoi.isFull()) return false;
             if (!kythiMoi.isEarlyAtLeast24h()) return false;
@@ -152,9 +159,65 @@ namespace WinFormsApp1.Business
         }
 
         public void addPhieuGiaHan(string maPhieuDuThi, string maKyThiCu, string maKyThiMoi,
-            string lyDo, string thoiGianThiMoi, int maNhanVienGiaHan)
+            string lyDo, string thoiGianThiMoi, string maNhanVienGiaHan, bool dacBiet, string maChungChi)
         {
-            
+            DataTable table = phieuGiaHanDAO.getPhieuGiaHanByMaPhieuDuThi(Convert.ToInt32(maPhieuDuThi));
+            Debug.WriteLine("table.Rows.Count: " + table.Rows.Count);
+            if (table.Rows.Count == 2 && (table.Rows[1]["ma_thanh_toan"] == null || table.Rows[1]["ma_thanh_toan"] == DBNull.Value))
+            {
+                string _maPhieu = table.Rows[1]["ma_phieu_gia_han"].ToString();
+                string _maThanhToan = table.Rows[1]["ma_thanh_toan"].ToString();
+                string _maPhieuDuThi = table.Rows[1]["ma_phieu_du_thi"].ToString();
+                string _soLan = table.Rows[1]["so_lan"].ToString();
+                string _maKyThiCu = table.Rows[1]["ma_ky_thi_cu"].ToString();
+                string _maKyThiMoi = maKyThiMoi;
+                string _thoiGianGiaHan = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string _lyDo = lyDo.Length > 0 ? lyDo : table.Rows[1]["ly_do"].ToString();
+                string _truongHopDB = table.Rows[1]["th_dac_biet"].ToString().ToLower() == "true" ?
+                    table.Rows[1]["th_dac_biet"].ToString().ToLower() : dacBiet.ToString().ToLower();
+                string _thoiGianThiMoi = thoiGianThiMoi;
+                string _maNV = maNhanVienGiaHan;
+                string _phiGiaHan = table.Rows[1]["phi_gia_han"].ToString();
+
+                phieuGiaHanDAO.updatePhieuGiaHan(_maPhieu, _maThanhToan, maPhieuDuThi, int.Parse(_soLan) + 1,
+                int.Parse(_maKyThiCu), int.Parse(_maKyThiMoi), DateTime.Parse(_thoiGianGiaHan), double.Parse(_phiGiaHan),
+                true, _lyDo, bool.Parse(_truongHopDB), DateTime.Parse(_thoiGianThiMoi), int.Parse(_maNV));
+            }
+
+            else if (table.Rows.Count < 2)
+            {
+                string _maPhieu = phieuGiaHanDAO.getNextMaPhieuGiaHan().ToString();
+                Debug.WriteLine("_maPhieu: "+ _maPhieu);
+                //string _maThanhToan = "-1";
+                //Debug.WriteLine("_maThanhToan: " + _maThanhToan);
+                string _maPhieuDuThi = maPhieuDuThi;
+                Debug.WriteLine("_maPhieuDuThi: " + _maPhieuDuThi);
+                int _soLan = table.Rows.Count + 1;
+                Debug.WriteLine("_soLan: " + _soLan);
+                string _maKyThiCu = maKyThiCu;
+                Debug.WriteLine("_maKyThiCu: " + _maKyThiCu);
+                string _maKyThiMoi = maKyThiMoi;
+                Debug.WriteLine("_maKyThiMoi: " + _maKyThiMoi);
+                DateTime _thoiGianGiaHan = DateTime.Now;
+                Debug.WriteLine("_thoiGianGiaHan: " + _thoiGianGiaHan);
+                string _lyDo = lyDo;
+                Debug.WriteLine("_lyDo: " + _lyDo);
+                string _truongHopDB = dacBiet.ToString().ToLower();
+                Debug.WriteLine("_truongHopDB: " + _truongHopDB);
+                string _thoiGianThiMoi = thoiGianThiMoi;
+                Debug.WriteLine("_thoiGianThiMoi: " + _thoiGianThiMoi);
+                string _maNV = maNhanVienGiaHan;
+                Debug.WriteLine("_maNV: " + _maNV);
+                double _phiGiaHan = _truongHopDB == "true"? 
+                    0 : double.Parse(new DanhSachChungChiDAO().getChungChiByMaChungChi(Convert.ToInt32(maChungChi))["gia_tien"].ToString()) * 0.2;
+                Debug.WriteLine("_phiGiaHan: " + _phiGiaHan);
+
+                phieuGiaHanDAO.addPhieuGiaHan(_maPhieu, maPhieuDuThi, _soLan,
+                    int.Parse(_maKyThiCu), int.Parse(_maKyThiMoi), _thoiGianGiaHan, _phiGiaHan,
+                    false, _lyDo, bool.Parse(_truongHopDB), DateTime.Parse(_thoiGianThiMoi), int.Parse(_maNV));
+            }
+
+            else return;
         }
     }
 }

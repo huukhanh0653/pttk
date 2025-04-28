@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,28 +67,48 @@ namespace WinFormsApp1.Business
             return dataTable;
         }
 
+        public DataTable getKyThiByMaChungChiLater(string maChungChi)
+        {
+            Debug.WriteLine("getKyThiByMaChungChiLater");
+            DataTable dataTable = kyThiDAO.getAllKyThiByMaChungChi(Convert.ToInt32(maChungChi));
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                if (DateTime.Parse(dataTable.Rows[i]["thoi_gian_bat_dau"].ToString()) < DateTime.Now)
+                {
+                    dataTable.Rows.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            return dataTable;
+        }
+
         public DataTable dtbGetAllKyThi()
         {
+            Debug.WriteLine("dtbGetAllKyThi");
             return kyThiDAO.getAllKyThi();
         }
 
         public bool isFull()
         {
+            Debug.WriteLine("isFull");
             return soLuongDangKyHienTai >= soLuongToiDa;
         }
 
         public bool isEarlyAtLeast24h()
         {
-
+            Debug.WriteLine("isEarlyAtLeast24h");
             return thoiGianBatDau - DateTime.Now > TimeSpan.FromHours(24);
 
         }
 
         public DataRow getKyThiByMaKyThi(int maKyThi)
         {
+            Debug.WriteLine("getKyThiByMaKyThi");
             return kyThiDAO.getKyThiByMaKyThi(maKyThi);
         }
 
-        public Data
+        //public Data
     }
 }

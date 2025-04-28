@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 namespace WinFormsApp1.DAO
 {
@@ -31,7 +32,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -53,7 +54,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -75,11 +76,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine(ex.Message);
             }
         }
 
@@ -90,6 +87,7 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
                 AppConfig.Command.Parameters.AddWithValue("@NgayDangKy", ngayDangKy);
@@ -98,11 +96,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("updatePhieuDangKy: " + ex.Message);
             }
         }
 
@@ -121,7 +115,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getPhieuDangKyByNguoiDangKy: " + ex.Message);
             }
             finally
             {
@@ -138,6 +132,7 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -145,11 +140,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine(" error in getPhieuDangKyByMaPhieu: " + ex.Message);
             }
 
             if (dataTable.Rows.Count > 0)
@@ -169,13 +160,14 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(" error in deletePhieuDangKyByNguoiDangKy: " + ex.Message);
             }
             finally
             {
@@ -199,11 +191,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine(" error in searchNguoiDangKy: " + ex.Message);
             }
             return dataTable;
         }

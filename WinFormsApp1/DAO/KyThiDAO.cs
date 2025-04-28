@@ -64,11 +64,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("AddKyThi: " + ex.Message);
             }
         }
 
@@ -79,13 +75,14 @@ namespace WinFormsApp1.DAO
             try
             {
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             } catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine($"Error during authentication: {ex.Message}");
+                Debug.WriteLine($"getKyThiByMaKyThi: {ex.Message}");
             }
 
             return dataTable.Rows.Count > 0? dataTable.Rows[0] : null;
@@ -99,14 +96,15 @@ namespace WinFormsApp1.DAO
             try
             {
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaChungChi", maChungChi);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
-                // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("error in getAllKyThiByMaChungChi" + ex.Message);
+                //Console.WriteLine(ex.Message);
             }
             return dataTable;
         }

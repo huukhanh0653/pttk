@@ -3,60 +3,16 @@
   "WorkspaceRootPath": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\screen\\giahan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\giahan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\screen\\cungcaplichthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\cungcaplichthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\business\\kythibus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\business\\kythibus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\thisinhdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\thisinhdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\taikhoandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\taikhoandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\business\\phieugiahanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\business\\phieugiahanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\phieugiahandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\phieugiahandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\phieuduthidao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\phieuduthidao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\phieudangkydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\phieudangkydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\nhanviendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\nhanviendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\nguoidangkydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\nguoidangkydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\kythidao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\kythidao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\screen\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\business\\phieuduthibus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\business\\phieuduthibus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|d:\\hcmus code\\information system analysis \u0026 design\\winformsapp1\\winformsapp1\\dao\\thisinhdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\thisinhdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,184 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ThiSinhDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\ThiSinhDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\ThiSinhDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\ThiSinhDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\ThiSinhDAO.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:28.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TaiKhoanDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\TaiKhoanDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\TaiKhoanDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\TaiKhoanDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\TaiKhoanDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:27.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "PhieuGiaHanDAO.cs",
               "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\PhieuGiaHanDAO.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\PhieuGiaHanDAO.cs",
               "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\PhieuGiaHanDAO.cs",
               "RelativeToolTip": "WinFormsApp1\\DAO\\PhieuGiaHanDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAwwEIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:26.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PhieuDuThiDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\PhieuDuThiDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\PhieuDuThiDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\PhieuDuThiDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\PhieuDuThiDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:25.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PhieuDangKyDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\PhieuDangKyDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\PhieuDangKyDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\PhieuDangKyDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\PhieuDangKyDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:24.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NhanVienDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\NhanVienDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\NhanVienDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\NhanVienDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\NhanVienDAO.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:14.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NguoiDangKyDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\NguoiDangKyDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\NguoiDangKyDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\NguoiDangKyDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\NguoiDangKyDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:14.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "KyThiDAO.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\KyThiDAO.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\KyThiDAO.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\KyThiDAO.cs",
-              "RelativeToolTip": "WinFormsApp1\\DAO\\KyThiDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:23:12.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Program.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Program.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Program.cs",
-              "RelativeToolTip": "WinFormsApp1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:21:51.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KyThiBUS.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Business\\KyThiBUS.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Business\\KyThiBUS.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Business\\KyThiBUS.cs",
-              "RelativeToolTip": "WinFormsApp1\\Business\\KyThiBUS.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAIA6wFQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:04:52.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DangNhap.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Screen\\DangNhap.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\DangNhap.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Screen\\DangNhap.cs",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\DangNhap.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAowCIAAAB2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:55:12.592Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PhieuDuThiBUS.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Business\\PhieuDuThiBUS.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Business\\PhieuDuThiBUS.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Business\\PhieuDuThiBUS.cs",
-              "RelativeToolTip": "WinFormsApp1\\Business\\PhieuDuThiBUS.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:48:44.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CungCapLichThi.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Screen\\CungCapLichThi.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\CungCapLichThi.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Screen\\CungCapLichThi.cs",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\CungCapLichThi.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAIwMoAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:43:53.6Z",
+              "WhenOpened": "2025-04-28T20:36:59.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GiaHan.cs",
-              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Screen\\GiaHan.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\GiaHan.cs",
-              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Screen\\GiaHan.cs",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\GiaHan.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAkwIEAAAApAAAAAAAAAA==",
+              "Title": "PhieuGiaHanBUS.cs",
+              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Business\\PhieuGiaHanBUS.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Business\\PhieuGiaHanBUS.cs",
+              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\Business\\PhieuGiaHanBUS.cs",
+              "RelativeToolTip": "WinFormsApp1\\Business\\PhieuGiaHanBUS.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAuwL8AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:34:37.273Z",
+              "WhenOpened": "2025-04-28T20:35:35.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ThiSinhDAO.cs",
+              "DocumentMoniker": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\ThiSinhDAO.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\ThiSinhDAO.cs",
+              "ToolTip": "D:\\HCMUS Code\\Information System Analysis \u0026 Design\\WinFormsApp1\\WinFormsApp1\\DAO\\ThiSinhDAO.cs",
+              "RelativeToolTip": "WinFormsApp1\\DAO\\ThiSinhDAO.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAmwGQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T20:32:11.517Z",
               "EditorCaption": ""
             }
           ]

@@ -1,5 +1,6 @@
 using WinFormsApp1;
 using WinFormsApp1.DAO.Database;
+using WinFormsApp1.Business;
 
 namespace WinFormsApp1
 {
@@ -15,6 +16,7 @@ namespace WinFormsApp1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             AppConfig app = AppConfig.Instance;
+            DangNhapBUS session = DangNhapBUS.Instance;
             Application.Run(MainForm.Instance);
 
         }

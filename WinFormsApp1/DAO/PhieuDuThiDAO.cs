@@ -35,7 +35,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("addPhieuDuThi: " + ex.Message);
             }
             finally
             {
@@ -56,7 +56,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+               Debug.WriteLine("getAllPhieuDuThi: " + ex.Message);
             }
             finally
             {
@@ -80,7 +80,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getPhieuDuThiByMaThiSinh: " + ex.Message);
             }
 
             return dataTable;
@@ -101,7 +101,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("deletePhieuDuThi: " + ex.Message);
             }
 
         }
@@ -121,7 +121,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getPhieuDuThiByMaKyThi: " + ex.Message);
             }
 
             return dataTable;
@@ -142,7 +142,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getPhieuDuThiByMaPhieu: " + ex.Message);
             }
 
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;

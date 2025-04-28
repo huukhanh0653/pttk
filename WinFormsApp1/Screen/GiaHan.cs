@@ -70,9 +70,18 @@ namespace WinFormsApp1
         private void dgvDSPhieuDuThi_SelectionChanged(object? sender, EventArgs e)
         {
             //HideAllUIElements();
+            if (dgvDSPhieuDuThi.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
             selectedMaPhieuDuThi = this.dgvDSPhieuDuThi.SelectedRows[0].Cells["ma_phieu_du_thi"].Value.ToString();
             selectedMaKyThi = this.dgvDSPhieuDuThi.SelectedRows[0].Cells["ma_ky_thi"].Value.ToString();
             selectedMaChungChi = this.dgvDSPhieuDuThi.SelectedRows[0].Cells["ma_chung_chi"].Value.ToString();
+
+            Debug.WriteLine("Selected Ma Phieu Du Thi: " + selectedMaPhieuDuThi);
+            Debug.WriteLine("Selected Ma Ky Thi: " + selectedMaKyThi);
+            Debug.WriteLine("Selected Ma Chung Chi: " + selectedMaChungChi);
         }
 
         private void HideAllUIElements()
@@ -136,10 +145,13 @@ namespace WinFormsApp1
             cungCapLichThi.DataSelected += (s, data) =>
             {
                 selectedExamSchedule = data;
-                lblLichThiDaChon.Text = $"Lịch thi đã chọn: {selectedExamSchedule}";
-                selectedMaKyThiMoi = data.Split(" -")[0];
-                selectedThoiGianBatDau = data.Split(" -")[7];
+                string[] split = data.Split(" - ");
+                lblLichThiDaChon.Text = $"Lịch thi đã chọn: {split[0] + " - " + split[1] + " - " + split[2] }";
+                selectedMaKyThiMoi = split[0];
+                Debug.WriteLine("Selected Ma Ky Thi Moi: " + selectedMaKyThiMoi);
+                selectedThoiGianBatDau = split[6];
                 lblLichThiDaChon.Visible = true;
+
                 popup.Close();
                 MessageBox.Show("Data received: " + data);
             };
@@ -189,23 +201,24 @@ namespace WinFormsApp1
 
             if (KiemTraDieuKienGiaHan())
             {
-                phieuGiaHanBUS.addPhieuGiaHan(selectedMaPhieuDuThi, selectedMaKyThi, selectedMaKyThiMoi, lyDo, selectedThoiGianBatDau, 1);
+                phieuGiaHanBUS.addPhieuGiaHan(selectedMaPhieuDuThi, selectedMaKyThi, 
+                selectedMaKyThiMoi, lyDo, selectedThoiGianBatDau, DangNhapBUS.Instance.TenDangNhap, chkTruongHopDBChecked, selectedMaChungChi);
             }
-            //// Show success message
-            //MessageBox.Show("lưu thông tin thành công!");
+            // Show success message
+            MessageBox.Show("lưu thông tin thành công!");
 
-            //// Reset visibility to allow re-selection
-            //txtLyDo.Visible = false;
-            //lblLichThiDaChon.Visible = false;
-            //chkTruongHopDB.Visible = false;
-            //btnCungCapLichThi.Visible = false;
-            //btnXoaLichThiDaChon.Visible = false;
-            //btnThanhToan.Visible = false;
-            //btnLuuThongTin.Visible = false;
+            // Reset visibility to allow re-selection
+            txtLyDo.Visible = false;
+            lblLichThiDaChon.Visible = false;
+            chkTruongHopDB.Visible = false;
+            btnCungCapLichThi.Visible = false;
+            btnXoaLichThiDaChon.Visible = false;
+            btnThanhToan.Visible = false;
+            btnLuuThongTin.Visible = false;
 
-            //// Re-enable both tables for a new selection
-            //dgvDSThiSinh.Enabled = true;
-            //dgvDSPhieuDuThi.Enabled = true;
+            // Re-enable both tables for a new selection
+            dgvDSThiSinh.Enabled = true;
+            dgvDSPhieuDuThi.Enabled = true;
         }
 
         private void chkTruongHopDB_CheckedChanged(object sender, EventArgs e)
