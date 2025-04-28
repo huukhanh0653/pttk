@@ -29,82 +29,90 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnNhapDiem = new Button();
+            btnGiaHan = new Button();
+            btnCapPhatCC = new Button();
+            btnPhatHanh = new Button();
+            btnDangKyThi = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnNhapDiem);
+            panel1.Controls.Add(btnGiaHan);
+            panel1.Controls.Add(btnCapPhatCC);
+            panel1.Controls.Add(btnPhatHanh);
+            panel1.Controls.Add(btnDangKyThi);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1200, 800);
+            panel1.Size = new Size(1050, 600);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // button5
+            // btnNhapDiem
             // 
-            button5.Location = new Point(485, 507);
-            button5.Name = "button5";
-            button5.Size = new Size(248, 72);
-            button5.TabIndex = 9;
-            button5.Text = "Nhập điểm";
-            button5.UseVisualStyleBackColor = true;
+            btnNhapDiem.Location = new Point(424, 380);
+            btnNhapDiem.Margin = new Padding(3, 2, 3, 2);
+            btnNhapDiem.Name = "btnNhapDiem";
+            btnNhapDiem.Size = new Size(217, 54);
+            btnNhapDiem.TabIndex = 9;
+            btnNhapDiem.Text = "Nhập điểm";
+            btnNhapDiem.UseVisualStyleBackColor = true;
+            //btnNhapDiem.Click += btnNhapDiem_Click;
             // 
-            // button4
+            // btnGiaHan
             // 
-            button4.Location = new Point(760, 376);
-            button4.Name = "button4";
-            button4.Size = new Size(248, 72);
-            button4.TabIndex = 8;
-            button4.Text = "Gia hạn thời gian thi";
-            button4.UseVisualStyleBackColor = true;
+            btnGiaHan.Location = new Point(665, 282);
+            btnGiaHan.Margin = new Padding(3, 2, 3, 2);
+            btnGiaHan.Name = "btnGiaHan";
+            btnGiaHan.Size = new Size(217, 54);
+            btnGiaHan.TabIndex = 8;
+            btnGiaHan.Text = "Gia hạn thời gian thi";
+            btnGiaHan.UseVisualStyleBackColor = true;
+            btnGiaHan.Click += btnGiaHan_Click;
             // 
-            // button3
+            // btnCapPhatCC
             // 
-            button3.Location = new Point(193, 376);
-            button3.Name = "button3";
-            button3.Size = new Size(248, 72);
-            button3.TabIndex = 7;
-            button3.Text = "Cấp phát chứng chỉ";
-            button3.UseVisualStyleBackColor = true;
+            btnCapPhatCC.Location = new Point(169, 282);
+            btnCapPhatCC.Margin = new Padding(3, 2, 3, 2);
+            btnCapPhatCC.Name = "btnCapPhatCC";
+            btnCapPhatCC.Size = new Size(217, 54);
+            btnCapPhatCC.TabIndex = 7;
+            btnCapPhatCC.Text = "Cấp phát chứng chỉ";
+            btnCapPhatCC.UseVisualStyleBackColor = true;
+            // btnCapPhatCC.Click += btnCapPhatCC_Click;
             // 
-            // button2
+            // btnPhatHanh
             // 
-            button2.Location = new Point(760, 222);
-            button2.Name = "button2";
-            button2.Size = new Size(248, 72);
-            button2.TabIndex = 6;
-            button2.Text = "Phát hành phiếu dự thi";
-            button2.UseVisualStyleBackColor = true;
+            btnPhatHanh.Location = new Point(665, 166);
+            btnPhatHanh.Margin = new Padding(3, 2, 3, 2);
+            btnPhatHanh.Name = "btnPhatHanh";
+            btnPhatHanh.Size = new Size(217, 54);
+            btnPhatHanh.TabIndex = 6;
+            btnPhatHanh.Text = "Phát hành phiếu dự thi";
+            btnPhatHanh.UseVisualStyleBackColor = true;
+            btnPhatHanh.Click += btnPhatHanh_Click;
             // 
-            // button1
+            // btnDangKyThi
             // 
-            button1.Location = new Point(193, 222);
-            button1.Name = "button1";
-            button1.Size = new Size(248, 72);
-            button1.TabIndex = 5;
-            button1.Text = "Đăng ký dự thi";
-            button1.UseVisualStyleBackColor = true;
+            btnDangKyThi.Location = new Point(169, 166);
+            btnDangKyThi.Margin = new Padding(3, 2, 3, 2);
+            btnDangKyThi.Name = "btnDangKyThi";
+            btnDangKyThi.Size = new Size(217, 54);
+            btnDangKyThi.TabIndex = 5;
+            btnDangKyThi.Text = "Đăng ký dự thi";
+            btnDangKyThi.UseVisualStyleBackColor = true;
+            btnDangKyThi.Click += btnDangKyThi_Click;
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Main";
-            Size = new Size(1200, 800);
+            Size = new Size(1050, 600);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -112,10 +120,10 @@
         #endregion
 
         private Panel panel1;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnNhapDiem;
+        private Button btnGiaHan;
+        private Button btnCapPhatCC;
+        private Button btnPhatHanh;
+        private Button btnDangKyThi;
     }
 }

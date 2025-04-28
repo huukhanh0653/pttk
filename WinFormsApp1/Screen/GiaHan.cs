@@ -16,7 +16,12 @@ namespace WinFormsApp1
         private string selectedCustomerId = string.Empty;
         private string selectedExamSchedule = string.Empty;
         private bool chkTruongHopDBChecked = false;
+
+        private string lyDo;
+
         private ThiSinhBUS thiSinhBUS = new ThiSinhBUS();
+        private PhieuDuThiBUS phieuDuThiBUS = new PhieuDuThiBUS();
+
         public GiaHan()
         {
             InitializeComponent();
@@ -38,12 +43,10 @@ namespace WinFormsApp1
                 {
                     selectedCustomerId = newSelectedCustomerId ?? string.Empty;
 
-                    LoadDSPhieuDuThiCuaThiSinh(selectedCustomerId);
+                    this.dgvDSPhieuDuThi.DataSource = phieuDuThiBUS.dtbGetPhieuDuThiByMaThiSinh(selectedCustomerId);
 
                     dgvDSPhieuDuThi.Visible = true;
                     btnKTPhieuDuThiHopLe.Visible = true;
-
-                    HideAllUIElements();
                 }
             }
             else
@@ -86,13 +89,13 @@ namespace WinFormsApp1
 
         private void HideAllUIElements()
         {
-            txtLyDo.Visible = false;
-            chkTruongHopDB.Visible = false;
-            btnCungCapLichThi.Visible = false;
-            lblLichThiDaChon.Visible = false;
-            btnXoaLichThiDaChon.Visible = false;
-            btnThanhToan.Visible = false;
-            btnLuuThongTin.Visible = false;
+            //txtLyDo.Visible = false;
+            //chkTruongHopDB.Visible = false;
+            //btnCungCapLichThi.Visible = false;
+            //lblLichThiDaChon.Visible = false;
+            //btnXoaLichThiDaChon.Visible = false;
+            //btnThanhToan.Visible = false;
+            //btnLuuThongTin.Visible = false;
         }
 
         private void btnKTPhieuDuThiHopLe_Click(object sender, EventArgs e)
@@ -159,19 +162,17 @@ namespace WinFormsApp1
 
         private void btnXoaLichThiDaChon_Click(object sender, EventArgs e)
         {
-            //// Clear the selected schedule
-            //selectedExamSchedule = string.Empty;
-            //lblLichThiDaChon.Text = "Lịch thi đã chọn:";
-            //lblLichThiDaChon.Visible = false;
+            // Clear the selected schedule
+            selectedExamSchedule = string.Empty;
+            lblLichThiDaChon.Text = "Lịch thi đã chọn:";
 
             //// Hide related buttons
             //btnXoaLichThiDaChon.Visible = false;
-            //btnThanhToan.Visible = false;
-            //btnLuuThongTin.Visible = false;
+            btnLuuThongTin.Enabled = false;
 
-            //// Re-enable both tables
-            //dgvDSThiSinh.Enabled = true;
-            //dgvDSPhieuDuThi.Enabled = true;
+            // Re-enable both tables
+            dgvDSThiSinh.Enabled = true;
+            dgvDSPhieuDuThi.Enabled = true;
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -206,7 +207,7 @@ namespace WinFormsApp1
 
         private void txtLyDo_TextChanged(object sender, EventArgs e)
         {
-
+            lyDo = txtLyDo.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -214,42 +215,6 @@ namespace WinFormsApp1
 
         }
 
-        //private DataTable ExecuteCommand(string commandText, CommandType commandType, Dictionary<string, object>? parameters = null)
-        //{
-        //    //string connectionString = "User Id=ADMIN;Password=122712;Data Source=localhost:1521/PDB;";
-        //    //DataTable resultTable = new DataTable();
-
-        //    //try
-        //    //{
-        //    //    using (OracleConnection connection = new OracleConnection(connectionString))
-        //    //    {
-        //    //        
-        //    //        using (OracleCommand command = new OracleCommand(commandText, connection))
-        //    //        {
-        //    //            AppConfig.Command.CommandType = commandType;
-
-        //    //            // Nếu có tham số, thêm chúng vào command
-        //    //            if (parameters != null)
-        //    //            {
-        //    //                foreach (var param in parameters)
-        //    //                {
-        //    //                    AppConfig.Command.Parameters.Add(new OracleParameter(param.Key, param.Value));
-        //    //                }
-        //    //            }
-
-        //    //            using (OracleDataAppConfig.Adapter AppConfig.Adapter = new OracleDataAppConfig.Adapter(command))
-        //    //            {
-        //    //                AppConfig.Adapter.Fill(resultTable);
-        //    //            }
-        //    //        }
-        //    //    }
-        //    //}
-        //    //catch (Exception ex)
-        //    //{
-        //    //    MessageBox.Show($"Error executing command: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    //}
-
-        //    //return resultTable;
-        //}
+  
     }
 }

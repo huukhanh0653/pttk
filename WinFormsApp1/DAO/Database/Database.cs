@@ -31,7 +31,7 @@ namespace WinFormsApp1.DAO.Database
 
         public static SqlCommand Command
         {
-            get { return AppConfig.Command; }
+            get { return command; }
             set { command = value; }
         }
 

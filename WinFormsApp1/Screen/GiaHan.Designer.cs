@@ -41,10 +41,13 @@
             btnLuuThongTin = new Button();
             lblLichThiDaChon = new Label();
             scrollablePanel = new Panel();
+            label2 = new Label();
+            label1 = new Label();
             btnClear = new Button();
             btnXoaLichThiDaChon = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            label3 = new Label();
+            txtSearch = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDSThiSinh).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDSPhieuDuThi).BeginInit();
             scrollablePanel.SuspendLayout();
@@ -94,7 +97,6 @@
             dgvDSPhieuDuThi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDSPhieuDuThi.Size = new Size(772, 153);
             dgvDSPhieuDuThi.TabIndex = 3;
-            dgvDSPhieuDuThi.Visible = false;
             dgvDSPhieuDuThi.SelectionChanged += dgvDSPhieuDuThi_SelectionChanged;
             // 
             // btnKTPhieuDuThiHopLe
@@ -106,7 +108,6 @@
             btnKTPhieuDuThiHopLe.Size = new Size(167, 44);
             btnKTPhieuDuThiHopLe.TabIndex = 4;
             btnKTPhieuDuThiHopLe.Text = "Kiểm tra lịch gia hạn";
-            btnKTPhieuDuThiHopLe.Visible = false;
             btnKTPhieuDuThiHopLe.Click += btnKTPhieuDuThiHopLe_Click;
             // 
             // txtLyDo
@@ -118,7 +119,6 @@
             txtLyDo.Name = "txtLyDo";
             txtLyDo.Size = new Size(168, 116);
             txtLyDo.TabIndex = 5;
-            txtLyDo.Visible = false;
             txtLyDo.TextChanged += txtLyDo_TextChanged;
             // 
             // chkTruongHopDB
@@ -130,7 +130,6 @@
             chkTruongHopDB.Size = new Size(167, 25);
             chkTruongHopDB.TabIndex = 7;
             chkTruongHopDB.Text = "Trường hợp đặc biệt";
-            chkTruongHopDB.Visible = false;
             chkTruongHopDB.CheckedChanged += chkTruongHopDB_CheckedChanged;
             // 
             // btnCungCapLichThi
@@ -142,7 +141,6 @@
             btnCungCapLichThi.Size = new Size(167, 30);
             btnCungCapLichThi.TabIndex = 8;
             btnCungCapLichThi.Text = "Cung cấp lịch thi";
-            btnCungCapLichThi.Visible = false;
             btnCungCapLichThi.Click += btnCungCapLichThi_Click;
             // 
             // btnThanhToan
@@ -167,7 +165,6 @@
             btnLuuThongTin.Size = new Size(167, 44);
             btnLuuThongTin.TabIndex = 10;
             btnLuuThongTin.Text = "Lưu thông tin";
-            btnLuuThongTin.Visible = false;
             btnLuuThongTin.Click += btnLuuThongTin_Click;
             // 
             // lblLichThiDaChon
@@ -179,11 +176,13 @@
             lblLichThiDaChon.Size = new Size(109, 19);
             lblLichThiDaChon.TabIndex = 6;
             lblLichThiDaChon.Text = "Lịch thi đã chọn:";
-            lblLichThiDaChon.Visible = false;
             // 
             // scrollablePanel
             // 
             scrollablePanel.AutoScroll = true;
+            scrollablePanel.Controls.Add(button2);
+            scrollablePanel.Controls.Add(txtSearch);
+            scrollablePanel.Controls.Add(label3);
             scrollablePanel.Controls.Add(label2);
             scrollablePanel.Controls.Add(label1);
             scrollablePanel.Controls.Add(btnClear);
@@ -204,6 +203,27 @@
             scrollablePanel.Size = new Size(1050, 602);
             scrollablePanel.TabIndex = 0;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(44, 55);
+            label2.Name = "label2";
+            label2.Size = new Size(123, 17);
+            label2.TabIndex = 14;
+            label2.Text = "Danh sách thí sinh";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(44, 303);
+            label1.Name = "label1";
+            label1.Size = new Size(119, 17);
+            label1.TabIndex = 13;
+            label1.Text = "Danh sách lịch thi";
+            label1.Click += label1_Click;
+            // 
             // btnClear
             // 
             btnClear.Font = new Font("Segoe UI", 10F);
@@ -213,7 +233,6 @@
             btnClear.Size = new Size(119, 44);
             btnClear.TabIndex = 12;
             btnClear.Text = "Xóa";
-            btnClear.Visible = false;
             // 
             // btnXoaLichThiDaChon
             // 
@@ -224,31 +243,38 @@
             btnXoaLichThiDaChon.Size = new Size(167, 24);
             btnXoaLichThiDaChon.TabIndex = 11;
             btnXoaLichThiDaChon.Text = "Xóa Lịch Thi";
-            btnXoaLichThiDaChon.Visible = false;
             btnXoaLichThiDaChon.Click += btnXoaLichThiDaChon_Click;
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(44, 316);
-            label1.Name = "label1";
-            label1.Size = new Size(119, 17);
-            label1.TabIndex = 13;
-            label1.Text = "Danh sách lịch thi";
-            label1.Visible = false;
-            label1.Click += label1_Click;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(750, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 17);
+            label3.TabIndex = 15;
+            label3.Text = "Tìm kiếm";
             // 
-            // label2
+            // txtSearch
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(44, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(123, 17);
-            label2.TabIndex = 14;
-            label2.Text = "Danh sách thí sinh";
-            label2.Visible = false;
+            txtSearch.Font = new Font("Segoe UI", 10F);
+            txtSearch.Location = new Point(818, 49);
+            txtSearch.Margin = new Padding(3, 2, 3, 2);
+            txtSearch.Multiline = true;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(142, 31);
+            txtSearch.TabIndex = 16;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.search;
+            button2.BackgroundImageLayout = ImageLayout.Center;
+            button2.Location = new Point(966, 49);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(33, 31);
+            button2.TabIndex = 17;
+            button2.UseVisualStyleBackColor = true;
             // 
             // GiaHan
             // 
@@ -268,5 +294,8 @@
         private Button btnClear;
         private Label label1;
         private Label label2;
+        private TextBox txtSearch;
+        private Label label3;
+        private Button button2;
     }
 }

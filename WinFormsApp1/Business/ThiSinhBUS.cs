@@ -114,20 +114,20 @@ namespace WinFormsApp1.Business
                 );
         }
 
-        public ThiSinhBUS getThiSinhById(string maThiSinh)
-        {
-            DataRow row = thiSinhDAO.getThiSinhById(Convert.ToInt64(maThiSinh));
-            ThiSinhBUS thiSinh = new ThiSinhBUS();
-            if (row != null)
-            {
-                thiSinh.MaThiSinh = Convert.ToInt32(row["ma_thi_sinh"]);
-                thiSinh.HoTen = row["ho_ten"].ToString();
-                thiSinh.SoDienThoai = row["so_dien_thoai"].ToString();
-                thiSinh.NgaySinh = DateOnly.Parse(row["ngay_sinh"].ToString());
-                thiSinh.Email = row["email"].ToString();
-                thiSinh.CreatedAt = Convert.ToDateTime(row["created_at"]);
-            }
-            return thiSinh;
-        }
+        //public ThiSinhBUS getThiSinhById(string maThiSinh)
+        //{
+        //    DataRow row = thiSinhDAO.getThiSinhById(Convert.ToInt64(maThiSinh));
+        //    ThiSinhBUS thiSinh = new ThiSinhBUS();
+        //    if (row != null)
+        //    {
+        //        thiSinh.MaThiSinh = Convert.ToInt32(row["ma_thi_sinh"]);
+        //        thiSinh.HoTen = row["ho_ten"].ToString();
+        //        thiSinh.SoDienThoai = row["so_dien_thoai"].ToString();
+        //        thiSinh.NgaySinh = DateOnly.Parse(row["ngay_sinh"].ToString());
+        //        thiSinh.Email = row["email"].ToString();
+        //        thiSinh.CreatedAt = Convert.ToDateTime(row["created_at"]);
+        //    }
+        //    return thiSinh;
+        //}
     }
 }

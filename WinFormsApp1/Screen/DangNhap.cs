@@ -38,32 +38,32 @@ namespace WinFormsApp1
             }
 
             // Handle successful login based on maChucVu
-            //switch (maChucVu)
-            //{
-            //    case -1:
-            //        MessageBox.Show("Mã chức vụ: " + maChucVu, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        this.txtPassword.Clear();
-            //    break;
-            //    case 1:
-            //        // Manager
-            //        MainForm.Instance.SwitchUserControl(new Main());
-            //    break;
-            //    case 2:
-            //        // Nhan Vien Tiep Nhan
-            //        MainForm.Instance.SwitchUserControl(new Main());
-            //    break;
-            //    case 3:
-            //        // Nhan Vien Ke Toan
-            //        MainForm.Instance.SwitchUserControl(new Main());
-            //    break;
-            //    case 4:
-            //        // Nhan Vien Nhap Lieu
-            //        MainForm.Instance.SwitchUserControl(new Main());
-            //    break;
-            //default:
-            //        MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        break;
-            //}
+            switch (maChucVu)
+            {
+                case -1:
+                    MessageBox.Show("Mã chức vụ: " + maChucVu, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtPassword.Clear();
+                    break;
+                case 1:
+                    // Manager
+                    MainForm.Instance.SwitchUserControl(new Main());
+                    break;
+                case 2:
+                    // Nhan Vien Tiep Nhan
+                    MainForm.Instance.SwitchUserControl(new Main());
+                    break;
+                case 3:
+                    // Nhan Vien Ke Toan
+                    MainForm.Instance.SwitchUserControl(new Main());
+                    break;
+                case 4:
+                    // Nhan Vien Nhap Lieu
+                    MainForm.Instance.SwitchUserControl(new Main());
+                    break;
+                default:
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
 
         }
 
