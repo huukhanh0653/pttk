@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HCMUS Code\\Information System Analysis & Design\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "D:\\HCMUS Code\\Information System Analysis & Design\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HCMUS Code\\Information System Analysis & Design\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "D:\\HCMUS Code\\Information System Analysis & Design\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
-        "packagesPath": "C:\\Users\\nhk06\\.nuget\\packages\\",
-        "outputPath": "D:\\HCMUS Code\\Information System Analysis & Design\\WinFormsApp1\\WinFormsApp1\\obj\\",
+        "projectPath": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\WinFormsApp1.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\nhk06\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -75,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
