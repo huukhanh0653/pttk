@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\dao\\hoadonthanhtoandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\dao\\hoadonthanhtoandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\business\\hoadonthanhtoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\business\\hoadonthanhtoanbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\xacnhanthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\xacnhanthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\chitietphieudangky.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\chitietphieudangky.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\thanhtoanphieudk.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\thanhtoanphieudk.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\nhapketqua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\nhapketqua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\chitietphieudangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\chitietphieudangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,53 +46,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NhapKetQua.cs",
-              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\NhapKetQua.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\NhapKetQua.cs",
-              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\NhapKetQua.cs",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\NhapKetQua.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T14:19:29.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ThanhToanPhieuDK.Designer.cs",
-              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.Designer.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.Designer.cs",
-              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.Designer.cs*",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.Designer.cs*",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAAACYAAAAmAAAAAAAAAA==",
+              "Title": "XacNhanThanhToan.cs",
+              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
+              "RelativeToolTip": "WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAiwHEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T14:10:55.974Z",
+              "WhenOpened": "2025-04-29T07:55:40.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ThanhToanPhieuDK.cs [Design]",
+              "Title": "HoaDonThanhToanBUS.cs",
+              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Business\\HoaDonThanhToanBUS.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Business\\HoaDonThanhToanBUS.cs",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Business\\HoaDonThanhToanBUS.cs",
+              "RelativeToolTip": "WinFormsApp1\\Business\\HoaDonThanhToanBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T07:53:39.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChiTietPhieuDangKy.Designer.cs",
+              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ChiTietPhieuDangKy.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ChiTietPhieuDangKy.Designer.cs",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ChiTietPhieuDangKy.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\Screen\\ChiTietPhieuDangKy.Designer.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAUwLEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T07:53:28.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ThanhToanPhieuDK.cs",
               "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
-              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs [Design]*",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs [Design]*",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
+              "RelativeToolTip": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T14:10:49.243Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-29T07:51:35.295Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ThanhToanPhieuDK.cs",
-              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
-              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs*",
-              "RelativeToolTip": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAowCUAAAAMAAAAAAAAAA==",
+              "Title": "HoaDonThanhToanDAO.cs",
+              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\DAO\\HoaDonThanhToanDAO.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\DAO\\HoaDonThanhToanDAO.cs",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\DAO\\HoaDonThanhToanDAO.cs",
+              "RelativeToolTip": "WinFormsApp1\\DAO\\HoaDonThanhToanDAO.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowCoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T14:08:34.715Z",
+              "WhenOpened": "2025-04-29T07:51:18.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChiTietPhieuDangKy.cs",
+              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ChiTietPhieuDangKy.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ChiTietPhieuDangKy.cs",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ChiTietPhieuDangKy.cs",
+              "RelativeToolTip": "WinFormsApp1\\Screen\\ChiTietPhieuDangKy.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAUwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T07:51:03.55Z",
               "EditorCaption": ""
             }
           ]

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 namespace WinFormsApp1.DAO
 {
@@ -16,11 +17,26 @@ namespace WinFormsApp1.DAO
         {
         }
 
-        public void addHoaDonThanhToan(string maThanhToan, string loaiThanhToan, double soTien, float giamGia, DateTime ngayThanhToan,
+        public int addHoaDonThanhToan(string loaiThanhToan, double soTien, float giamGia, DateTime ngayThanhToan,
             string hinhThuc, string maGiaoDich)
         {
-            string query = "INSERT INTO hoa_don_thanh_toan (ma_thanh_toan, loai_thanh_toan, so_tien, giam_gia, ngay_thanh_toan, hinh_thuc, ma_giao_dich) " +
-                "VALUES (@MaThanhToan, @LoaiThanhToan, @SoTien, @GiamGia, @NgayThanhToan, @HinhThuc, @MaGiaoDich)";
+            string queryMaThanhToan = "SELECT MAX(ma_thanh_toan) FROM hoa_don_thanh_toan";
+            AppConfig.Command.CommandText = queryMaThanhToan;
+            object result = AppConfig.Command.ExecuteScalar();
+            int maThanhToan = (result == DBNull.Value) ? 1 : Convert.ToInt32(result) + 1;
+
+            string maNV = "1";
+            Debug.WriteLine("maThanhToan: " + maThanhToan);
+            Debug.WriteLine("loaiThanhToan: " + loaiThanhToan);
+            Debug.WriteLine("soTien: " + soTien);
+            Debug.WriteLine("giamGia: " + giamGia);
+            Debug.WriteLine("ngayThanhToan: " + ngayThanhToan);
+            Debug.WriteLine("hinhThuc: " + hinhThuc);
+            Debug.WriteLine("maGiaoDich: " + maGiaoDich);
+            Debug.WriteLine("maNV: " + maNV);
+            
+            string query = "INSERT INTO hoa_don_thanh_toan (ma_thanh_toan, loai_thanh_toan, so_tien, giam_gia, ngay_thanh_toan, hinh_thuc_thanh_toan, ma_giao_dich, ma_nhan_vien) " +
+                "VALUES (@MaThanhToan, @LoaiThanhToan, @SoTien, @GiamGia, @NgayThanhToan, @HinhThuc, @MaGiaoDich, @MaNV)";
             try
             {
                 
@@ -33,6 +49,7 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.Parameters.AddWithValue("@NgayThanhToan", ngayThanhToan);
                 AppConfig.Command.Parameters.AddWithValue("@HinhThuc", hinhThuc);
                 AppConfig.Command.Parameters.AddWithValue("@MaGiaoDich", maGiaoDich);
+                AppConfig.Command.Parameters.AddWithValue("@MaNV", maNV);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -44,6 +61,7 @@ namespace WinFormsApp1.DAO
             {
                 
             }
+            return maThanhToan;
         }
 
         public DataTable getAllHoaDonThanhToan()

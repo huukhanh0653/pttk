@@ -18,7 +18,7 @@ namespace WinFormsApp1.DAO
         {
         }
 
-        public static DataTable GetAllKyThi()
+        public DataTable getAllKyThi()
         {
            string query = "SELECT * FROM KyThi";
             DataTable dataTable = new DataTable();
@@ -38,14 +38,18 @@ namespace WinFormsApp1.DAO
             }
             return dataTable;
         }
-        public static void AddKyThi(string maKyThi, string maChungChi, int maPhong, string diaDiem, string tenKyThi, 
+
+        public void AddKyThi(string maKyThi, string maChungChi, int maPhong, string diaDiem, string tenKyThi, 
             string moTa, DateTime TGBatDau, int soLuongToiDa, int soLuongDKHienTai)
         {
             string query = "INSERT INTO ky_thi (ma_ky_thi, ma_chung_chi, so_phong, dia_diem, ten_ky_thi, mo_ta, " +
                 "thoi_gian_bat_dau, so_luong_toi_da, so_luong_dang_ky_hien_tai) " +
                 "VALUES (@maKyThi, @maChungChi, @maPhong, @diaDiem, @tenKyThi, @moTa, @TGBatDau, @soLuongToiDa, @soLuongDKHienTai)";
-            SqlConnection connection = new SqlConnection(AppConfig.ConnectionString);
-            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+
+            AppConfig.Command.Parameters.Clear();
             AppConfig.Command.Parameters.AddWithValue("@maKyThi", maKyThi);
             AppConfig.Command.Parameters.AddWithValue("@maChungChi", maChungChi);
             AppConfig.Command.Parameters.AddWithValue("@maPhong", maPhong);
@@ -55,20 +59,12 @@ namespace WinFormsApp1.DAO
             AppConfig.Command.Parameters.AddWithValue("@TGBatDau", TGBatDau);
             AppConfig.Command.Parameters.AddWithValue("@soLuongToiDa", soLuongToiDa);
             AppConfig.Command.Parameters.AddWithValue("@soLuongDKHienTai", soLuongDKHienTai);
-
-            try
-            {
-                
-                AppConfig.Command.ExecuteNonQuery();
+            AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("AddKyThi: " + ex.Message);
             }
         }
 
@@ -79,17 +75,40 @@ namespace WinFormsApp1.DAO
             try
             {
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             } catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine($"Error during authentication: {ex.Message}");
+                Debug.WriteLine($"getKyThiByMaKyThi: {ex.Message}");
             }
 
             return dataTable.Rows.Count > 0? dataTable.Rows[0] : null;
 
         }
+
+        public DataTable getAllKyThiByMaChungChi(int maChungChi)
+        {
+            DataTable dataTable = new DataTable();
+            string query = "SELECT * FROM ky_thi WHERE ma_chung_chi = @MaChungChi";
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@MaChungChi", maChungChi);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("error in getAllKyThiByMaChungChi" + ex.Message);
+                //Console.WriteLine(ex.Message);
+            }
+            return dataTable;
+        }
+
+
     }
 }

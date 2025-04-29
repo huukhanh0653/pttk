@@ -10,9 +10,7 @@ namespace WinFormsApp1.Business
 {
     internal class PhieuDuThiBUS
     {
-
         private PhieuDuThiDAO phieuDuThiDAO = new PhieuDuThiDAO();
-        private KyThiDAO kyThiDAO = new KyThiDAO();
 
         public PhieuDuThiBUS() { }
 
@@ -20,11 +18,12 @@ namespace WinFormsApp1.Business
         {
             DataTable dataTable = phieuDuThiDAO.getPhieuDuThiByMaThiSinh(maThiSinh);
             dataTable.Columns.Add("thoi_gian_bat_dau", typeof(string));
+            dataTable.Columns.Add("ma_chung_chi", typeof(string));
             DateTime now = DateTime.Now;
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                DataRow kythi = kyThiDAO.getKyThiByMaKyThi(int.Parse(dataTable.Rows[i]["ma_ky_thi"].ToString()));
+                DataRow kythi = new KyThiBUS().getKyThiByMaKyThi(int.Parse(dataTable.Rows[i]["ma_ky_thi"].ToString()));
 
                 // Xóa những phiếu đã thi rồi (có điểm) hoặc cách ngày thi không quá 24 tiếng (now sớm hơn thoi_gian_bat_dau)    
                 if (dataTable.Rows[i]["diem"] != DBNull.Value ||
@@ -34,6 +33,7 @@ namespace WinFormsApp1.Business
                 } else
                 {
                     dataTable.Rows[i]["thoi_gian_bat_dau"] = kythi["thoi_gian_bat_dau"].ToString();
+                    dataTable.Rows[i]["ma_chung_chi"] = kythi["ma_chung_chi"].ToString();
                 }
             }
 
@@ -43,7 +43,7 @@ namespace WinFormsApp1.Business
 
             return dataTable;
         }
+        
 
-        //public DataTable dtbCungCapLichThi()
     }
 }

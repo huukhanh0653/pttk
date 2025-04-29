@@ -52,7 +52,7 @@ E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\bin\Debug\net8.0-window
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.ChiTietPhieuDangKy.resources
-E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.MHCungCapLichThi.resources
+E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.CungCapLichThi.resources
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.DangNhap.resources
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.GiaHan.resources
 E:\FITUS\25-26\PTTKHTTTT\QLTRUNGTAMTHI\pttk\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Main.resources

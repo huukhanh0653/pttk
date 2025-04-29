@@ -16,11 +16,9 @@ namespace WinFormsApp1
     public partial class DangNhap : UserControl
     {
 
-        private DangNhapBUS dangNhapBUS;
         public DangNhap()
         {
             InitializeComponent();
-            this.dangNhapBUS = new DangNhapBUS();
         }
 
         private void button_Login_Click(object sender, EventArgs e)
@@ -28,7 +26,7 @@ namespace WinFormsApp1
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            int maChucVu = dangNhapBUS.dangNhap(username, password);
+            int maChucVu = DangNhapBUS.Instance.dangNhap(username, password);
 
             if (maChucVu == -1)
             {

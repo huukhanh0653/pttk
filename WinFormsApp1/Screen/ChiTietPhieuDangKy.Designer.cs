@@ -28,86 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
+            lblMaPhieu = new Label();
+            lblNgayDK = new Label();
+            lblLoaiDK = new Label();
+            lblHoTen = new Label();
+            lblSDT = new Label();
+            lblEmail = new Label();
             label7 = new Label();
-            label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox8 = new TextBox();
-            dataGridView1 = new DataGridView();
-            HoTen = new DataGridViewTextBoxColumn();
-            NgaySinh = new DataGridViewTextBoxColumn();
-            Email = new DataGridViewTextBoxColumn();
-            Phone = new DataGridViewTextBoxColumn();
-            Certi = new DataGridViewTextBoxColumn();
-            NgayThi = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            lblTongTien = new Label();
+            txtboxSDT = new TextBox();
+            txtboxNgayDK = new TextBox();
+            txtboxLoaiDK = new TextBox();
+            txtboxMaPhieuDk = new TextBox();
+            txtboxHoTen = new TextBox();
+            txtboxEmail = new TextBox();
+            txtboxTongTien = new TextBox();
+            dgvThiSinh = new DataGridView();
+            btnTroVe = new Button();
+            btnThanhToan = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvThiSinh).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // lblMaPhieu
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(129, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(102, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Mã phiếu đăng ký";
+            lblMaPhieu.AutoSize = true;
+            lblMaPhieu.Location = new Point(96, 37);
+            lblMaPhieu.Name = "lblMaPhieu";
+            lblMaPhieu.Size = new Size(102, 15);
+            lblMaPhieu.TabIndex = 0;
+            lblMaPhieu.Text = "Mã phiếu đăng ký";
             // 
-            // label2
+            // lblNgayDK
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(433, 37);
-            label2.Name = "label2";
-            label2.Size = new Size(80, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Ngày đăng ký";
+            lblNgayDK.AutoSize = true;
+            lblNgayDK.Location = new Point(433, 37);
+            lblNgayDK.Name = "lblNgayDK";
+            lblNgayDK.Size = new Size(80, 15);
+            lblNgayDK.TabIndex = 1;
+            lblNgayDK.Text = "Ngày đăng ký";
             // 
-            // label3
+            // lblLoaiDK
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(697, 37);
-            label3.Name = "label3";
-            label3.Size = new Size(74, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Loại đăng ký";
+            lblLoaiDK.AutoSize = true;
+            lblLoaiDK.Location = new Point(738, 37);
+            lblLoaiDK.Name = "lblLoaiDK";
+            lblLoaiDK.Size = new Size(74, 15);
+            lblLoaiDK.TabIndex = 2;
+            lblLoaiDK.Text = "Loại đăng ký";
             // 
-            // label4
+            // lblHoTen
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(129, 114);
-            label4.Name = "label4";
-            label4.Size = new Size(122, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Họ tên người đăng ký";
+            lblHoTen.AutoSize = true;
+            lblHoTen.Location = new Point(96, 114);
+            lblHoTen.Name = "lblHoTen";
+            lblHoTen.Size = new Size(122, 15);
+            lblHoTen.TabIndex = 3;
+            lblHoTen.Text = "Họ tên người đăng ký";
             // 
-            // label5
+            // lblSDT
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(433, 114);
-            label5.Name = "label5";
-            label5.Size = new Size(107, 15);
-            label5.TabIndex = 4;
-            label5.Text = "SĐT người đăng ký";
+            lblSDT.AutoSize = true;
+            lblSDT.Location = new Point(433, 114);
+            lblSDT.Name = "lblSDT";
+            lblSDT.Size = new Size(107, 15);
+            lblSDT.TabIndex = 4;
+            lblSDT.Text = "SĐT người đăng ký";
             // 
-            // label6
+            // lblEmail
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(697, 114);
-            label6.Name = "label6";
-            label6.Size = new Size(115, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Email người đăng ký";
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(738, 114);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(115, 15);
+            lblEmail.TabIndex = 5;
+            lblEmail.Text = "Email người đăng ký";
             // 
             // label7
             // 
@@ -118,200 +112,152 @@
             label7.TabIndex = 6;
             label7.Text = "Danh sách thí sinh";
             // 
-            // label8
+            // lblTongTien
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(129, 436);
-            label8.Name = "label8";
-            label8.Size = new Size(58, 15);
-            label8.TabIndex = 7;
-            label8.Text = "Tổng tiền";
+            lblTongTien.AutoSize = true;
+            lblTongTien.Location = new Point(96, 438);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(93, 15);
+            lblTongTien.TabIndex = 7;
+            lblTongTien.Text = "Tổng tiền (VNĐ)";
             // 
-            // textBox1
+            // txtboxSDT
             // 
-            textBox1.Location = new Point(433, 138);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(206, 23);
-            textBox1.TabIndex = 8;
+            txtboxSDT.Location = new Point(433, 138);
+            txtboxSDT.Margin = new Padding(3, 2, 3, 2);
+            txtboxSDT.Name = "txtboxSDT";
+            txtboxSDT.Size = new Size(206, 23);
+            txtboxSDT.TabIndex = 8;
             // 
-            // textBox2
+            // txtboxNgayDK
             // 
-            textBox2.Location = new Point(433, 63);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(206, 23);
-            textBox2.TabIndex = 9;
+            txtboxNgayDK.Location = new Point(433, 63);
+            txtboxNgayDK.Margin = new Padding(3, 2, 3, 2);
+            txtboxNgayDK.Name = "txtboxNgayDK";
+            txtboxNgayDK.Size = new Size(206, 23);
+            txtboxNgayDK.TabIndex = 9;
             // 
-            // textBox3
+            // txtboxLoaiDK
             // 
-            textBox3.Location = new Point(697, 63);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(232, 23);
-            textBox3.TabIndex = 10;
+            txtboxLoaiDK.Location = new Point(738, 63);
+            txtboxLoaiDK.Margin = new Padding(3, 2, 3, 2);
+            txtboxLoaiDK.Name = "txtboxLoaiDK";
+            txtboxLoaiDK.Size = new Size(232, 23);
+            txtboxLoaiDK.TabIndex = 10;
             // 
-            // textBox4
+            // txtboxMaPhieuDk
             // 
-            textBox4.Location = new Point(129, 63);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(246, 23);
-            textBox4.TabIndex = 11;
+            txtboxMaPhieuDk.Location = new Point(96, 63);
+            txtboxMaPhieuDk.Margin = new Padding(3, 2, 3, 2);
+            txtboxMaPhieuDk.Name = "txtboxMaPhieuDk";
+            txtboxMaPhieuDk.Size = new Size(171, 23);
+            txtboxMaPhieuDk.TabIndex = 11;
             // 
-            // textBox5
+            // txtboxHoTen
             // 
-            textBox5.Location = new Point(129, 138);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(246, 23);
-            textBox5.TabIndex = 12;
+            txtboxHoTen.Location = new Point(96, 138);
+            txtboxHoTen.Margin = new Padding(3, 2, 3, 2);
+            txtboxHoTen.Name = "txtboxHoTen";
+            txtboxHoTen.Size = new Size(246, 23);
+            txtboxHoTen.TabIndex = 12;
             // 
-            // textBox6
+            // txtboxEmail
             // 
-            textBox6.Location = new Point(697, 138);
-            textBox6.Margin = new Padding(3, 2, 3, 2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(232, 23);
-            textBox6.TabIndex = 13;
+            txtboxEmail.Location = new Point(738, 138);
+            txtboxEmail.Margin = new Padding(3, 2, 3, 2);
+            txtboxEmail.Name = "txtboxEmail";
+            txtboxEmail.Size = new Size(232, 23);
+            txtboxEmail.TabIndex = 13;
             // 
-            // textBox8
+            // txtboxTongTien
             // 
-            textBox8.Location = new Point(129, 459);
-            textBox8.Margin = new Padding(3, 2, 3, 2);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(800, 23);
-            textBox8.TabIndex = 15;
-            textBox8.TextChanged += textBox8_TextChanged;
+            txtboxTongTien.Location = new Point(96, 459);
+            txtboxTongTien.Margin = new Padding(3, 2, 3, 2);
+            txtboxTongTien.Name = "txtboxTongTien";
+            txtboxTongTien.Size = new Size(874, 23);
+            txtboxTongTien.TabIndex = 15;
             // 
-            // dataGridView1
+            // dgvThiSinh
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HoTen, NgaySinh, Email, Phone, Certi, NgayThi });
-            dataGridView1.Location = new Point(129, 198);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(800, 215);
-            dataGridView1.TabIndex = 16;
+            dgvThiSinh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvThiSinh.Location = new Point(96, 198);
+            dgvThiSinh.Margin = new Padding(3, 2, 3, 2);
+            dgvThiSinh.Name = "dgvThiSinh";
+            dgvThiSinh.RowHeadersWidth = 51;
+            dgvThiSinh.Size = new Size(874, 215);
+            dgvThiSinh.TabIndex = 16;
             // 
-            // HoTen
+            // btnTroVe
             // 
-            HoTen.HeaderText = "Họ Tên";
-            HoTen.MinimumWidth = 6;
-            HoTen.Name = "HoTen";
-            HoTen.Width = 125;
+            btnTroVe.Location = new Point(343, 512);
+            btnTroVe.Margin = new Padding(3, 2, 3, 2);
+            btnTroVe.Name = "btnTroVe";
+            btnTroVe.Size = new Size(156, 38);
+            btnTroVe.TabIndex = 17;
+            btnTroVe.Text = "Trở về";
+            btnTroVe.UseVisualStyleBackColor = true;
+            btnTroVe.Click += btnTroVe_Click;
             // 
-            // NgaySinh
+            // btnThanhToan
             // 
-            NgaySinh.HeaderText = "Ngày Sinh";
-            NgaySinh.MinimumWidth = 6;
-            NgaySinh.Name = "NgaySinh";
-            NgaySinh.Width = 125;
-            // 
-            // Email
-            // 
-            Email.HeaderText = "Email";
-            Email.MinimumWidth = 6;
-            Email.Name = "Email";
-            Email.Width = 125;
-            // 
-            // Phone
-            // 
-            Phone.HeaderText = "Số điện thoại";
-            Phone.MinimumWidth = 6;
-            Phone.Name = "Phone";
-            Phone.Width = 125;
-            // 
-            // Certi
-            // 
-            Certi.HeaderText = "Chứng chỉ";
-            Certi.MinimumWidth = 6;
-            Certi.Name = "Certi";
-            Certi.Width = 125;
-            // 
-            // NgayThi
-            // 
-            NgayThi.HeaderText = "Ngày Thi";
-            NgayThi.MinimumWidth = 6;
-            NgayThi.Name = "NgayThi";
-            NgayThi.Width = 125;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(343, 512);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 38);
-            button1.TabIndex = 17;
-            button1.Text = "Trở về";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(568, 512);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 38);
-            button2.TabIndex = 18;
-            button2.Text = "Tiếp tục thanh toán";
-            button2.UseVisualStyleBackColor = true;
+            btnThanhToan.Location = new Point(568, 512);
+            btnThanhToan.Margin = new Padding(3, 2, 3, 2);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(203, 38);
+            btnThanhToan.TabIndex = 18;
+            btnThanhToan.Text = "Tiếp tục thanh toán";
+            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Click += btnThanhToan_Click;
             // 
             // ChiTietPhieuDangKy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox8);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label8);
+            Controls.Add(btnThanhToan);
+            Controls.Add(btnTroVe);
+            Controls.Add(dgvThiSinh);
+            Controls.Add(txtboxTongTien);
+            Controls.Add(txtboxEmail);
+            Controls.Add(txtboxHoTen);
+            Controls.Add(txtboxMaPhieuDk);
+            Controls.Add(txtboxLoaiDK);
+            Controls.Add(txtboxNgayDK);
+            Controls.Add(txtboxSDT);
+            Controls.Add(lblTongTien);
             Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblEmail);
+            Controls.Add(lblSDT);
+            Controls.Add(lblHoTen);
+            Controls.Add(lblLoaiDK);
+            Controls.Add(lblNgayDK);
+            Controls.Add(lblMaPhieu);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ChiTietPhieuDangKy";
             Size = new Size(1050, 600);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvThiSinh).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
+        private Label lblMaPhieu;
+        private Label lblNgayDK;
+        private Label lblLoaiDK;
+        private Label lblHoTen;
+        private Label lblSDT;
+        private Label lblEmail;
         private Label label7;
-        private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox8;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn HoTen;
-        private DataGridViewTextBoxColumn NgaySinh;
-        private DataGridViewTextBoxColumn Email;
-        private DataGridViewTextBoxColumn Phone;
-        private DataGridViewTextBoxColumn Certi;
-        private DataGridViewTextBoxColumn NgayThi;
-        private Button button1;
-        private Button button2;
+        private Label lblTongTien;
+        private TextBox txtboxSDT;
+        private TextBox txtboxNgayDK;
+        private TextBox txtboxLoaiDK;
+        private TextBox txtboxMaPhieuDk;
+        private TextBox txtboxHoTen;
+        private TextBox txtboxEmail;
+        private TextBox txtboxTongTien;
+        private DataGridView dgvThiSinh;
+        private Button btnTroVe;
+        private Button btnThanhToan;
     }
 }

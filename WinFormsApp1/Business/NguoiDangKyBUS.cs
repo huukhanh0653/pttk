@@ -12,7 +12,7 @@ namespace WinFormsApp1.Business
     {
 
         private NguoiDangKyDAO nguoiDangKyDAO = new NguoiDangKyDAO();
-
+        private KyThiDAO kyThiDAO = new KyThiDAO();
         public NguoiDangKyBUS() { }
 
         public DataTable dtbGetNguoiDangKyByMaThiSinh(string maThiSinh)
@@ -42,6 +42,17 @@ namespace WinFormsApp1.Business
 
             return dataTable;
         }
+
+        public DataRow getTTNguoiDangKyByMaNguoiDangKy(string maNguoiDangKy)
+        {
+            return nguoiDangKyDAO.findNguoiDangKyById(int.Parse(maNguoiDangKy));
+        }
+
+        public DataTable searchTTNguoiDangKyBySDT(string sdt)
+        {
+            return nguoiDangKyDAO.searchNguoiDangKyBySDT(sdt);
+        }
+        
 
         //public DataTable dtbCungCapLichThi()
     }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 namespace WinFormsApp1.DAO
 {
@@ -31,7 +32,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -48,12 +49,13 @@ namespace WinFormsApp1.DAO
                 
                 AppConfig.Command.CommandText = query;
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Command.ExecuteNonQuery();
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -75,11 +77,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine(ex.Message);
             }
         }
 
@@ -90,6 +88,7 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
                 AppConfig.Command.Parameters.AddWithValue("@NgayDangKy", ngayDangKy);
@@ -98,15 +97,11 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("updatePhieuDangKy: " + ex.Message);
             }
         }
 
-        public DataTable getPhieuDangKyByNguoiDangKy(string maNguoiDangKy)
+        public DataTable getTTPhieuDangKyByNguoiDangKy(string maNguoiDangKy)
         {
             string query = "SELECT * FROM phieu_dang_ky WHERE ma_nguoi_dang_ky = @MaNguoiDangKy";
             DataTable dataTable = new DataTable();
@@ -121,7 +116,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getPhieuDangKyByNguoiDangKy: " + ex.Message);
             }
             finally
             {
@@ -130,7 +125,32 @@ namespace WinFormsApp1.DAO
             return dataTable;
         }
 
-        public DataRow getPhieuDangKyByMaPhieu(string maPhieu)
+        public DataTable searchTTPhieuDangKyByMaPhieu(string maPhieu)
+        {
+            string query = "SELECT * FROM phieu_dang_ky WHERE ma_phieu_dang_ky like @MaPhieu";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", '%' + maPhieu + '%');
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine("searchTTPhieuDangKyByMaPhieu: " + ex.Message);
+            }
+            finally
+            {
+                
+            }
+            return dataTable;
+        }
+            
+
+        public DataRow getTTPhieuDangKyByMaPhieu(string maPhieu)
         {
             string query = "SELECT * FROM phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu";
             DataTable dataTable = new DataTable();
@@ -138,6 +158,7 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -145,11 +166,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine(" error in getPhieuDangKyByMaPhieu: " + ex.Message);
             }
 
             if (dataTable.Rows.Count > 0)
@@ -169,19 +186,22 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(" error in deletePhieuDangKyByNguoiDangKy: " + ex.Message);
             }
             finally
             {
                 
             }
         }
+
+        
 
         public DataTable searchNguoiDangKy(string searchTerm)
         {
@@ -199,13 +219,76 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine(" error in searchNguoiDangKy: " + ex.Message);
             }
             return dataTable;
         }
+
+        public DataTable getAllPhieuDK()
+        {
+            string query = "SELECT * FROM phieu_dang_ky";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine(" error in getAllPhieuDK: " + ex.Message);
+            }
+            finally
+            {
+
+            }
+            return dataTable;
+        }
+
+        public DataTable getDSPhieuDangKyByMaNguoiDangKy(string maNguoiDangKy)
+        {
+            string query = "SELECT * FROM phieu_dang_ky WHERE ma_nguoi_dang_ky = @MaNguoiDangKy";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine(" error in getTTPhieuDangKyByMaNguoiDangKy: " + ex.Message);
+            }
+            finally
+            {
+
+            }
+            return dataTable;
+        }
+
+        public void updateTrangThaiPhieuDangKy(string maPhieuDK, int maHoaDonThanhToan, int trangThai)
+        {
+            string query = "UPDATE phieu_dang_ky SET ma_thanh_toan = @MaHoaDonThanhToan, trang_thai_thanh_toan = @TrangThai WHERE ma_phieu_dang_ky = @MaPhieuDK";
+            try
+            {
+                AppConfig.Command.CommandText = query;  
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@MaHoaDonThanhToan", maHoaDonThanhToan);
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieuDK", maPhieuDK);
+                AppConfig.Command.Parameters.AddWithValue("@TrangThai", trangThai);
+                AppConfig.Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(" error in updateTrangThaiPhieuDangKy: " + ex.Message); 
+            }
+            finally
+            {
+
+            }
+        }   
     }
 }

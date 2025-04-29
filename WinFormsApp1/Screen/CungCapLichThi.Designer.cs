@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class MHCungCapLichThi
+    partial class CungCapLichThi
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridView dgvDSLichThi;

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getAllThiSinh: " + ex.Message);
             }
             finally
             {
@@ -59,13 +60,9 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("addThiSinh: " + ex.Message);
             }
 
-            finally
-            {
-                
-            }
         }
 
         public DataRow getThiSinhById(Int64 maThiSinh)
@@ -83,11 +80,7 @@ namespace WinFormsApp1.DAO
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("getThiSinhById: " + ex.Message);
             }
 
             if (dataTable.Rows.Count > 0)
@@ -104,19 +97,15 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@KeyWord", "%" + keyWord + "%");
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("searchThiSinh: " + ex.Message);
             }
             if (dataTable.Rows.Count > 0)
             {

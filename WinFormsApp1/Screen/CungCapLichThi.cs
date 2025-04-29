@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.Business;
 
 namespace WinFormsApp1
 {
-        public partial class MHCungCapLichThi : UserControl
+        public partial class CungCapLichThi : UserControl
         {
-            private DataTable examTable;
-            private DataTable originalExamTable;
+            private DataTable table;
+            private DataTable originaltable;
+            private string maChungChi;
+            private string SelectedExamSchedule = string.Empty;
+            private string SelectedMaKyThiMoi = string.Empty;
 
-            private string SelectedExamSchedule;
+            public event EventHandler<string> DataSelected;
+            private KyThiBUS kyThiBUS = new KyThiBUS();
 
 
-            public MHCungCapLichThi()
+        public CungCapLichThi(string maChungChi)
             {
                 InitializeComponent();
-                examTable = new DataTable();
-                originalExamTable = new DataTable();
+                this.maChungChi = maChungChi;
                 SelectedExamSchedule = string.Empty;
                 LoadExamData();
                 InitializeFilterOptions();
@@ -30,38 +35,27 @@ namespace WinFormsApp1
 
             private void LoadExamData()
             {
-                // Sample data for exams
-                examTable = new DataTable();
-                examTable.Columns.Add("Mã Kỳ Thi");
-                examTable.Columns.Add("Tên Kỳ Thi");
-                examTable.Columns.Add("Mô Tả");
-                examTable.Columns.Add("Địa Điểm");
-                examTable.Columns.Add("Số Phòng");
-                examTable.Columns.Add("Thời Gian Bắt Đầu");
-                examTable.Columns.Add("Mã Chứng Chỉ");
-                examTable.Columns.Add("Tên Chứng Chỉ");
-                examTable.Columns.Add("Số lượng");
+                table = kyThiBUS.getKyThiByMaChungChiLater(maChungChi);
+            // Sample data for exams
+            table.Columns["ma_ky_thi"].ColumnName = "Mã Kỳ Thi";
+                table.Columns["ma_chung_chi"].ColumnName = "Mã Chứng Chỉ";
+                table.Columns["so_phong"].ColumnName = "Số Phòng";
+                table.Columns["dia_diem"].ColumnName = "Địa Điểm";
+                table.Columns["ten_ky_thi"].ColumnName = "Tên Kỳ Thi";
+                table.Columns["mo_ta"].ColumnName = "Mô Tả";
+                table.Columns["thoi_gian_bat_dau"].ColumnName = "Thời Gian Bắt Đầu";
+                table.Columns["thoi_luong_thi"].ColumnName = "Thời Lượng Thi";
+                table.Columns["so_luong_dang_ky_hien_tai"].ColumnName = "Số Lượng Đăng Ký Hiện Tại";
+                table.Columns["so_luong_toi_da"].ColumnName = "Số Lượng Tối Đa";
 
-                examTable.Rows.Add("001", "Kỳ Thi A", "Mô tả A", "Hà Nội", "Phòng 101", "2023-10-01 09:00", "CC001", "Chứng Chỉ A", "50/100");
-                examTable.Rows.Add("002", "Kỳ Thi B", "Mô tả B", "Hồ Chí Minh", "Phòng 102", "2023-10-02 10:00", "CC002", "Chứng Chỉ B", "30/50");
-                examTable.Rows.Add("003", "Kỳ Thi C", "Mô tả C", "Đà Nẵng", "Phòng 103", "2023-10-03 11:00", "CC003", "Chứng Chỉ C", "20/30");
-                examTable.Rows.Add("004", "Kỳ Thi D", "Mô tả D", "Hà Nội", "Phòng 104", "2023-10-04 12:00", "CC004", "Chứng Chỉ D", "10/20");
-                examTable.Rows.Add("005", "Kỳ Thi E", "Mô tả E", "Hồ Chí Minh", "Phòng 105", "2023-10-05 13:00", "CC005", "Chứng Chỉ E", "5/10");
-                examTable.Rows.Add("006", "Kỳ Thi F", "Mô tả F", "Đà Nẵng", "Phòng 106", "2023-10-06 14:00", "CC006", "Chứng Chỉ F", "0/5");
-                examTable.Rows.Add("007", "Kỳ Thi G", "Mô tả G", "Hà Nội", "Phòng 107", "2023-10-07 15:00", "CC007", "Chứng Chỉ G", "0/10");
-
-                originalExamTable = examTable.Copy();
-                dgvDSLichThi.DataSource = examTable;
+                originaltable = table.Copy();
+                dgvDSLichThi.DataSource = table;
             }
 
-            public string LuaChonLichThi()
-            {
-                return SelectedExamSchedule;
-            }
             private void InitializeFilterOptions()
             {
                 cmbFilter.Items.Add("Tất cả");
-                var uniqueLocations = examTable.AsEnumerable()
+                var uniqueLocations = table.AsEnumerable()
                     .Select(row => row.Field<string>("Địa Điểm"))
                     .Distinct()
                     .ToList();
@@ -95,7 +89,7 @@ namespace WinFormsApp1
 
                 if (DateTime.TryParse(inputTime, out DateTime filterTime))
                 {
-                    var filteredRows = examTable.AsEnumerable().Where(row =>
+                    var filteredRows = table.AsEnumerable().Where(row =>
                         DateTime.TryParse(row.Field<string>("Thời Gian Bắt Đầu"), out DateTime examTime) &&
                         examTime.Date == filterTime.Date);
 
@@ -105,7 +99,7 @@ namespace WinFormsApp1
                     }
                     else
                     {
-                        dgvDSLichThi.DataSource = examTable.Clone(); // Show empty table if no match
+                        dgvDSLichThi.DataSource = table.Clone(); // Show empty table if no match
                     }
                 }
                 else
@@ -119,7 +113,7 @@ namespace WinFormsApp1
                 var selectedTime = dtpFilterByTime.Value;
 
                 // Filter the DataGridView based on the selected time
-                var filteredRows = originalExamTable.AsEnumerable()
+                var filteredRows = originaltable.AsEnumerable()
                     .Where(row => DateTime.Parse(row.Field<string>("Thời Gian Bắt Đầu") + "") >= selectedTime);
 
                 if (filteredRows.Any())
@@ -128,7 +122,7 @@ namespace WinFormsApp1
                 }
                 else
                 {
-                    dgvDSLichThi.DataSource = originalExamTable.Clone(); // Show an empty table if no match
+                    dgvDSLichThi.DataSource = originaltable.Clone(); // Show an empty table if no match
                 }
             }
 
@@ -136,7 +130,7 @@ namespace WinFormsApp1
             {
                 int selectedHour = (int)nudHourSelector.Value;
 
-                var filteredRows = originalExamTable.AsEnumerable()
+                var filteredRows = originaltable.AsEnumerable()
                     .Where(row => DateTime.TryParse(row.Field<string>("Thời Gian Bắt Đầu"), out DateTime examTime) &&
                                   examTime.Hour == selectedHour);
 
@@ -146,7 +140,7 @@ namespace WinFormsApp1
                 }
                 else
                 {
-                    dgvDSLichThi.DataSource = originalExamTable.Clone(); // Show an empty table if no match
+                    dgvDSLichThi.DataSource = originaltable.Clone(); // Show an empty table if no match
                 }
             }
 
@@ -155,7 +149,7 @@ namespace WinFormsApp1
                 string searchText = txtSearch.Text.ToLower();
                 string filterLocation = cmbFilter.SelectedItem?.ToString() ?? "Tất cả";
 
-                var filteredRows = examTable.AsEnumerable().Where(row =>
+                var filteredRows = table.AsEnumerable().Where(row =>
                     (filterLocation == "Tất cả" || row.Field<string>("Địa Điểm") == filterLocation) &&
                     ((row.Field<string>("Tên Kỳ Thi")?.ToLower() ?? string.Empty).Contains(searchText) ||
                      (row.Field<string>("Mã Kỳ Thi")?.ToLower() ?? string.Empty).Contains(searchText) ||
@@ -172,7 +166,7 @@ namespace WinFormsApp1
                 }
                 else
                 {
-                    dgvDSLichThi.DataSource = examTable.Clone(); // Show empty table if no match
+                    dgvDSLichThi.DataSource = table.Clone(); // Show empty table if no match
                 }
             }
 
@@ -182,20 +176,23 @@ namespace WinFormsApp1
                 if (dgvDSLichThi.SelectedRows.Count > 0)
                 {
                     var selectedRow = dgvDSLichThi.SelectedRows[0];
+                    
                     SelectedExamSchedule = selectedRow.Cells["Mã Kỳ Thi"].Value.ToString() + " - " +
                                            selectedRow.Cells["Tên Kỳ Thi"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Mô Tả"].Value.ToString() + " - " +
+                                           //selectedRow.Cells["Mô Tả"].Value.ToString() + " - " +
                                            selectedRow.Cells["Địa Điểm"].Value.ToString() + " - " +
                                            selectedRow.Cells["Số Phòng"].Value.ToString() + " - " +
                                            selectedRow.Cells["Mã Chứng Chỉ"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Tên Chứng Chỉ"].Value.ToString() + " - " +
+                                           selectedRow.Cells["Thời Lượng Thi"].Value.ToString() + " - " +
                                            selectedRow.Cells["Thời Gian Bắt Đầu"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Số lượng"].Value.ToString();
+                                           selectedRow.Cells["Số Lượng Tối Đa"].Value.ToString();
+                Debug.WriteLine(SelectedExamSchedule);
+                   DataSelected?.Invoke(this, SelectedExamSchedule);
 
-                    // Close the form and return OK result
-                    //this.DialogResult = DialogResult.OK;
-                    //this.Close();
-                }
+                // Close the form and return OK result
+                //this.DialogResult = DialogResult.OK;
+                //this.Close();
+            }
                 else
                 {
                     MessageBox.Show("Vui lòng chọn một lịch thi.", "Thông báo");

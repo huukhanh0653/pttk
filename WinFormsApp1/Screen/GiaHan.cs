@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +19,16 @@ namespace WinFormsApp1
         private string selectedCustomerId = string.Empty;
         private string selectedExamSchedule = string.Empty;
         private bool chkTruongHopDBChecked = false;
-
-        private string lyDo;
+        private string lyDo = string.Empty;
+        private string selectedMaPhieuDuThi = string.Empty;
+        private string selectedMaKyThi = string.Empty;
+        private string selectedThoiGianBatDau = string.Empty;
+        private string selectedMaKyThiMoi = string.Empty;
+        private string selectedMaChungChi = string.Empty;
 
         private ThiSinhBUS thiSinhBUS = new ThiSinhBUS();
         private PhieuDuThiBUS phieuDuThiBUS = new PhieuDuThiBUS();
+        private PhieuGiaHanBUS phieuGiaHanBUS = new PhieuGiaHanBUS();
 
         public GiaHan()
         {
@@ -59,32 +67,22 @@ namespace WinFormsApp1
             }
         }
 
-        private void LoadDSPhieuDuThiCuaThiSinh(string customerId)
-        {
-            //string query = "SELECT * FROM PHIEU_DU_THI WHERE ma_thi_sinh = :customerId";
-            //var parameters = new Dictionary<string, object>
-            //{
-            //    { "customerId", customerId }
-            //};
-
-            //DataTable examTable = ExecuteCommand(query, CommandType.Text, parameters);
-
-            //if (examTable.Rows.Count > 0)
-            //{
-            //    dgvDSPhieuDuThi.DataSource = examTable;
-            //}
-            //else
-            //{
-            //    dgvDSPhieuDuThi.DataSource = null;
-            //    MessageBox.Show("Không có phiếu dự thi cho thí sinh này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-        }
-
-
-
         private void dgvDSPhieuDuThi_SelectionChanged(object? sender, EventArgs e)
         {
-            HideAllUIElements();
+            //HideAllUIElements();
+            if (dgvDSPhieuDuThi.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            selectedMaPhieuDuThi = this.dgvDSPhieuDuThi.SelectedRows[0].Cells["ma_phieu_du_thi"].Value.ToString();
+            selectedMaKyThi = this.dgvDSPhieuDuThi.SelectedRows[0].Cells["ma_ky_thi"].Value.ToString();
+            selectedMaChungChi = this.dgvDSPhieuDuThi.SelectedRows[0].Cells["ma_chung_chi"].Value.ToString();
+
+            Debug.WriteLine("Selected Ma Phieu Du Thi: " + selectedMaPhieuDuThi);
+            Debug.WriteLine("Selected Ma Ky Thi: " + selectedMaKyThi);
+            Debug.WriteLine("Selected Ma Chung Chi: " + selectedMaChungChi);
+            Debug.WriteLine("Selected Ma Ky Thi Moi: " + selectedMaKyThiMoi);
         }
 
         private void HideAllUIElements()
@@ -127,43 +125,61 @@ namespace WinFormsApp1
 
         private bool KiemTraDieuKienGiaHan()
         {
+            if (selectedMaPhieuDuThi.IsNullOrEmpty() || selectedMaKyThi.IsNullOrEmpty() || selectedMaKyThiMoi.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy lựa chọn một kỳ thi, một phiếu dự thi hoặc một lịch thi mới bất kỳ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            return true;
+            return phieuGiaHanBUS.kiemTraDieuKienGiaHan(selectedMaPhieuDuThi, selectedMaKyThi, selectedMaKyThiMoi);
         }
 
         private void btnCungCapLichThi_Click(object sender, EventArgs e)
         {
-            //// Open the MHCungCapLichThi form
-            //using (var MHCungCapLichThi = new MHCungCapLichThi())
-            //{
-            //    if (MHCungCapLichThi.ShowDialog() == DialogResult.OK)
-            //    {
-            //        // Get the selected exam schedule from the other form
-            //        selectedExamSchedule = MHCungCapLichThi.LuaChonLichThi();
+            // Open the MHCungCapLichThi form
+            Form popup = new Form();
+            popup.Size = new Size(750, 500);
 
-            //        // Display the selected schedule below the text input
-            //        lblLichThiDaChon.Text = $"Lịch thi đã chọn: {selectedExamSchedule}";
-            //        lblLichThiDaChon.Visible = true;
+            CungCapLichThi cungCapLichThi = new CungCapLichThi(selectedMaChungChi);
 
-            //        // Show the "Xóa Lịch Thi" and "Thanh toán" buttons
-            //        btnXoaLichThiDaChon.Visible = true;
-            //        if (!chkTruongHopDBChecked)
-            //        {
-            //            btnThanhToan.Visible = true;
-            //        }
-            //        btnLuuThongTin.Visible = true;
+            cungCapLichThi.Dock = DockStyle.Fill;
 
-            //        // Disable both tables
-            //        dgvDSThiSinh.Enabled = false;
-            //        dgvDSPhieuDuThi.Enabled = false;
-            //    }
-            //}
+            cungCapLichThi.DataSelected += (s, data) =>
+            {
+                selectedExamSchedule = data;
+                string[] split = data.Split(" - ");
+                lblLichThiDaChon.Text = $"Lịch thi đã chọn: {split[0] + " - " + split[1] + " - " + split[2] }";
+                selectedMaKyThiMoi = split[0];
+                Debug.WriteLine("Selected Ma Ky Thi Moi: " + selectedMaKyThiMoi);
+                selectedThoiGianBatDau = split[6];
+                lblLichThiDaChon.Visible = true;
+
+                popup.Close();
+                MessageBox.Show("Data received: " + data);
+            };
+
+            popup.Controls.Add(cungCapLichThi);
+            // Display the selected schedule below the text input
+
+             // Show the "Xóa Lịch Thi" and "Thanh toán" buttons
+             btnXoaLichThiDaChon.Visible = true;
+             if (!chkTruongHopDBChecked)
+              {
+                 btnThanhToan.Visible = true;
+              }
+              btnLuuThongTin.Visible = true;
+
+              // Disable both tables
+              dgvDSThiSinh.Enabled = false;
+              dgvDSPhieuDuThi.Enabled = false;
+
+            popup.ShowDialog();
         }
 
         private void btnXoaLichThiDaChon_Click(object sender, EventArgs e)
         {
             // Clear the selected schedule
             selectedExamSchedule = string.Empty;
+            selectedMaKyThiMoi = string.Empty;
             lblLichThiDaChon.Text = "Lịch thi đã chọn:";
 
             //// Hide related buttons
@@ -183,8 +199,20 @@ namespace WinFormsApp1
 
         private void btnLuuThongTin_Click(object sender, EventArgs e)
         {
-            //// Show success message
-            //MessageBox.Show("lưu thông tin thành công!");
+
+            if (KiemTraDieuKienGiaHan())
+            {
+                phieuGiaHanBUS.addPhieuGiaHan(selectedMaPhieuDuThi, selectedMaKyThi, 
+                selectedMaKyThiMoi, lyDo, selectedThoiGianBatDau, DangNhapBUS.Instance.TenDangNhap, chkTruongHopDBChecked, selectedMaChungChi);
+                MessageBox.Show("Lưu thông tin gia hạn thành công!");
+
+            }
+            // Show success message
+            else
+            {
+                MessageBox.Show("Không đủ điều kiện gia hạn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
 
             //// Reset visibility to allow re-selection
             //txtLyDo.Visible = false;

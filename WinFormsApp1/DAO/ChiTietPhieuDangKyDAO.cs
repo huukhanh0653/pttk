@@ -92,7 +92,7 @@ namespace WinFormsApp1.DAO
             }
         }
 
-        public DataRow getChiTietPhieuDKByMaPhieuDK(string maPhieu)
+        public DataTable getChiTietPhieuDKByMaPhieuDK(string maPhieu)
         {
             string query = "SELECT * FROM chi_tiet_phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu";
             DataTable dataTable = new DataTable();
@@ -114,7 +114,7 @@ namespace WinFormsApp1.DAO
               
             }
 
-            return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
+            return dataTable;
         }
 
         public DataTable getChiTietPhieuByMaThiSinh(string maThiSinh)
