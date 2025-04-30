@@ -55,6 +55,7 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Command.ExecuteNonQuery();
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
@@ -104,7 +105,7 @@ namespace WinFormsApp1.DAO
             }
         }
 
-        public DataTable getPhieuDangKyByNguoiDangKy(string maNguoiDangKy)
+        public DataTable getTTPhieuDangKyByNguoiDangKy(string maNguoiDangKy)
         {
             string query = "SELECT * FROM phieu_dang_ky WHERE ma_nguoi_dang_ky = @MaNguoiDangKy";
             DataTable dataTable = new DataTable();
@@ -122,11 +123,39 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                 Debug.WriteLine("getPhieuDangKyByNguoiDangKy: " + ex.Message);
             }
-
+            finally
+            {
+                
+            }
             return dataTable;
         }
 
-        public DataRow getPhieuDangKyByMaPhieu(string maPhieu)
+        public DataTable searchTTPhieuDangKyByMaPhieu(string maPhieu)
+        {
+            string query = "SELECT * FROM phieu_dang_ky WHERE ma_phieu_dang_ky like @MaPhieu";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", '%' + maPhieu + '%');
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine("searchTTPhieuDangKyByMaPhieu: " + ex.Message);
+            }
+            finally
+            {
+                
+            }
+            return dataTable;
+        }
+            
+
+        public DataRow getTTPhieuDangKyByMaPhieu(string maPhieu)
         {
             string query = "SELECT * FROM phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu";
             DataTable dataTable = new DataTable();
@@ -177,6 +206,8 @@ namespace WinFormsApp1.DAO
             }
         }
 
+        
+
         public DataTable searchNguoiDangKy(string searchTerm)
         {
             string query = "SELECT * FROM phieu_dang_ky WHERE ma_nguoi_dang_ky LIKE @SearchTerm OR ho_ten LIKE @SearchTerm OR so_dien_thoai LIKE @SearchTerm " +
@@ -199,6 +230,71 @@ namespace WinFormsApp1.DAO
             return dataTable;
         }
 
-      
+        public DataTable getAllPhieuDK()
+        {
+            string query = "SELECT * FROM phieu_dang_ky";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine(" error in getAllPhieuDK: " + ex.Message);
+            }
+            finally
+            {
+
+            }
+            return dataTable;
+        }
+
+        public DataTable getDSPhieuDangKyByMaNguoiDangKy(string maNguoiDangKy)
+        {
+            string query = "SELECT * FROM phieu_dang_ky WHERE ma_nguoi_dang_ky = @MaNguoiDangKy";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Debug.WriteLine(" error in getTTPhieuDangKyByMaNguoiDangKy: " + ex.Message);
+            }
+            finally
+            {
+
+            }
+            return dataTable;
+        }
+
+        public void updateTrangThaiPhieuDangKy(string maPhieuDK, int maHoaDonThanhToan, int trangThai)
+        {
+            string query = "UPDATE phieu_dang_ky SET ma_thanh_toan = @MaHoaDonThanhToan, trang_thai_thanh_toan = @TrangThai WHERE ma_phieu_dang_ky = @MaPhieuDK";
+            try
+            {
+                AppConfig.Command.CommandText = query;  
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@MaHoaDonThanhToan", maHoaDonThanhToan);
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieuDK", maPhieuDK);
+                AppConfig.Command.Parameters.AddWithValue("@TrangThai", trangThai);
+                AppConfig.Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(" error in updateTrangThaiPhieuDangKy: " + ex.Message); 
+            }
+            finally
+            {
+
+            }
+        }   
     }
 }

@@ -88,5 +88,16 @@ namespace WinFormsApp1.Business
         {
             return thiSinhDAO.searchThiSinh(searchTerm);
         }
+
+<<<<<<< HEAD
+        public DataRow getThiSinhByMaThiSinh(int maThiSinh)
+        {
+            return thiSinhDAO.getThiSinhById(maThiSinh);
+=======
+        public DataTable searchThiSinh(string searchText)
+        {
+            return thiSinhDAO.searchThiSinh(searchText);
+>>>>>>> b6ce5cd9de5ef299fdb5c8d9d519880bebd892a8
+        }
     }
 }

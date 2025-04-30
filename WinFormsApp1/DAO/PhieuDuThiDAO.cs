@@ -50,7 +50,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-               Debug.WriteLine("getAllPhieuDuThi: " + ex.Message);
+                Debug.WriteLine("getAllPhieuDuThi: " + ex.Message);
             }
 
             return dataTable;
@@ -141,5 +141,21 @@ namespace WinFormsApp1.DAO
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
         }
 
+        public void updateMaKyThi(string maPhieuDuThi, string maKyThi)
+        {
+            string query = "UPDATE phieu_du_thi SET ma_ky_thi = @MaKyThi WHERE ma_phieu_du_thi = @MaPhieuDuThi";
+            try
+            {
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieuDuThi", maPhieuDuThi);
+                AppConfig.Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("updateMaKyThi: " + ex.Message);
+            }
+        }
     }
 }

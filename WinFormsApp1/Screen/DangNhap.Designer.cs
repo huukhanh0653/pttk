@@ -65,7 +65,7 @@ namespace WinFormsApp1
             btnLogin.BackgroundImageLayout = ImageLayout.None;
             btnLogin.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.ButtonHighlight;
-            btnLogin.Location = new Point(449, 278);
+            btnLogin.Location = new Point(449, 369);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(233, 44);
             btnLogin.TabIndex = 5;
@@ -75,7 +75,7 @@ namespace WinFormsApp1
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(369, 228);
+            txtPassword.Location = new Point(369, 319);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(385, 23);
             txtPassword.TabIndex = 4;
@@ -86,7 +86,7 @@ namespace WinFormsApp1
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPassword.ForeColor = SystemColors.ActiveCaptionText;
-            lblPassword.Location = new Point(372, 204);
+            lblPassword.Location = new Point(372, 295);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(75, 21);
             lblPassword.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace WinFormsApp1
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(369, 167);
+            txtUsername.Location = new Point(369, 258);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(385, 23);
             txtUsername.TabIndex = 2;
@@ -104,7 +104,7 @@ namespace WinFormsApp1
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUsername.ForeColor = SystemColors.ActiveCaptionText;
-            lblUsername.Location = new Point(369, 141);
+            lblUsername.Location = new Point(369, 232);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(101, 21);
             lblUsername.TabIndex = 1;
@@ -115,19 +115,18 @@ namespace WinFormsApp1
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = SystemColors.ActiveCaptionText;
-            lblLogin.Location = new Point(500, 100);
+            lblLogin.Location = new Point(500, 191);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(121, 30);
             lblLogin.TabIndex = 0;
             lblLogin.Text = "Đăng nhập";
             // 
-            // Login
+            // DangNhap
             // 
-
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel_LoginForm);
-            Name = "Login";
+            Name = "DangNhap";
             Size = new Size(1100, 700);
             panel_LoginForm.ResumeLayout(false);
             panel_LoginForm.PerformLayout();

@@ -36,6 +36,32 @@ namespace WinFormsApp1.DAO
 
             return dataTable;
         }
+
+        public DataTable LayTTNguoiDangKyBySDT(string sdt)
+        {
+            string query = "SELECT * FROM nguoi_dang_ky WHERE so_dien_thoai like @sdt";
+            DataTable dataTable = new DataTable();
+            try
+            {
+                AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@sdt", "%" + sdt + "%");
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                
+            }
+            return dataTable;
+        }
+        
+
         public void addNguoiDangKy(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
         {
             string query = "INSERT INTO nguoi_dang_ky (ma_nguoi_dang_ky, ho_ten, ngay_sinh, so_dien_thoai, email, don_vi) VALUES (@MaNguoiDangKy, @HoTen, @NgaySinh, @SoDienThoai, @Email, @DonVi)";
@@ -143,15 +169,15 @@ namespace WinFormsApp1.DAO
             }
         }
 
-        public DataTable searchNguoiDangKy(string keyword)
+        public DataTable searchNguoiDangKyBySDT(string sdt)
         {
-            string query = "SELECT * FROM nguoi_dang_ky WHERE ho_ten LIKE @keyword OR so_dien_thoai LIKE @keyword OR email LIKE @keyword";
+            string query = "SELECT * FROM nguoi_dang_ky WHERE so_dien_thoai LIKE @sdt";
             DataTable dataTable = new DataTable();
             try
             {
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
-                AppConfig.Command.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+                AppConfig.Command.Parameters.AddWithValue("@sdt", "%" + sdt + "%");
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
@@ -162,5 +188,11 @@ namespace WinFormsApp1.DAO
             }
             return dataTable;
         }
+
+        public DataTable getNguoiDangKyByMaThiSinh(string maThiSinh) 
+        {
+            return getAllNguoiDangKy();
+        }
+
     }
 }

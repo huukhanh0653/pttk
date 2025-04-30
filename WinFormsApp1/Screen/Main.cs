@@ -47,6 +47,11 @@ namespace WinFormsApp1
             MainForm.Instance.SwitchUserControl(new PhatHanhPhieuDuThi());
         }
 
+        private void btnThanhToanPhieuDK_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.SwitchUserControl(new ThanhToanPhieuDK());
+        }
+
         private void btnDangKyThi_Click(object sender, EventArgs e)
         {
             MainForm.Instance.SwitchUserControl(new DangKyDuThi());

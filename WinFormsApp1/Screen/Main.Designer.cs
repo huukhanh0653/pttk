@@ -32,8 +32,8 @@
             btnNhapDiem = new Button();
             btnGiaHan = new Button();
             btnCapPhatCC = new Button();
-            btnPhatHanh = new Button();
             btnDangKyThi = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             panel1.Controls.Add(btnNhapDiem);
             panel1.Controls.Add(btnGiaHan);
             panel1.Controls.Add(btnCapPhatCC);
-            panel1.Controls.Add(btnPhatHanh);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(btnDangKyThi);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -53,14 +53,13 @@
             // 
             // btnNhapDiem
             // 
-            btnNhapDiem.Location = new Point(424, 380);
+            btnNhapDiem.Location = new Point(665, 166);
             btnNhapDiem.Margin = new Padding(3, 2, 3, 2);
             btnNhapDiem.Name = "btnNhapDiem";
             btnNhapDiem.Size = new Size(217, 54);
             btnNhapDiem.TabIndex = 9;
             btnNhapDiem.Text = "Nhập điểm";
             btnNhapDiem.UseVisualStyleBackColor = true;
-            //btnNhapDiem.Click += btnNhapDiem_Click;
             // 
             // btnGiaHan
             // 
@@ -82,18 +81,6 @@
             btnCapPhatCC.TabIndex = 7;
             btnCapPhatCC.Text = "Cấp phát chứng chỉ";
             btnCapPhatCC.UseVisualStyleBackColor = true;
-            // btnCapPhatCC.Click += btnCapPhatCC_Click;
-            // 
-            // btnPhatHanh
-            // 
-            btnPhatHanh.Location = new Point(665, 166);
-            btnPhatHanh.Margin = new Padding(3, 2, 3, 2);
-            btnPhatHanh.Name = "btnPhatHanh";
-            btnPhatHanh.Size = new Size(217, 54);
-            btnPhatHanh.TabIndex = 6;
-            btnPhatHanh.Text = "Phát hành phiếu dự thi";
-            btnPhatHanh.UseVisualStyleBackColor = true;
-            btnPhatHanh.Click += btnPhatHanh_Click;
             // 
             // btnDangKyThi
             // 
@@ -105,6 +92,17 @@
             btnDangKyThi.Text = "Đăng ký dự thi";
             btnDangKyThi.UseVisualStyleBackColor = true;
             btnDangKyThi.Click += btnDangKyThi_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(421, 225);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(217, 54);
+            button1.TabIndex = 6;
+            button1.Text = "Thanh toán phiếu đăng ký";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnThanhToanPhieuDK_Click;
             // 
             // Main
             // 
@@ -123,7 +121,7 @@
         private Button btnNhapDiem;
         private Button btnGiaHan;
         private Button btnCapPhatCC;
-        private Button btnPhatHanh;
         private Button btnDangKyThi;
+        private Button button1;
     }
 }

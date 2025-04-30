@@ -197,7 +197,7 @@ CREATE TABLE [dbo].[phieu_dang_ky]
 (
     [ma_phieu_dang_ky] [int] NOT NULL,
     [ngay_dang_ky] [datetime] NULL,
-    [trang_thai_thanh_toan] [int] NULL,
+    [ma_thanh_toan] [int] NULL,
     [tong_tien] [decimal](10, 2) NULL,
     [nguoi_tiep_nhan] [int] NULL,
     [ma_nguoi_dang_ky] [int] NULL,
@@ -366,4 +366,8 @@ ALTER TABLE [dbo].[phieu_gia_han]  WITH CHECK ADD FOREIGN KEY([phieu_du_thi])
 REFERENCES [dbo].[phieu_du_thi] ([ma_phieu_du_thi])
 GO
 ALTER TABLE [dbo].[ky_thi]  WITH CHECK ADD CHECK  (([so_luong_dang_ky_hien_tai]<=[so_luong_toi_da]))
+GO
+
+ALTER TABLE [dbo].[phieu_dang_ky]  WITH CHECK ADD FOREIGN KEY([ma_thanh_toan])
+REFERENCES [dbo].[hoa_don_thanh_toan] ([ma_thanh_toan])
 GO

@@ -28,136 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            button2 = new Button();
-            MaPhieu = new DataGridViewTextBoxColumn();
-            SoLanGiaHan = new DataGridViewTextBoxColumn();
-            LichThiCu = new DataGridViewTextBoxColumn();
-            LichThiMoi = new DataGridViewTextBoxColumn();
-            LyDo = new DataGridViewTextBoxColumn();
-            ThoiGianGH = new DataGridViewTextBoxColumn();
-            PhiGH = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvDSPhieuDK = new DataGridView();
+            btnKiemTra = new Button();
+            txtboxTimKiem = new TextBox();
+            btnThanhToan = new Button();
+            txtKyTu = new Label();
+            btnCapNhatThanhToan = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvDSPhieuDK).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDSPhieuDK
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { MaPhieu, SoLanGiaHan, LichThiCu, LichThiMoi, LyDo, ThoiGianGH, PhiGH });
-            dataGridView1.Location = new Point(62, 159);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(927, 551);
-            dataGridView1.TabIndex = 6;
-            //dataGridView1.CellContentClick += this.dataGridView1_CellContentClick;
+            dgvDSPhieuDK.AllowUserToOrderColumns = true;
+            dgvDSPhieuDK.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSPhieuDK.Location = new Point(51, 143);
+            dgvDSPhieuDK.Margin = new Padding(3, 2, 3, 2);
+            dgvDSPhieuDK.Name = "dgvDSPhieuDK";
+            dgvDSPhieuDK.RowHeadersWidth = 51;
+            dgvDSPhieuDK.Size = new Size(944, 413);
+            dgvDSPhieuDK.TabIndex = 6;
+            dgvDSPhieuDK.CellContentClick += dgvDSPhieuDK_CellContentClick;
             // 
-            // button1
+            // btnKiemTra
             // 
-            button1.Location = new Point(1031, 91);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 48);
-            button1.TabIndex = 5;
-            button1.Text = "Kiểm tra";
-            button1.UseVisualStyleBackColor = true;
-            //button1.Click += this.button1_Click;
+            btnKiemTra.Location = new Point(901, 50);
+            btnKiemTra.Margin = new Padding(3, 2, 3, 2);
+            btnKiemTra.Name = "btnKiemTra";
+            btnKiemTra.Size = new Size(94, 36);
+            btnKiemTra.TabIndex = 5;
+            btnKiemTra.Text = "Kiểm tra";
+            btnKiemTra.UseVisualStyleBackColor = true;
+            btnKiemTra.Click += btnKiemTra_Click;
             // 
-            // textBox1
+            // txtboxTimKiem
             // 
-            textBox1.Location = new Point(62, 102);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(927, 27);
-            textBox1.TabIndex = 4;
-            //textBox1.TextChanged += this.textBox1_TextChanged;
+            txtboxTimKiem.Location = new Point(51, 56);
+            txtboxTimKiem.Margin = new Padding(3, 2, 3, 2);
+            txtboxTimKiem.Name = "txtboxTimKiem";
+            txtboxTimKiem.Size = new Size(828, 23);
+            txtboxTimKiem.TabIndex = 4;
             // 
-            // button2
+            // btnThanhToan
             // 
-            button2.Location = new Point(1031, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(108, 48);
-            button2.TabIndex = 7;
-            button2.Text = "Thanh toán";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnThanhToan.Location = new Point(901, 94);
+            btnThanhToan.Margin = new Padding(3, 2, 3, 2);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(94, 36);
+            btnThanhToan.TabIndex = 7;
+            btnThanhToan.Text = "Thanh toán";
+            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Click += btnThanhToan_Click;
             // 
-            // MaPhieu
+            // txtKyTu
             // 
-            MaPhieu.HeaderText = "Mã phiếu";
-            MaPhieu.MinimumWidth = 6;
-            MaPhieu.Name = "MaPhieu";
-            MaPhieu.Width = 125;
+            txtKyTu.AutoSize = true;
+            txtKyTu.Location = new Point(51, 33);
+            txtKyTu.Name = "txtKyTu";
+            txtKyTu.Size = new Size(240, 15);
+            txtKyTu.TabIndex = 8;
+            txtKyTu.Text = "Tìm kiếm bằng số điện thoại hoặc mã phiếu";
             // 
-            // SoLanGiaHan
+            // btnCapNhatThanhToan
             // 
-            SoLanGiaHan.HeaderText = "Ngày đăng ký";
-            SoLanGiaHan.MinimumWidth = 6;
-            SoLanGiaHan.Name = "SoLanGiaHan";
-            SoLanGiaHan.Width = 125;
-            // 
-            // LichThiCu
-            // 
-            LichThiCu.HeaderText = "Tổng tiền";
-            LichThiCu.MinimumWidth = 6;
-            LichThiCu.Name = "LichThiCu";
-            LichThiCu.Width = 125;
-            // 
-            // LichThiMoi
-            // 
-            LichThiMoi.HeaderText = "Họ tên người đăng ký";
-            LichThiMoi.MinimumWidth = 6;
-            LichThiMoi.Name = "LichThiMoi";
-            LichThiMoi.Width = 125;
-            // 
-            // LyDo
-            // 
-            LyDo.HeaderText = "Số điện thoại";
-            LyDo.MinimumWidth = 6;
-            LyDo.Name = "LyDo";
-            LyDo.Width = 125;
-            // 
-            // ThoiGianGH
-            // 
-            ThoiGianGH.HeaderText = "Loại đăng ký";
-            ThoiGianGH.MinimumWidth = 6;
-            ThoiGianGH.Name = "ThoiGianGH";
-            ThoiGianGH.Width = 125;
-            // 
-            // PhiGH
-            // 
-            PhiGH.HeaderText = "Mã thanh toán";
-            PhiGH.MinimumWidth = 6;
-            PhiGH.Name = "PhiGH";
-            PhiGH.Width = 125;
+            btnCapNhatThanhToan.Location = new Point(770, 94);
+            btnCapNhatThanhToan.Margin = new Padding(3, 2, 3, 2);
+            btnCapNhatThanhToan.Name = "btnCapNhatThanhToan";
+            btnCapNhatThanhToan.Size = new Size(125, 36);
+            btnCapNhatThanhToan.TabIndex = 7;
+            btnCapNhatThanhToan.Text = "Cập nhật thanh toán";
+            btnCapNhatThanhToan.UseVisualStyleBackColor = true;
+            btnCapNhatThanhToan.Click += btnThanhToan_Click;
             // 
             // ThanhToanPhieuDK
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
+            Controls.Add(txtKyTu);
+            Controls.Add(dgvDSPhieuDK);
+            Controls.Add(btnKiemTra);
+            Controls.Add(txtboxTimKiem);
+            Controls.Add(btnCapNhatThanhToan);
+            Controls.Add(btnThanhToan);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ThanhToanPhieuDK";
-            Size = new Size(1200, 800);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Size = new Size(1050, 600);
+            ((System.ComponentModel.ISupportInitialize)dgvDSPhieuDK).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Button button1;
-        private TextBox textBox1;
-        private Button button2;
-        private DataGridViewTextBoxColumn MaPhieu;
-        private DataGridViewTextBoxColumn SoLanGiaHan;
-        private DataGridViewTextBoxColumn LichThiCu;
-        private DataGridViewTextBoxColumn LichThiMoi;
-        private DataGridViewTextBoxColumn LyDo;
-        private DataGridViewTextBoxColumn ThoiGianGH;
-        private DataGridViewTextBoxColumn PhiGH;
+        private DataGridView dgvDSPhieuDK;
+        private Button btnKiemTra;
+        private TextBox txtboxTimKiem;
+        private Button btnThanhToan;
+        private Label txtKyTu;
+        private Button btnCapNhatThanhToan;
     }
 }

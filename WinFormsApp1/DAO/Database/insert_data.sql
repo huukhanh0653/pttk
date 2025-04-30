@@ -21,9 +21,6 @@ DELETE FROM [dbo].[danh_sach_chung_chi];
 DELETE FROM [dbo].[tai_khoan];
 GO
 */
-use [TRUNGTAMTHI]
-go
-
 -- 1. Populate [dbo].[chuc_vu_nhan_vien] (Staff Roles)
 PRINT 'Populating [dbo].[chuc_vu_nhan_vien]...';
 INSERT INTO [dbo].[chuc_vu_nhan_vien] ([ma_chuc_vu], [ten_chuc_vu]) VALUES
@@ -58,11 +55,11 @@ GO
 -- 4. Populate [dbo].[tai_khoan] (Accounts - Example Accounts)
 PRINT 'Populating [dbo].[tai_khoan]...';
 INSERT INTO [dbo].[tai_khoan] ([tai_khoan], [mat_khau]) VALUES
-('quanly01', '$2a$10$...' ), -- Store hashed passwords in practice
-('tiepnhan01', '$2a$10$...' ),
-('ketoan01', '$2a$10$...' ),
-('nhaplieu01', '$2a$10$...' ),
-('giamthi01', '$2a$10$...');
+('1', '12345' ), -- Store hashed passwords in practice
+('2', '12345' ),
+('3', '12345' ),
+('4', '12345' ),
+('5', '12345');
 GO
 
 -- 5. Populate [dbo].[nhan_vien] (Staff)

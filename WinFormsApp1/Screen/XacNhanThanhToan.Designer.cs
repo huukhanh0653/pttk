@@ -28,197 +28,211 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
-            button2 = new Button();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            btnHuy = new Button();
+            lblLoaiThanhToan = new Label();
+            btnThanhToan = new Button();
+            lblHinhThuc = new Label();
+            lblTongTien = new Label();
+            lblSoTienCanThanhToan = new Label();
+            lblGiamGia = new Label();
+            lblMaGiaoDich = new Label();
+            lblNgayThanhToan = new Label();
+            txtboxLoaiThanhToan = new TextBox();
+            txtBoxNgayThanhToan = new TextBox();
+            txtboxTongTien = new TextBox();
+            txtboxGiamGia = new TextBox();
+            txtboxMaGiaoDich = new TextBox();
+            txtboxSoTienThanhToan = new TextBox();
+            cbboxHinhThuc = new ComboBox();
             SuspendLayout();
             // 
-            // button1
+            // btnHuy
             // 
-            button1.Location = new Point(262, 615);
-            button1.Name = "button1";
-            button1.Size = new Size(218, 48);
-            button1.TabIndex = 0;
-            button1.Text = "Hủy";
-            button1.UseVisualStyleBackColor = true;
+            btnHuy.Location = new Point(326, 431);
+            btnHuy.Margin = new Padding(3, 2, 3, 2);
+            btnHuy.Name = "btnHuy";
+            btnHuy.Size = new Size(191, 36);
+            btnHuy.TabIndex = 0;
+            btnHuy.Text = "Hủy";
+            btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.Click += btnHuy_Click;
             // 
-            // label1
+            // lblLoaiThanhToan
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(40, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Loại thanh toán";
+            lblLoaiThanhToan.AutoSize = true;
+            lblLoaiThanhToan.Location = new Point(72, 74);
+            lblLoaiThanhToan.Name = "lblLoaiThanhToan";
+            lblLoaiThanhToan.Size = new Size(90, 15);
+            lblLoaiThanhToan.TabIndex = 1;
+            lblLoaiThanhToan.Text = "Loại thanh toán";
             // 
-            // button2
+            // btnThanhToan
             // 
-            button2.Location = new Point(546, 615);
-            button2.Name = "button2";
-            button2.Size = new Size(218, 48);
-            button2.TabIndex = 2;
-            button2.Text = "Thanh toán";
-            button2.UseVisualStyleBackColor = true;
+            btnThanhToan.Location = new Point(575, 431);
+            btnThanhToan.Margin = new Padding(3, 2, 3, 2);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(191, 36);
+            btnThanhToan.TabIndex = 2;
+            btnThanhToan.Text = "Thanh toán";
+            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Click += btnThanhToan_Click;
             // 
-            // label2
+            // lblHinhThuc
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(40, 151);
-            label2.Name = "label2";
-            label2.Size = new Size(73, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Hình thức";
+            lblHinhThuc.AutoSize = true;
+            lblHinhThuc.Location = new Point(72, 144);
+            lblHinhThuc.Name = "lblHinhThuc";
+            lblHinhThuc.Size = new Size(60, 15);
+            lblHinhThuc.TabIndex = 3;
+            lblHinhThuc.Text = "Hình thức";
             // 
-            // label3
+            // lblTongTien
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(40, 225);
-            label3.Name = "label3";
-            label3.Size = new Size(72, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Tổng tiền";
+            lblTongTien.AutoSize = true;
+            lblTongTien.Location = new Point(72, 216);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(93, 15);
+            lblTongTien.TabIndex = 4;
+            lblTongTien.Text = "Tổng tiền (VNĐ)";
             // 
-            // label4
+            // lblSoTienCanThanhToan
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(61, 398);
-            label4.Name = "label4";
-            label4.Size = new Size(157, 20);
-            label4.TabIndex = 5;
-            label4.Text = "Số tiền cần thanh toán";
+            lblSoTienCanThanhToan.AutoSize = true;
+            lblSoTienCanThanhToan.Location = new Point(72, 303);
+            lblSoTienCanThanhToan.Name = "lblSoTienCanThanhToan";
+            lblSoTienCanThanhToan.Size = new Size(161, 15);
+            lblSoTienCanThanhToan.TabIndex = 5;
+            lblSoTienCanThanhToan.Text = "Số tiền cần thanh toán (VNĐ)";
             // 
-            // label5
+            // lblGiamGia
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(615, 225);
-            label5.Name = "label5";
-            label5.Size = new Size(69, 20);
-            label5.TabIndex = 6;
-            label5.Text = "Giảm giá";
+            lblGiamGia.AutoSize = true;
+            lblGiamGia.Location = new Point(575, 215);
+            lblGiamGia.Name = "lblGiamGia";
+            lblGiamGia.Size = new Size(54, 15);
+            lblGiamGia.TabIndex = 6;
+            lblGiamGia.Text = "Giảm giá";
             // 
-            // label6
+            // lblMaGiaoDich
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(615, 151);
-            label6.Name = "label6";
-            label6.Size = new Size(96, 20);
-            label6.TabIndex = 7;
-            label6.Text = "Mã giao dịch";
+            lblMaGiaoDich.AutoSize = true;
+            lblMaGiaoDich.Location = new Point(575, 145);
+            lblMaGiaoDich.Name = "lblMaGiaoDich";
+            lblMaGiaoDich.Size = new Size(76, 15);
+            lblMaGiaoDich.TabIndex = 7;
+            lblMaGiaoDich.Text = "Mã giao dịch";
             // 
-            // label7
+            // lblNgayThanhToan
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(615, 59);
-            label7.Name = "label7";
-            label7.Size = new Size(119, 20);
-            label7.TabIndex = 8;
-            label7.Text = "Ngày thanh toán";
+            lblNgayThanhToan.AutoSize = true;
+            lblNgayThanhToan.Location = new Point(575, 74);
+            lblNgayThanhToan.Name = "lblNgayThanhToan";
+            lblNgayThanhToan.Size = new Size(96, 15);
+            lblNgayThanhToan.TabIndex = 8;
+            lblNgayThanhToan.Text = "Ngày thanh toán";
             // 
-            // textBox1
+            // txtboxLoaiThanhToan
             // 
-            textBox1.Location = new Point(40, 94);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(431, 27);
-            textBox1.TabIndex = 9;
+            txtboxLoaiThanhToan.Location = new Point(72, 100);
+            txtboxLoaiThanhToan.Margin = new Padding(3, 2, 3, 2);
+            txtboxLoaiThanhToan.Name = "txtboxLoaiThanhToan";
+            txtboxLoaiThanhToan.Size = new Size(378, 23);
+            txtboxLoaiThanhToan.TabIndex = 9;
             // 
-            // textBox2
+            // txtBoxNgayThanhToan
             // 
-            textBox2.Location = new Point(40, 174);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(431, 27);
-            textBox2.TabIndex = 10;
+            txtBoxNgayThanhToan.Location = new Point(575, 100);
+            txtBoxNgayThanhToan.Margin = new Padding(3, 2, 3, 2);
+            txtBoxNgayThanhToan.Name = "txtBoxNgayThanhToan";
+            txtBoxNgayThanhToan.Size = new Size(378, 23);
+            txtBoxNgayThanhToan.TabIndex = 12;
             // 
-            // textBox4
+            // txtboxTongTien
             // 
-            textBox4.Location = new Point(615, 94);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(431, 27);
-            textBox4.TabIndex = 12;
+            txtboxTongTien.Location = new Point(72, 238);
+            txtboxTongTien.Margin = new Padding(3, 2, 3, 2);
+            txtboxTongTien.Name = "txtboxTongTien";
+            txtboxTongTien.Size = new Size(378, 23);
+            txtboxTongTien.TabIndex = 11;
             // 
-            // textBox3
+            // txtboxGiamGia
             // 
-            textBox3.Location = new Point(40, 262);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(431, 27);
-            textBox3.TabIndex = 11;
+            txtboxGiamGia.Location = new Point(575, 238);
+            txtboxGiamGia.Margin = new Padding(3, 2, 3, 2);
+            txtboxGiamGia.Name = "txtboxGiamGia";
+            txtboxGiamGia.Size = new Size(378, 23);
+            txtboxGiamGia.TabIndex = 13;
             // 
-            // textBox5
+            // txtboxMaGiaoDich
             // 
-            textBox5.Location = new Point(615, 262);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(431, 27);
-            textBox5.TabIndex = 13;
+            txtboxMaGiaoDich.Location = new Point(575, 164);
+            txtboxMaGiaoDich.Margin = new Padding(3, 2, 3, 2);
+            txtboxMaGiaoDich.Name = "txtboxMaGiaoDich";
+            txtboxMaGiaoDich.Size = new Size(378, 23);
+            txtboxMaGiaoDich.TabIndex = 14;
             // 
-            // textBox6
+            // txtboxSoTienThanhToan
             // 
-            textBox6.Location = new Point(615, 174);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(431, 27);
-            textBox6.TabIndex = 14;
+            txtboxSoTienThanhToan.Location = new Point(72, 326);
+            txtboxSoTienThanhToan.Margin = new Padding(3, 2, 3, 2);
+            txtboxSoTienThanhToan.Name = "txtboxSoTienThanhToan";
+            txtboxSoTienThanhToan.Size = new Size(881, 23);
+            txtboxSoTienThanhToan.TabIndex = 15;
             // 
-            // textBox7
+            // cbboxHinhThuc
             // 
-            textBox7.Location = new Point(61, 434);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(985, 27);
-            textBox7.TabIndex = 15;
+            cbboxHinhThuc.FormattingEnabled = true;
+            cbboxHinhThuc.Items.AddRange(new object[] { "Chuyển khoản", "Tiền mặt" });
+            cbboxHinhThuc.Location = new Point(74, 167);
+            cbboxHinhThuc.Name = "cbboxHinhThuc";
+            cbboxHinhThuc.Size = new Size(376, 23);
+            cbboxHinhThuc.TabIndex = 16;
+            cbboxHinhThuc.SelectedIndexChanged += cbboxHinhThuc_SelectedIndexChanged;
             // 
             // XacNhanThanhToan
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(button2);
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(cbboxHinhThuc);
+            Controls.Add(txtboxSoTienThanhToan);
+            Controls.Add(txtboxMaGiaoDich);
+            Controls.Add(txtboxGiamGia);
+            Controls.Add(txtBoxNgayThanhToan);
+            Controls.Add(txtboxTongTien);
+            Controls.Add(txtboxLoaiThanhToan);
+            Controls.Add(lblNgayThanhToan);
+            Controls.Add(lblMaGiaoDich);
+            Controls.Add(lblGiamGia);
+            Controls.Add(lblSoTienCanThanhToan);
+            Controls.Add(lblTongTien);
+            Controls.Add(lblHinhThuc);
+            Controls.Add(btnThanhToan);
+            Controls.Add(lblLoaiThanhToan);
+            Controls.Add(btnHuy);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "XacNhanThanhToan";
-            Size = new Size(1200, 800);
+            Size = new Size(1050, 600);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Label label1;
-        private Button button2;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private Button btnHuy;
+        private Label lblLoaiThanhToan;
+        private Button btnThanhToan;
+        private Label lblHinhThuc;
+        private Label lblTongTien;
+        private Label lblSoTienCanThanhToan;
+        private Label lblGiamGia;
+        private Label lblMaGiaoDich;
+        private Label lblNgayThanhToan;
+        private TextBox txtboxLoaiThanhToan;
+        private TextBox txtBoxNgayThanhToan;
+        private TextBox txtboxTongTien;
+        private TextBox txtboxGiamGia;
+        private TextBox txtboxMaGiaoDich;
+        private TextBox txtboxSoTienThanhToan;
+        private ComboBox cbboxHinhThuc;
     }
 }

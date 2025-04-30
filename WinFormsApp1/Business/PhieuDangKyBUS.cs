@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,62 +10,57 @@ namespace WinFormsApp1.Business
 {
     internal class PhieuDangKyBUS
     {
-        private PhieuDangKyDAO phieuDangKyDAO;
-        private ChiTietPhieuDangKyDAO chiTietPhieuDangKyDAO;
+        private PhieuDangKyDAO phieuDangKyDAO = new PhieuDangKyDAO();
+        private NguoiDangKyDAO nguoiDangKyDAO = new NguoiDangKyDAO();
 
-        public PhieuDangKyBUS()
+        public PhieuDangKyBUS() {}
+
+
+        public DataRow LayTTPhieuDangKyByMaPhieu(string maPhieu)
         {
-            phieuDangKyDAO = new PhieuDangKyDAO();
-            chiTietPhieuDangKyDAO = new ChiTietPhieuDangKyDAO();
+            DataRow datarow = phieuDangKyDAO.getTTPhieuDangKyByMaPhieu(maPhieu);
+            return datarow;
         }
 
-        public void AddPhieuDangKy(string maNguoiDangKy, string nguoiTiepNhan, double tongTien)
+        public DataTable LayTTPhieuDangKyByMaNguoiDangKy(string maNguoiDangKy)
         {
-            phieuDangKyDAO.addPhieuDangKy(maNguoiDangKy, DateOnly.FromDateTime(DateTime.Now), Convert.ToInt32(nguoiTiepNhan), tongTien);
+            DataTable dataTable = phieuDangKyDAO.getDSPhieuDangKyByMaNguoiDangKy(maNguoiDangKy);
+            return dataTable;
         }
 
-        public DataTable GetAllPhieuDangKy()
+        public DataTable TimKiemTTPhieuDangKyByMaPhieu(string maPhieu)
         {
-            return phieuDangKyDAO.getAllPhieuDangKy();
+            DataTable dataTable = phieuDangKyDAO.searchTTPhieuDangKyByMaPhieu(maPhieu);
+            return dataTable;
         }
-
-        public void DeletePhieuDangKy(string maPhieu)
+        
+        public DataTable LayDSPhieuDK()
         {
-            phieuDangKyDAO.deletePhieuDangKy(maPhieu);
-        }
+            DataTable dataTable = phieuDangKyDAO.getAllPhieuDangKy();
 
-        public DataTable GetAllPhieuDangKyAndChiTiet()
-        {
-            DataTable phieu = phieuDangKyDAO.getAllPhieuDangKy();
-            DataTable chiTiet = chiTietPhieuDangKyDAO.getAllChiTietPhieuDangKy();
-            DataTable result = phieu.Clone();
 
-            // Add additional columns for ChiTietPhieuDangKy data  
-            foreach (DataColumn column in chiTiet.Columns)
+            for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                if (!result.Columns.Contains(column.ColumnName))
-                {
-                    result.Columns.Add(column.ColumnName, column.DataType);
-                }
+                DataRow row = dataTable.Rows[i];
+                row["ma_phieu_dang_ky"] = row["ma_phieu_dang_ky"].ToString();
+                row["ngay_dang_ky"] = row["ngay_dang_ky"].ToString();
+                row["tong_tien"] = row["tong_tien"].ToString();
+                row["ma_nguoi_dang_ky"] = row["ma_nguoi_dang_ky"].ToString();
+                
             }
+            return dataTable;
+        }
 
+        public DataTable LayDSPhieuDKChuaThanhToan()
+        {
+            DataTable dataTable = phieuDangKyDAO.getAllPhieuDangKy();
+            dataTable.DefaultView.RowFilter = "trang_thai_thanh_toan = 0";
+            return dataTable.DefaultView.ToTable();
+        }
 
-            foreach (DataRow dr in phieu.Rows)
-            {
-                foreach (DataRow dr2 in chiTiet.Rows)
-                {
-                    if (dr["ma_phieu_dang_ky"].ToString() == dr2["ma_phieu_dang_ky"].ToString())
-                    {
-                        DataRow newRow = result.NewRow();
-                        newRow.ItemArray = dr.ItemArray;
-                        newRow["ma_ky_thi"] = dr2["ma_ky_thi"];
-                        newRow["ma_thi_sinh"] = dr2["ma_thi_sinh"];
-                        result.Rows.Add(newRow);
-                    }
-                }
-            }
-
-            return result;
+        public void CapNhatTrangThaiPhieuDangKy(string maPhieuDK, int maHoaDonThanhToan, int trangThai)
+        {
+            phieuDangKyDAO.updateTrangThaiPhieuDangKy(maPhieuDK, maHoaDonThanhToan, trangThai);
         }
     }
 }

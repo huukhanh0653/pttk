@@ -30,7 +30,8 @@ namespace WinFormsApp1.Business
                     DateTime.Parse(kythi["thoi_gian_bat_dau"].ToString()) - now < TimeSpan.FromHours(24))
                 {
                     dataTable.Rows[i].Delete();
-                } else
+                }
+                else
                 {
                     dataTable.Rows[i]["thoi_gian_bat_dau"] = kythi["thoi_gian_bat_dau"].ToString();
                     dataTable.Rows[i]["ma_chung_chi"] = kythi["ma_chung_chi"].ToString();
@@ -39,11 +40,16 @@ namespace WinFormsApp1.Business
 
             dataTable.AcceptChanges(); // Ensure deleted rows are removed  
             dataTable.Columns.Remove("diem");
-            
+
 
             return dataTable;
         }
-        
+
+        public void updateMaKyThi(string maPhieuDuThi, string maKyThi)
+        {
+            phieuDuThiDAO.updateMaKyThi(maPhieuDuThi, maKyThi);
+        }
+
 
     }
 }

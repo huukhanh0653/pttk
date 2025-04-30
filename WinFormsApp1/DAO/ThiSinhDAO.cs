@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,7 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                
+
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
@@ -37,7 +38,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                
+
             }
             return dataTable;
         }

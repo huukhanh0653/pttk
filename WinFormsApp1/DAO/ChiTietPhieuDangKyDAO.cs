@@ -123,7 +123,6 @@ namespace WinFormsApp1.DAO
                 Debug.WriteLine(ex.Message);
             }
 
-
             return dataTable;
         }
 
