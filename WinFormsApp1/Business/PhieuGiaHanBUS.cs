@@ -132,85 +132,95 @@ namespace WinFormsApp1.Business
 
         public bool is2TimesAlready(string maPhieuDuThi)
         {
-            DataTable table = this.getPhieuGiaHanByMaPhieuDuThi(maPhieuDuThi);
-            if (table.Rows.Count > 1)
-            {
-                if (int.TryParse(table.Rows[0]["ma_thanh_toan"]?.ToString(), out int value1) && value1 > 0 &&
-                    int.TryParse(table.Rows[1]["ma_thanh_toan"]?.ToString(), out int value2) && value2 > 0)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool kiemTraDieuKienGiaHan(string maPhieuDuThi, string maKyThiHienTai, string maKyThiMoi)
-        {
-            if (maPhieuDuThi.IsNullOrEmpty() || maKyThiHienTai.IsNullOrEmpty() || maKyThiMoi.IsNullOrEmpty())
-            {
-                return false;
-            }
-
-            KyThiBUS kythiMoi = new KyThiBUS(maKyThiMoi);
-            KyThiBUS kyThiHienTai = new KyThiBUS(maKyThiHienTai);
-
-            Debug.WriteLine("kiemTraDieuKienGiaHan");
-
-            if (is2TimesAlready(maPhieuDuThi)) return false;
-            if (kythiMoi.isFull()) return false;
-            if (!kythiMoi.isEarlyAtLeast24h()) return false;
-
-            return true;
+            DataTable table = getPhieuGiaHanByMaPhieuDuThi(maPhieuDuThi);
+            int successfulExtensions = table.AsEnumerable()
+                .Count(row =>
+                    (bool)row["truong_hop_dac_biet"] ||
+                    (!string.IsNullOrEmpty(row["ma_thanh_toan"]?.ToString()) && row["ma_thanh_toan"] != DBNull.Value));
+            return successfulExtensions < 2; // Trả về true nếu chưa đạt 2 lần gia hạn
         }
 
         public void addPhieuGiaHan(string maPhieuDuThi, string maKyThiCu, string maKyThiMoi,
             string lyDo, string thoiGianThiMoi, string maNhanVienGiaHan, bool dacBiet, string maChungChi)
         {
+            if (!is2TimesAlready(maPhieuDuThi))
+            {
+                throw new InvalidOperationException("Phiếu dự thi đã gia hạn thành công 2 lần.");
+            }
+
             DataTable table = phieuGiaHanDAO.getPhieuGiaHanByMaPhieuDuThi(Convert.ToInt32(maPhieuDuThi));
             Debug.WriteLine("table.Rows.Count: " + table.Rows.Count);
-            if (table.Rows.Count == 2 && (table.Rows[1]["ma_thanh_toan"] == null || table.Rows[1]["ma_thanh_toan"] == DBNull.Value))
-            {
-                string _maPhieu = table.Rows[1]["ma_phieu_gia_han"].ToString();
-                string _maThanhToan = table.Rows[1]["ma_thanh_toan"].ToString();
-                string _maPhieuDuThi = table.Rows[1]["ma_phieu_du_thi"].ToString();
-                string _soLan = table.Rows[1]["so_lan"].ToString();
-                string _maKyThiCu = table.Rows[1]["ma_ky_thi_cu"].ToString();
-                string _maKyThiMoi = maKyThiMoi;
-                string _thoiGianGiaHan = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                string _lyDo = lyDo.Length > 0 ? lyDo : table.Rows[1]["ly_do"].ToString();
-                string _truongHopDB = table.Rows[1]["th_dac_biet"].ToString().ToLower() == "true" ?
-                    table.Rows[1]["th_dac_biet"].ToString().ToLower() : dacBiet.ToString().ToLower();
-                string _thoiGianThiMoi = thoiGianThiMoi;
-                string _maNV = maNhanVienGiaHan;
-                string _phiGiaHan = table.Rows[1]["phi_gia_han"].ToString();
 
-                phieuGiaHanDAO.updatePhieuGiaHan(_maPhieu, _maThanhToan, maPhieuDuThi, int.Parse(_soLan) + 1,
-                int.Parse(_maKyThiCu), int.Parse(_maKyThiMoi), DateTime.Parse(_thoiGianGiaHan), double.Parse(_phiGiaHan),
-                true, _lyDo, bool.Parse(_truongHopDB), DateTime.Parse(_thoiGianThiMoi), int.Parse(_maNV));
+            bool isSuccessful(DataRow row) => (bool)row["truong_hop_dac_biet"] ||
+                (!string.IsNullOrEmpty(row["ma_thanh_toan"]?.ToString()) && row["ma_thanh_toan"] != DBNull.Value);
+
+            DataRow targetRow = null;
+            bool isUpdate = false;
+            int soLan = table.Rows.Count + 1;
+
+            if (table.Rows.Count == 0)
+            {
+                soLan = 1;
+            }
+            else if (table.Rows.Count == 1)
+            {
+                targetRow = table.Rows[0];
+                if (!isSuccessful(targetRow))
+                {
+                    MessageBox.Show("3");
+                    isUpdate = true;
+                    soLan = (int)targetRow["so_lan"];
+                }
+                else
+                {
+                    soLan = 2;
+                }
+            }
+            else if (table.Rows.Count == 2)
+            {
+                targetRow = table.Rows[1];
+                if (!isSuccessful(targetRow))
+                {
+                    MessageBox.Show("4");
+                    isUpdate = true;
+                    soLan = (int)targetRow["so_lan"];
+                }
+                else
+                {
+                    throw new InvalidOperationException("Phiếu dự thi đã có 2 phiếu gia hạn thành công.");
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("Số lượng phiếu gia hạn không hợp lệ.");
             }
 
-            else if (table.Rows.Count < 2)
+            string maPhieu = isUpdate ? targetRow["ma_phieu_gia_han"].ToString() : phieuGiaHanDAO.getNextMaPhieuGiaHan().ToString();
+            int maKyThiCuVal = isUpdate ? (int)targetRow["ma_ky_thi_cu"] : int.Parse(maKyThiCu);
+            int maKyThiMoiVal = int.Parse(maKyThiMoi);
+            DateTime thoiGianGiaHan = DateTime.Now;
+            double phiGiaHan = dacBiet ? 0 :
+                double.Parse(new DanhSachChungChiDAO().getChungChiByMaChungChi(Convert.ToInt32(maChungChi))["gia_tien"].ToString()) * 0.2;
+            bool trangThai = dacBiet;
+            string lyDoVal = lyDo.Length > 0 ? lyDo : (isUpdate ? targetRow["ly_do"].ToString() : lyDo);
+            bool truongHopDB = dacBiet;
+            DateTime thoiGianThiMoiVal = DateTime.Parse(thoiGianThiMoi);
+            //maNhanVienGiaHan = "1";
+            int maNV = Convert.ToInt32(maNhanVienGiaHan);
+
+            // Thực hiện hành động
+            if (isUpdate)
             {
-                string _maPhieu = phieuGiaHanDAO.getNextMaPhieuGiaHan().ToString();
-                string _maPhieuDuThi = maPhieuDuThi;
-                int _soLan = table.Rows.Count + 1;
-                string _maKyThiCu = maKyThiCu;
-                string _maKyThiMoi = maKyThiMoi;
-                DateTime _thoiGianGiaHan = DateTime.Now;
-                string _lyDo = lyDo;
-                string _truongHopDB = dacBiet.ToString().ToLower();
-                string _thoiGianThiMoi = thoiGianThiMoi;
-                string _maNV = maNhanVienGiaHan;
-                double _phiGiaHan = _truongHopDB == "true"? 
-                0 : double.Parse(new DanhSachChungChiDAO().getChungChiByMaChungChi(Convert.ToInt32(maChungChi))["gia_tien"].ToString()) * 0.2;
-
-                phieuGiaHanDAO.addPhieuGiaHan(_maPhieu, maPhieuDuThi, _soLan,
-                    int.Parse(_maKyThiCu), int.Parse(_maKyThiMoi), _thoiGianGiaHan, _phiGiaHan,
-                    false, _lyDo, bool.Parse(_truongHopDB), DateTime.Parse(_thoiGianThiMoi), int.Parse(_maNV));
-
+                phieuGiaHanDAO.updatePhieuGiaHan(
+                    maPhieu, "", maPhieuDuThi, soLan, maKyThiCuVal, maKyThiMoiVal, thoiGianGiaHan, phiGiaHan,
+                    trangThai, lyDoVal, truongHopDB, thoiGianThiMoiVal, maNV);
             }
-
-            else return;
+            else
+            {
+                phieuGiaHanDAO.addPhieuGiaHan(
+                    maPhieu, maPhieuDuThi, soLan, maKyThiCuVal, maKyThiMoiVal, thoiGianGiaHan, phiGiaHan,
+                    trangThai, lyDoVal, truongHopDB, thoiGianThiMoiVal, maNV);
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
 using System.Diagnostics;
+using System.Globalization;
+using System.Security.Cryptography;
 
 namespace WinFormsApp1.DAO
 {
@@ -28,7 +30,7 @@ namespace WinFormsApp1.DAO
                 {
                     nextMaPhieuGiaHan = Convert.ToInt32(result);
                 }
-}
+            }
             catch (Exception ex)
             {
                 // Handle exceptions
@@ -67,12 +69,11 @@ namespace WinFormsApp1.DAO
                 "VALUES (@MaPhieu, @MaPhieuDuThi, @SoLan, @MaKyThiCu, @MaKyThiMoi, @ThoiGianGiaHan, @PhiGiaHan, @TrangThai, @LyDo, @THDacBiet, @TGThiMoi, @MaNV)";
             try
             {
-
                 // Insert new record
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                
+
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieuDuThi", maPhieuDuThi);
                 AppConfig.Command.Parameters.AddWithValue("@SoLan", soLan);
                 AppConfig.Command.Parameters.AddWithValue("@MaKyThiCu", maKyThiCu);
@@ -88,6 +89,7 @@ namespace WinFormsApp1.DAO
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Lỗi thêm phiếu gia hạn: " + ex.Message);
                 // Handle exceptions
                 Debug.WriteLine("addPhieuGiaHan catched an exception");
                 Debug.WriteLine(ex.Message);
@@ -154,15 +156,23 @@ namespace WinFormsApp1.DAO
         }
 
         public void updatePhieuGiaHan(string maPhieu, string maThanhToan, string maPhieuDuThi, int soLan, int maKyThiCu, int maKyThiMoi,
-            DateTime thoiGianGiahHan, Double PhiGiaHan, bool trangThai, string lyDo, bool THDacBiet, DateTime TGThiMoi, int v)
+            DateTime thoiGianGiahHan, Double PhiGiaHan, bool trangThai, string lyDo, bool THDacBiet, DateTime TGThiMoi, int MaNV)
         {
-            string query = "UPDATE phieu_gia_han SET ma_thanh_toan = @MaThanhToan, ma_phieu_du_thi = @MaPhieuDuThi, so_lan = @SoLan, ma_ky_thi_cu = @MaKyThiCu, ma_ky_thi_moi = @MaKyThiMoi, thoi_gian_gia_han = @ThoiGianGiaHan, phi_gia_han = @PhiGiaHan, trang_thai = @TrangThai, ly_do = @LyDo, th_dac_biet = @THDacBiet, tg_thi_moi = @TGThiMoi WHERE ma_phieu_gia_han = @MaPhieu";
+            string query = "UPDATE phieu_gia_han SET ma_thanh_toan = @MaThanhToan, phieu_du_thi = @MaPhieuDuThi, so_lan = @SoLan, ma_ky_thi_cu = @MaKyThiCu, ma_ky_thi_moi = @MaKyThiMoi, ngay_gia_han = @ThoiGianGiaHan, phi_gia_han = @PhiGiaHan, trang_thai_thanh_toan = @TrangThai, ly_do = @LyDo, truong_hop_dac_biet = @THDacBiet, thoi_gian_thi_moi = @TGThiMoi WHERE ma_phieu_gia_han = @MaPhieu";
             try
             {
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
-                AppConfig.Command.Parameters.AddWithValue("@MaThanhToan", maThanhToan);
+                if (string.IsNullOrEmpty(maThanhToan))
+                {
+                    AppConfig.Command.Parameters.AddWithValue("@MaThanhToan", DBNull.Value);
+                }
+                else
+                {
+                    AppConfig.Command.Parameters.AddWithValue("@MaThanhToan", maThanhToan);
+                }
+
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieuDuThi", maPhieuDuThi);
                 AppConfig.Command.Parameters.AddWithValue("@SoLan", soLan);
                 AppConfig.Command.Parameters.AddWithValue("@MaKyThiCu", maKyThiCu);
@@ -173,10 +183,12 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.Parameters.AddWithValue("@LyDo", lyDo);
                 AppConfig.Command.Parameters.AddWithValue("@THDacBiet", THDacBiet);
                 AppConfig.Command.Parameters.AddWithValue("@TGThiMoi", TGThiMoi);
+                AppConfig.Command.Parameters.AddWithValue("@MaNV", MaNV);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Lỗi cập nhật phiếu gia hạn: " + ex.Message);
                 // Handle exceptions
                 Debug.WriteLine("error in updatePhieuGiaHan: " + ex.Message);
             }
