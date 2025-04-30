@@ -34,7 +34,7 @@
             lblHoTen = new Label();
             lblSDT = new Label();
             lblEmail = new Label();
-            label7 = new Label();
+            lblDSThiSinh = new Label();
             lblTongTien = new Label();
             txtboxSDT = new TextBox();
             txtboxNgayDK = new TextBox();
@@ -103,14 +103,14 @@
             lblEmail.TabIndex = 5;
             lblEmail.Text = "Email người đăng ký";
             // 
-            // label7
+            // lblDSThiSinh
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(127, 178);
-            label7.Name = "label7";
-            label7.Size = new Size(104, 15);
-            label7.TabIndex = 6;
-            label7.Text = "Danh sách thí sinh";
+            lblDSThiSinh.AutoSize = true;
+            lblDSThiSinh.Location = new Point(127, 178);
+            lblDSThiSinh.Name = "lblDSThiSinh";
+            lblDSThiSinh.Size = new Size(104, 15);
+            lblDSThiSinh.TabIndex = 6;
+            lblDSThiSinh.Text = "Danh sách thí sinh";
             // 
             // lblTongTien
             // 
@@ -224,7 +224,7 @@
             Controls.Add(txtboxNgayDK);
             Controls.Add(txtboxSDT);
             Controls.Add(lblTongTien);
-            Controls.Add(label7);
+            Controls.Add(lblDSThiSinh);
             Controls.Add(lblEmail);
             Controls.Add(lblSDT);
             Controls.Add(lblHoTen);
@@ -247,7 +247,7 @@
         private Label lblHoTen;
         private Label lblSDT;
         private Label lblEmail;
-        private Label label7;
+        private Label lblDSThiSinh;
         private Label lblTongTien;
         private TextBox txtboxSDT;
         private TextBox txtboxNgayDK;

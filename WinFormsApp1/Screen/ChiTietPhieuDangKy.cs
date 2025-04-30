@@ -22,11 +22,11 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             this.phieuDangKy = phieuDangKy;
-            ChiTietPhieuDangKy_Load();
+            MH_ChiTietPhieuDangKy_Load();
             this.Dock = DockStyle.Fill;
         }
 
-        private void ChiTietPhieuDangKy_Load()
+        public void MH_ChiTietPhieuDangKy_Load()
         {
             txtboxMaPhieuDk.Text = phieuDangKy.Cells[0].Value.ToString();
             txtboxHoTen.Text = phieuDangKy.Cells[3].Value.ToString();

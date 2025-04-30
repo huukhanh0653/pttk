@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\xacnhanthanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|e:\\fitus\\25-26\\pttkhtttt\\qltrungtamthi\\pttk\\winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A93407DC-69BE-4330-84EC-2C9BC983623C}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\screen\\thanhtoanphieudk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,20 +34,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThanhToanPhieuDK.cs [Design]",
+              "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
+              "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T00:45:41.751Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "XacNhanThanhToan.cs",
               "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
               "ToolTip": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
               "RelativeToolTip": "WinFormsApp1\\Screen\\XacNhanThanhToan.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAWwFAAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAA0wDcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T07:55:40.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ThanhToanPhieuDK.cs",
               "DocumentMoniker": "E:\\FITUS\\25-26\\PTTKHTTTT\\QLTRUNGTAMTHI\\pttk\\WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Screen\\ThanhToanPhieuDK.cs",

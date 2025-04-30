@@ -47,11 +47,6 @@ namespace WinFormsApp1.Business
         {
             return nguoiDangKyDAO.findNguoiDangKyById(int.Parse(maNguoiDangKy));
         }
-
-        public DataTable searchTTNguoiDangKyBySDT(string sdt)
-        {
-            return nguoiDangKyDAO.searchNguoiDangKyBySDT(sdt);
-        }
         
 
         //public DataTable dtbCungCapLichThi()

@@ -98,7 +98,7 @@ namespace WinFormsApp1
             }
         }
 
-        private void MH_XacNhanThanhToan_Load(string loaiThanhToan, string tongTien, string loai_dk, string so_thi_sinh)
+        public void MH_XacNhanThanhToan_Load(string loaiThanhToan, string tongTien, string loai_dk, string so_thi_sinh)
         {
             this.tongTien = float.Parse(tongTien);
             txtboxLoaiThanhToan.Text = loaiThanhToan;
