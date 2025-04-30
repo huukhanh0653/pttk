@@ -9,35 +9,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Business;
+using System.Globalization;
 
 namespace WinFormsApp1
 {
-        public partial class CungCapLichThi : UserControl
-        {
-            private DataTable table;
-            private DataTable originaltable;
-            private string maChungChi;
-            private string SelectedExamSchedule = string.Empty;
-            private string SelectedMaKyThiMoi = string.Empty;
+    public partial class CungCapLichThi : UserControl
+    {
+        private DataTable table;
+        private DataTable originaltable;
+        private string maChungChi;
+        private string SelectedExamSchedule = string.Empty;
+        private string SelectedMaKyThiMoi = string.Empty;
 
-            public event EventHandler<string> DataSelected;
-            private KyThiBUS kyThiBUS = new KyThiBUS();
-
+        public event EventHandler<string> DataSelected;
+        private KyThiBUS kyThiBUS = new KyThiBUS();
 
         public CungCapLichThi(string maChungChi)
-            {
-                InitializeComponent();
-                this.maChungChi = maChungChi;
-                SelectedExamSchedule = string.Empty;
-                LoadExamData();
-                InitializeFilterOptions();
-            }
+        {
+            InitializeComponent();
+            this.maChungChi = maChungChi;
+            SelectedExamSchedule = string.Empty;
+            LoadExamData();
+            InitializeFilterOptions();
+        }
 
-            private void LoadExamData()
+        private void LoadExamData()
+        {
+            try
             {
                 table = kyThiBUS.getKyThiByMaChungChiLater(maChungChi);
-            // Sample data for exams
-            table.Columns["ma_ky_thi"].ColumnName = "Mã Kỳ Thi";
+                // Rename columns for display
+                table.Columns["ma_ky_thi"].ColumnName = "Mã Kỳ Thi";
                 table.Columns["ma_chung_chi"].ColumnName = "Mã Chứng Chỉ";
                 table.Columns["so_phong"].ColumnName = "Số Phòng";
                 table.Columns["dia_diem"].ColumnName = "Địa Điểm";
@@ -50,159 +52,209 @@ namespace WinFormsApp1
 
                 originaltable = table.Copy();
                 dgvDSLichThi.DataSource = table;
-            }
 
-            private void InitializeFilterOptions()
+                // Format Thời Gian Bắt Đầu column in DataGridView
+                if (dgvDSLichThi.Columns["Thời Gian Bắt Đầu"] != null)
+                {
+                    dgvDSLichThi.Columns["Thời Gian Bắt Đầu"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
+                }
+
+                // Debug column types and sample data
+                foreach (DataColumn col in table.Columns)
+                {
+                    Debug.WriteLine($"Column {col.ColumnName}: {col.DataType}");
+                }
+                if (table.Rows.Count > 0)
+                {
+                    Debug.WriteLine($"Sample Thời Gian Bắt Đầu: {table.Rows[0]["Thời Gian Bắt Đầu"]}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in LoadExamData: {ex.Message}\n{ex.StackTrace}");
+            }
+        }
+
+        private void InitializeFilterOptions()
+        {
+            try
             {
                 cmbFilter.Items.Add("Tất cả");
                 var uniqueLocations = table.AsEnumerable()
                     .Select(row => row.Field<string>("Địa Điểm"))
+                    .Where(location => !string.IsNullOrEmpty(location))
                     .Distinct()
                     .ToList();
-                foreach (var location in uniqueLocations)
-                {
-                    if (location != null)
-                    {
-                        cmbFilter.Items.Add(location);
-                    }
-                }
+                cmbFilter.Items.AddRange(uniqueLocations.ToArray());
                 cmbFilter.SelectedIndex = 0;
             }
-
-            private void txtSearch_TextChanged(object sender, EventArgs e)
+            catch (Exception ex)
             {
-                ApplyFilters();
+                Debug.WriteLine($"Error in InitializeFilterOptions: {ex.Message}\n{ex.StackTrace}");
             }
+        }
 
-            private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                ApplyFilters();
-            }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
 
-            private void btnFilterByTime_Click(object sender, EventArgs e)
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void btnFilterByTime_Click(object sender, EventArgs e)
+        {
+            try
             {
-                // Filter by time logic
                 string inputTime = Microsoft.VisualBasic.Interaction.InputBox(
                     "Nhập thời gian bắt đầu (yyyy-MM-dd):",
                     "Lọc theo thời gian",
                     DateTime.Now.ToString("yyyy-MM-dd"));
 
-                if (DateTime.TryParse(inputTime, out DateTime filterTime))
+                if (DateTime.TryParse(inputTime, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime filterTime))
                 {
-                    var filteredRows = table.AsEnumerable().Where(row =>
-                        DateTime.TryParse(row.Field<string>("Thời Gian Bắt Đầu"), out DateTime examTime) &&
-                        examTime.Date == filterTime.Date);
+                    var filteredRows = originaltable.AsEnumerable().Where(row =>
+                        row.Field<DateTime>("Thời Gian Bắt Đầu").Date == filterTime.Date);
 
                     if (filteredRows.Any())
                     {
-                        dgvDSLichThi.DataSource = filteredRows.CopyToDataTable();
+                        table = filteredRows.CopyToDataTable();
+                        dgvDSLichThi.DataSource = table;
                     }
                     else
                     {
-                        dgvDSLichThi.DataSource = table.Clone(); // Show empty table if no match
+                        table = originaltable.Clone();
+                        dgvDSLichThi.DataSource = table;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Thời gian không hợp lệ. Vui lòng nhập đúng định dạng (yyyy-MM-dd).", "Thông báo");
-                }
             }
-
-            private void dtpFilterByTime_ValueChanged(object sender, EventArgs e)
+            catch (Exception ex)
             {
-                var selectedTime = dtpFilterByTime.Value;
-
-                // Filter the DataGridView based on the selected time
-                var filteredRows = originaltable.AsEnumerable()
-                    .Where(row => DateTime.Parse(row.Field<string>("Thời Gian Bắt Đầu") + "") >= selectedTime);
-
-                if (filteredRows.Any())
-                {
-                    dgvDSLichThi.DataSource = filteredRows.CopyToDataTable();
-                }
-                else
-                {
-                    dgvDSLichThi.DataSource = originaltable.Clone(); // Show an empty table if no match
-                }
+                Debug.WriteLine($"Error in btnFilterByTime_Click: {ex.Message}\n{ex.StackTrace}");
             }
+        }
 
-            private void nudHourSelector_ValueChanged(object sender, EventArgs e)
-            {
-                int selectedHour = (int)nudHourSelector.Value;
-
-                var filteredRows = originaltable.AsEnumerable()
-                    .Where(row => DateTime.TryParse(row.Field<string>("Thời Gian Bắt Đầu"), out DateTime examTime) &&
-                                  examTime.Hour == selectedHour);
-
-                if (filteredRows.Any())
-                {
-                    dgvDSLichThi.DataSource = filteredRows.CopyToDataTable();
-                }
-                else
-                {
-                    dgvDSLichThi.DataSource = originaltable.Clone(); // Show an empty table if no match
-                }
-            }
-
-            private void ApplyFilters()
+        private void ApplyFilters()
+        {
+            try
             {
                 string searchText = txtSearch.Text.ToLower();
                 string filterLocation = cmbFilter.SelectedItem?.ToString() ?? "Tất cả";
 
-                var filteredRows = table.AsEnumerable().Where(row =>
-                    (filterLocation == "Tất cả" || row.Field<string>("Địa Điểm") == filterLocation) &&
-                    ((row.Field<string>("Tên Kỳ Thi")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Mã Kỳ Thi")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Mô Tả")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Địa Điểm")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Số Phòng")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Mã Chứng Chỉ")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Tên Chứng Chỉ")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Thời Gian Bắt Đầu")?.ToLower() ?? string.Empty).Contains(searchText) ||
-                     (row.Field<string>("Số lượng")?.ToLower() ?? string.Empty).Contains(searchText)));
-                if (filteredRows.Any())
+                var filteredRows = originaltable.AsEnumerable().Where(row =>
                 {
-                    dgvDSLichThi.DataSource = filteredRows.CopyToDataTable();
-                }
-                else
-                {
-                    dgvDSLichThi.DataSource = table.Clone(); // Show empty table if no match
-                }
-            }
+                    // Kiểm tra location
+                    bool locationMatch = filterLocation == "Tất cả" ||
+                                       (row["Địa Điểm"] != DBNull.Value &&
+                                        row["Địa Điểm"].ToString() == filterLocation);
 
-            private void btnChonLichThi_Click(object sender, EventArgs e)
+                    // Kiểm tra search text
+                    bool textMatch = string.IsNullOrEmpty(searchText);
+
+                    if (!textMatch)
+                    {
+                        textMatch =
+                            (row["Tên Kỳ Thi"] != DBNull.Value && row["Tên Kỳ Thi"].ToString().ToLower().Contains(searchText)) ||
+                            (row["Mã Kỳ Thi"] != DBNull.Value && row["Mã Kỳ Thi"].ToString().ToLower().Contains(searchText)) ||
+                            (row["Mô Tả"] != DBNull.Value && row["Mô Tả"].ToString().ToLower().Contains(searchText)) ||
+                            (row["Địa Điểm"] != DBNull.Value && row["Địa Điểm"].ToString().ToLower().Contains(searchText)) ||
+                            (row["Số Phòng"] != DBNull.Value && row["Số Phòng"].ToString().Contains(searchText)) ||
+                            (row["Mã Chứng Chỉ"] != DBNull.Value && row["Mã Chứng Chỉ"].ToString().ToLower().Contains(searchText)) ||
+                            (row["Thời Gian Bắt Đầu"] != DBNull.Value &&
+                             DateTime.TryParse(row["Thời Gian Bắt Đầu"].ToString(), out DateTime dateValue) &&
+                             dateValue.ToString("yyyy-MM-dd HH:mm").ToLower().Contains(searchText)) ||
+                            (row["Thời Lượng Thi"] != DBNull.Value && row["Thời Lượng Thi"].ToString().Contains(searchText)) ||
+                            (row["Số Lượng Đăng Ký Hiện Tại"] != DBNull.Value && row["Số Lượng Đăng Ký Hiện Tại"].ToString().Contains(searchText)) ||
+                            (row["Số Lượng Tối Đa"] != DBNull.Value && row["Số Lượng Tối Đa"].ToString().Contains(searchText));
+                    }
+
+                    return locationMatch && textMatch;
+                });
+
+                table = filteredRows.Any() ? filteredRows.CopyToDataTable() : originaltable.Clone();
+                dgvDSLichThi.DataSource = table;
+            }
+            catch (Exception ex)
             {
-                // Get the selected row from the DataGridView
+                Debug.WriteLine($"Error in ApplyFilters: {ex.Message}\n{ex.StackTrace}");
+            }
+        }
+
+        private void dtpFilterByTime_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedTime = dtpFilterByTime.Value.Date;
+
+                var filteredRows = originaltable.AsEnumerable()
+                    .Where(row => row["Thời Gian Bắt Đầu"] != DBNull.Value &&
+                                 DateTime.TryParse(row["Thời Gian Bắt Đầu"].ToString(), out DateTime dateValue) &&
+                                 dateValue.Date == selectedTime);
+
+                table = filteredRows.Any() ? filteredRows.CopyToDataTable() : originaltable.Clone();
+                dgvDSLichThi.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in dtpFilterByTime_ValueChanged: {ex.Message}\n{ex.StackTrace}");
+            }
+        }
+
+        private void nudHourSelector_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedHour = (int)nudHourSelector.Value;
+
+                var filteredRows = originaltable.AsEnumerable()
+                    .Where(row => row["Thời Gian Bắt Đầu"] != DBNull.Value &&
+                                 DateTime.TryParse(row["Thời Gian Bắt Đầu"].ToString(), out DateTime dateValue) &&
+                                 dateValue.Hour == selectedHour);
+
+                table = filteredRows.Any() ? filteredRows.CopyToDataTable() : originaltable.Clone();
+                dgvDSLichThi.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error in nudHourSelector_ValueChanged: {ex.Message}\n{ex.StackTrace}");
+            }
+        }
+
+        private void btnChonLichThi_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 if (dgvDSLichThi.SelectedRows.Count > 0)
                 {
                     var selectedRow = dgvDSLichThi.SelectedRows[0];
-                    
-                    SelectedExamSchedule = selectedRow.Cells["Mã Kỳ Thi"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Tên Kỳ Thi"].Value.ToString() + " - " +
-                                           //selectedRow.Cells["Mô Tả"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Địa Điểm"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Số Phòng"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Mã Chứng Chỉ"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Thời Lượng Thi"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Thời Gian Bắt Đầu"].Value.ToString() + " - " +
-                                           selectedRow.Cells["Số Lượng Tối Đa"].Value.ToString();
-                Debug.WriteLine(SelectedExamSchedule);
-                   DataSelected?.Invoke(this, SelectedExamSchedule);
 
-                // Close the form and return OK result
-                //this.DialogResult = DialogResult.OK;
-                //this.Close();
-            }
+                    SelectedExamSchedule = $"{selectedRow.Cells["Mã Kỳ Thi"].Value} - " +
+                                          $"{selectedRow.Cells["Tên Kỳ Thi"].Value} - " +
+                                          $"{selectedRow.Cells["Địa Điểm"].Value} - " +
+                                          $"{selectedRow.Cells["Số Phòng"].Value} - " +
+                                          $"{selectedRow.Cells["Mã Chứng Chỉ"].Value} - " +
+                                          $"{selectedRow.Cells["Thời Lượng Thi"].Value} - " +
+                                          $"{selectedRow.Cells["Thời Gian Bắt Đầu"].Value} - " +
+                                          $"{selectedRow.Cells["Số Lượng Tối Đa"].Value}";
+                    Debug.WriteLine(SelectedExamSchedule);
+                    DataSelected?.Invoke(this, SelectedExamSchedule);
+                }
                 else
                 {
                     MessageBox.Show("Vui lòng chọn một lịch thi.", "Thông báo");
                 }
             }
-
-            private void dgvDSLichThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            catch (Exception ex)
             {
-
+                Debug.WriteLine($"Error in btnChonLichThi_Click: {ex.Message}\n{ex.StackTrace}");
             }
         }
 
+        private void dgvDSLichThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Handle cell click if needed
+        }
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,7 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                
+
                 AppConfig.Command.CommandText = query;
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -36,7 +37,7 @@ namespace WinFormsApp1.DAO
             }
             finally
             {
-                
+
             }
             return dataTable;
         }
@@ -47,7 +48,7 @@ namespace WinFormsApp1.DAO
                 "VALUES (@MaThiSinh, @HoTen, @NgaySinh, @SoDienThoai, @Email, @CreatedAt)";
             try
             {
-                
+
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", MaThiSinh);
                 AppConfig.Command.Parameters.AddWithValue("@HoTen", HoTen);
@@ -72,7 +73,7 @@ namespace WinFormsApp1.DAO
 
             try
             {
-                
+
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
@@ -91,7 +92,7 @@ namespace WinFormsApp1.DAO
             return null;
         }
 
-        public DataRow searchThiSinh(String keyWord)
+        public DataTable searchThiSinh(String keyWord)
         {
             string query = "SELECT * FROM thi_sinh WHERE ho_ten LIKE @KeyWord OR so_dien_thoai LIKE @KeyWord OR email LIKE @KeyWord";
             DataTable dataTable = new DataTable();
@@ -107,12 +108,8 @@ namespace WinFormsApp1.DAO
             {
                 Debug.WriteLine("searchThiSinh: " + ex.Message);
             }
-            if (dataTable.Rows.Count > 0)
-            {
-                DataRow row = dataTable.Rows[0];
-                return row;
-            }
-            return null;
+
+            return dataTable;
 
         }
     }

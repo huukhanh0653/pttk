@@ -113,5 +113,10 @@ namespace WinFormsApp1.Business
                 this.created_at
                 );
         }
+
+        public DataTable searchThiSinh(string searchText)
+        {
+            return thiSinhDAO.searchThiSinh(searchText);
+        }
     }
 }
