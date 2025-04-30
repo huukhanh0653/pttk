@@ -29,6 +29,7 @@ namespace WinFormsApp1
         {
             this.Controls.Clear();
             newControl.Anchor = AnchorStyles.None;
+            this.ClientSize = new Size(1200, 800);
             newControl.Location = new Point(
                 (this.ClientSize.Width - newControl.Width) / 2,
                 (this.ClientSize.Height - newControl.Height) / 2

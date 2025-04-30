@@ -20,26 +20,24 @@ namespace WinFormsApp1.DAO
 
         public DataTable getAllKyThi()
         {
-           string query = "SELECT * FROM KyThi";
+            string query = "SELECT * FROM ky_thi";
             DataTable dataTable = new DataTable();
             try
             {
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
+                Debug.WriteLine("getAllKyThi: " + ex.Message);
             }
             return dataTable;
         }
 
-        public void AddKyThi(string maKyThi, string maChungChi, int maPhong, string diaDiem, string tenKyThi, 
+        public void AddKyThi(string maKyThi, string maChungChi, int maPhong, string diaDiem, string tenKyThi,
             string moTa, DateTime TGBatDau, int soLuongToiDa, int soLuongDKHienTai)
         {
             string query = "INSERT INTO ky_thi (ma_ky_thi, ma_chung_chi, so_phong, dia_diem, ten_ky_thi, mo_ta, " +
@@ -49,17 +47,17 @@ namespace WinFormsApp1.DAO
             try
             {
 
-            AppConfig.Command.Parameters.Clear();
-            AppConfig.Command.Parameters.AddWithValue("@maKyThi", maKyThi);
-            AppConfig.Command.Parameters.AddWithValue("@maChungChi", maChungChi);
-            AppConfig.Command.Parameters.AddWithValue("@maPhong", maPhong);
-            AppConfig.Command.Parameters.AddWithValue("@diaDiem", diaDiem);
-            AppConfig.Command.Parameters.AddWithValue("@tenKyThi", tenKyThi);
-            AppConfig.Command.Parameters.AddWithValue("@moTa", moTa);
-            AppConfig.Command.Parameters.AddWithValue("@TGBatDau", TGBatDau);
-            AppConfig.Command.Parameters.AddWithValue("@soLuongToiDa", soLuongToiDa);
-            AppConfig.Command.Parameters.AddWithValue("@soLuongDKHienTai", soLuongDKHienTai);
-            AppConfig.Command.ExecuteNonQuery();
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@maKyThi", maKyThi);
+                AppConfig.Command.Parameters.AddWithValue("@maChungChi", maChungChi);
+                AppConfig.Command.Parameters.AddWithValue("@maPhong", maPhong);
+                AppConfig.Command.Parameters.AddWithValue("@diaDiem", diaDiem);
+                AppConfig.Command.Parameters.AddWithValue("@tenKyThi", tenKyThi);
+                AppConfig.Command.Parameters.AddWithValue("@moTa", moTa);
+                AppConfig.Command.Parameters.AddWithValue("@TGBatDau", TGBatDau);
+                AppConfig.Command.Parameters.AddWithValue("@soLuongToiDa", soLuongToiDa);
+                AppConfig.Command.Parameters.AddWithValue("@soLuongDKHienTai", soLuongDKHienTai);
+                AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -79,13 +77,14 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 // Handle exceptions
                 Debug.WriteLine($"getKyThiByMaKyThi: {ex.Message}");
             }
 
-            return dataTable.Rows.Count > 0? dataTable.Rows[0] : null;
+            return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
 
         }
 
@@ -109,6 +108,25 @@ namespace WinFormsApp1.DAO
             return dataTable;
         }
 
+        public DataTable searchKyThi(string query)
+        {
+            DataTable dataTable = new DataTable();
+            string sql = "SELECT * FROM ky_thi WHERE ten_ky_thi LIKE @query OR dia_diem LIKE @query" +
+                "OR ma_chung_chi LIKE @query";
+            try
+            {
+                AppConfig.Command.CommandText = sql;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@query", "%" + query + "%");
+                AppConfig.Adapter.SelectCommand = AppConfig.Command;
+                AppConfig.Adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("error in searchKyThi" + ex.Message);
+            }
 
+            return dataTable;
+        }
     }
 }

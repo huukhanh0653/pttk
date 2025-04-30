@@ -69,49 +69,24 @@ namespace WinFormsApp1.Business
         private ThiSinhDAO thiSinhDAO = new ThiSinhDAO();
         #endregion
 
-        public List<ThiSinhBUS> getAllThiSinh()
-        {
-            DataTable dataTable = thiSinhDAO.getAllThiSinh();
-            List<ThiSinhBUS> thiSinhs = new List<ThiSinhBUS>();
-            if (dataTable.Rows.Count > 0)
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    thiSinhs.Add(
-                        new ThiSinhBUS(
-                        Convert.ToInt32(row["ma_thi_sinh"]),
-                        row["ho_ten"].ToString(),
-                        DateOnly.Parse(row["ngay_sinh"].ToString()),
-                        row["so_dien_thoai"].ToString(),
-                        row["email"].ToString(),
-                        Convert.ToDateTime(row["created_at"]))
-                        {
-                            MaThiSinh = Convert.ToInt32(row["ma_thi_sinh"]),
-                            HoTen = row["ho_ten"].ToString(),
-                            SoDienThoai = row["so_dien_thoai"].ToString(),
-                            NgaySinh = DateOnly.Parse(row["ngay_sinh"].ToString()),
-                            CreatedAt = Convert.ToDateTime(row["created_at"])
-                        });
-                }
-            }
-
-            return thiSinhs;
-        }
-
         public DataTable dtbGetAllThiSinh()
         {
             return thiSinhDAO.getAllThiSinh();
         }
 
-        public void addThiSinh()
+       public void addThiSinh(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, DateTime CreatedAt)
         {
-            thiSinhDAO.addThiSinh(this.ma_thi_sinh,
-                this.ho_ten,
-                this.ngay_sinh,
-                this.so_dien_thoai,
-                this.email,
-                this.created_at
-                );
+            thiSinhDAO.addThiSinh(HoTen, NgaySinh, SoDienThoai, Email, CreatedAt);
+        }
+
+        public void updateThiSinh(int MaThiSinh, string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email)
+        {
+            thiSinhDAO.updateThiSinh(MaThiSinh, HoTen, NgaySinh, SoDienThoai, Email);
+        }
+        
+        public DataTable searchThiSinh(string searchTerm)
+        {
+            return thiSinhDAO.searchThiSinh(searchTerm);
         }
     }
 }

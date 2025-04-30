@@ -13,16 +13,14 @@ namespace WinFormsApp1.DAO
     internal class PhieuDuThiDAO
     {
        
-        public PhieuDuThiDAO()
-        {
-           
-        }
+        public PhieuDuThiDAO() {}
+
         public void addPhieuDuThi(string maPhieu, string maKyThi, string maPhong, string maThiSinh)
         {
             string query = "INSERT INTO phieu_du_thi (ma_phieu_du_thi, ma_ky_thi, so_phong, ma_thi_sinh) VALUES (@MaPhieu, @MaKyThi, @MaPhong, @MaThiSinh)";
             try
             {
-
+                // 
                 // Insert new record
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.CommandText = query;
@@ -36,10 +34,6 @@ namespace WinFormsApp1.DAO
             {
                 // Handle exceptions
                 Debug.WriteLine("addPhieuDuThi: " + ex.Message);
-            }
-            finally
-            {
-                
             }
         }
         public DataTable getAllPhieuDuThi()
@@ -58,10 +52,7 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                Debug.WriteLine("getAllPhieuDuThi: " + ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable;
         }
 
@@ -89,6 +80,7 @@ namespace WinFormsApp1.DAO
         public void deletePhieuDuThi(string maPhieu)
         {
             string query = "DELETE FROM phieu_du_thi WHERE ma_phieu_du_thi = @MaPhieu";
+
             try
             {
 
@@ -98,6 +90,7 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Command.ExecuteNonQuery();
             }
+
             catch (Exception ex)
             {
                 // Handle exceptions

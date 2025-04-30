@@ -16,27 +16,32 @@ namespace WinFormsApp1.DAO
         public PhieuDangKyDAO()
         {
         }
-        public void addPhieuDangKy(string maPhieu, string maNguoiDangKy, DateOnly ngayDangKy)
+        public void addPhieuDangKy(string maNguoiDangKy, DateOnly ngayDangKy, int nguoiTiepNhan, double tongTien)
         {
-            string query = "INSERT INTO phieu_dang_ky (ma_phieu_dang_ky, ma_nguoi_dang_ky, ngay_dang_ky) VALUES (@MaPhieu, @MaNguoiDangKy, @NgayDangKy)";
+            
+            string query = "INSERT INTO phieu_dang_ky (ma_phieu_dang_ky, ma_nguoi_dang_ky, ngay_dang_ky, nguoi_tiep_nhan, tong_tien) VALUES (@MaPhieu, @MaNguoiDangKy, @NgayDangKy, @NguoiTiepNhan, @TongTien)";
+
+
             try
             {
-                
+                // Create ID for new record
+                AppConfig.Command.CommandText = "SELECT COUNT(*) FROM phieu_dang_ky";
+                Int32 count = (Int32)AppConfig.Command.ExecuteScalar() + 1;
+
                 // Insert new record
                 AppConfig.Command.CommandText = query;
-                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", count);
                 AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
                 AppConfig.Command.Parameters.AddWithValue("@NgayDangKy", ngayDangKy);
+                AppConfig.Command.Parameters.AddWithValue("@NguoiTiepNhan", nguoiTiepNhan);
+                AppConfig.Command.Parameters.AddWithValue("@TongTien", tongTien);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("addPhieuDangKy" + ex.Message);
             }
         }
 
@@ -48,18 +53,16 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("getAllPhieuDangKy" + ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable;
         }
 
@@ -70,13 +73,14 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("deletePhieuDangKy: " + ex.Message);
             }
         }
 
@@ -108,6 +112,7 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", maNguoiDangKy);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -117,10 +122,7 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                 Debug.WriteLine("getPhieuDangKyByNguoiDangKy: " + ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable;
         }
 
@@ -184,6 +186,7 @@ namespace WinFormsApp1.DAO
             {
                 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@SearchTerm", "%" + searchTerm + "%");
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -195,5 +198,7 @@ namespace WinFormsApp1.DAO
             }
             return dataTable;
         }
+
+      
     }
 }

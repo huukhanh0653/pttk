@@ -19,6 +19,9 @@
     <Compile Update="Screen\DangNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Screen\DangKyDuThi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Screen\PhatHanhPhieuDuThi.cs">
       <SubType>UserControl</SubType>
     </Compile>

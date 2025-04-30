@@ -49,7 +49,7 @@ namespace WinFormsApp1
 
         private void btnDangKyThi_Click(object sender, EventArgs e)
         {
-            //MainForm.Instance.SwitchUserControl(new DangKyThi());
+            MainForm.Instance.SwitchUserControl(new DangKyDuThi());
         }
     }
 }

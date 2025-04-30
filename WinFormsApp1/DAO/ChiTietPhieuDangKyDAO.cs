@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 namespace WinFormsApp1.DAO
 {
@@ -14,24 +15,39 @@ namespace WinFormsApp1.DAO
         public ChiTietPhieuDangKyDAO()
         {
         }
-        public void addChiTietPhieuDangKy(string maPhieu, string maThiSinh)
+        public void addChiTietPhieuDangKy(int maPhieuDangKy, int maKyThi, int maThiSinh)
         {
-            string query = "INSERT INTO chi_tiet_phieu_dang_ky (ma_phieu_dang_ky, ma_thi_sinh) VALUES (@MaPhieu, @MaThiSinh)";
+            string query = "INSERT INTO chi_tiet_phieu_dang_ky (ma_phieu_dang_ky, ma_thi_sinh, ma_ky_thi) VALUES (@MaPhieu, @MaThiSinh, @MaKyThi)";
             try
             {
+                // Check if the record already exists
+                string checkQuery = "SELECT COUNT(*) FROM chi_tiet_phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu AND ma_thi_sinh = @MaThiSinh";
+                AppConfig.Command.CommandText = checkQuery;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieuDangKy);
+                AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThi", maKyThi);
+                Int32 count = (Int32)AppConfig.Command.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    // If a record with the same MaPhieu and MaThiSinh exists, do not insert
+                    Debug.WriteLine("A record with the same MaPhieu and MaThiSinh already exists.");
+                    return;
+                }
+
                 // Insert new record
                 AppConfig.Command.CommandText = query;
-                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieuDangKy);
                 AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
+                AppConfig.Command.Parameters.AddWithValue("@MaKyThi",maKyThi);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
+                Debug.WriteLine("addChiTietPhieuDangKy: " + ex.Message);
             }
         }
 
@@ -42,16 +58,14 @@ namespace WinFormsApp1.DAO
             try
             {
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
+                Debug.WriteLine(ex.Message);
             }
             return dataTable;
         }
@@ -62,6 +76,7 @@ namespace WinFormsApp1.DAO
             try
             {
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
                 AppConfig.Command.ExecuteNonQuery();
@@ -69,7 +84,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
         }
 
@@ -85,14 +100,11 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
+                Debug.WriteLine(ex.Message);
             }
         }
 
-        public DataRow getChiTietPhieuDKByMaPhieuDK(string maPhieu)
+        public DataTable getChiTietPhieuDKByMaPhieuDK(string maPhieu)
         {
             string query = "SELECT * FROM chi_tiet_phieu_dang_ky WHERE ma_phieu_dang_ky = @MaPhieu";
             DataTable dataTable = new DataTable();
@@ -100,6 +112,7 @@ namespace WinFormsApp1.DAO
             {
 
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaPhieu", maPhieu);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -107,14 +120,11 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-              
+                Debug.WriteLine(ex.Message);
             }
 
-            return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
+
+            return dataTable;
         }
 
         public DataTable getChiTietPhieuByMaThiSinh(string maThiSinh)
@@ -123,8 +133,8 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaThiSinh", maThiSinh);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -132,7 +142,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
 
             return dataTable;

@@ -86,7 +86,6 @@ namespace WinFormsApp1.Business
 
         public DataTable dtbGetAllKyThi()
         {
-            Debug.WriteLine("dtbGetAllKyThi");
             return kyThiDAO.getAllKyThi();
         }
 
@@ -109,6 +108,9 @@ namespace WinFormsApp1.Business
             return kyThiDAO.getKyThiByMaKyThi(maKyThi);
         }
 
-        //public Data
+        public DataTable searchKyThi(string search)
+        {
+            return kyThiDAO.searchKyThi(search);
+        }
     }
 }

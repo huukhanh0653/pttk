@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 
 namespace WinFormsApp1.DAO
@@ -22,37 +23,45 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("getAllNguoiDangKy" + ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable;
         }
         public void addNguoiDangKy(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
         {
-            string query = "INSERT INTO nguoi_dang_ky (ma_nguoi_dang_ky, ho_ten, ngay_sinh, so_dien_thoai, email, don_vi) VALUES (@HoTen, @NgaySinh, @SoDienThoai, @Email, @DonVi)";
+            string query = "INSERT INTO nguoi_dang_ky (ma_nguoi_dang_ky, ho_ten, ngay_sinh, so_dien_thoai, email, don_vi) VALUES (@MaNguoiDangKy, @HoTen, @NgaySinh, @SoDienThoai, @Email, @DonVi)";
             try
             {
-                
+                // find if there is a record with the same phone number
+                string checkQuery = "SELECT COUNT(*) FROM nguoi_dang_ky WHERE so_dien_thoai = @SoDienThoai";
+                AppConfig.Command.CommandText = checkQuery;
+                AppConfig.Command.Parameters.Clear();
+                AppConfig.Command.Parameters.AddWithValue("@SoDienThoai", SoDienThoai);
+                int count = (Int32)AppConfig.Command.ExecuteScalar();
+                if (count > 0)
+                {
+                    // If a record with the same phone number exists, do not insert
+                    Debug.WriteLine("A record with the same phone number already exists.");
+                    return;
+                }
 
                 // Create ID for new record
                 AppConfig.Command.CommandText = "SELECT COUNT(*) FROM nguoi_dang_ky";
-                Int64 count = (Int64) AppConfig.Command.ExecuteScalar() + 1;
+                count = (Int32) AppConfig.Command.ExecuteScalar() + 1;
 
                 // Insert new record
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
-                AppConfig.Command.Parameters.AddWithValue("@ma_nguoi_dang_ky", count);
+                AppConfig.Command.Parameters.AddWithValue("@MaNguoiDangKy", count);
                 AppConfig.Command.Parameters.AddWithValue("@HoTen", HoTen);
                 AppConfig.Command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
                 AppConfig.Command.Parameters.AddWithValue("@SoDienThoai", SoDienThoai);
@@ -63,21 +72,16 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("addNguoiDangKy: " + ex.Message);
             }
         }
 
-        public DataRow findNguoiDangKyById(Int64 id)
+        public DataRow findNguoiDangKyById(Int32 id)
         {
             string query = "SELECT * FROM nguoi_dang_ky WHERE ma_nguoi_dang_ky = @id";
             DataTable dataTable = new DataTable();
             try
             {
-                
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@id", id);
@@ -87,25 +91,18 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("findNguoiDangKyById: " + ex.Message);
             }
-            finally
-            {
-                
-            }
-            if (dataTable.Rows.Count > 0)
-            {
-                return dataTable.Rows[0];
-            }
-            return null;
+
+            return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
+           
         }
 
-        public void updateNguoiDangKy(Int64 id, string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
+        public void updateNguoiDangKy(Int32 id, string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
         {
             string query = "UPDATE nguoi_dang_ky SET ho_ten = @HoTen, ngay_sinh = @NgaySinh, so_dien_thoai = @SoDienThoai, email = @Email, don_vi = @DonVi WHERE ma_nguoi_dang_ky = @id";
             try
             {
-                
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@id", id);
@@ -119,15 +116,12 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
-            finally
-            {
-                
-            }
+
         }
 
-        public void deleteNguoiDangKy(Int64 id)
+        public void deleteNguoiDangKy(Int32 id)
         {
             string query = "DELETE FROM nguoi_dang_ky WHERE ma_nguoi_dang_ky = @id";
             try
@@ -141,7 +135,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -155,7 +149,6 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
@@ -165,11 +158,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                
+                Debug.WriteLine("searchNguoiDangKy: " + ex.Message);
             }
             return dataTable;
         }
