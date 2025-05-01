@@ -236,7 +236,7 @@ namespace WinFormsApp1
 
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
             MainForm.Instance.SwitchUserControl(new Main());
         }

@@ -1,7 +1,10 @@
-﻿namespace WinFormsApp1
+﻿using WinFormsApp1.Properties;
+
+namespace WinFormsApp1
 {
     partial class GiaHan
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaHan));
         private System.ComponentModel.IContainer components = null;
         private Label lblGiaHan;
         private DataGridView dgvDSThiSinh;
@@ -19,6 +22,7 @@
         private TextBox txtSearch;
         private Label lblSearch;
         private Button btnSearch;
+        private Button btnReturn;
 
         protected override void Dispose(bool disposing)
         {
@@ -31,6 +35,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaHan));
             lblGiaHan = new Label();
             dgvDSThiSinh = new DataGridView();
             dgvDSPhieuDuThi = new DataGridView();
@@ -41,13 +46,13 @@
             btnLuuThongTin = new Button();
             lblLichThiDaChon = new Label();
             scrollablePanel = new Panel();
+            btnReturn = new Button();
             btnSearch = new Button();
             txtSearch = new TextBox();
             lblSearch = new Label();
             lblDSThiSinh = new Label();
             lblDSLichThi = new Label();
             btnXoaLichThiDaChon = new Button();
-            back = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDSThiSinh).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDSPhieuDuThi).BeginInit();
             scrollablePanel.SuspendLayout();
@@ -164,7 +169,7 @@
             // scrollablePanel
             // 
             scrollablePanel.AutoScroll = true;
-            scrollablePanel.Controls.Add(back);
+            scrollablePanel.Controls.Add(btnReturn);
             scrollablePanel.Controls.Add(btnSearch);
             scrollablePanel.Controls.Add(txtSearch);
             scrollablePanel.Controls.Add(lblSearch);
@@ -185,9 +190,24 @@
             scrollablePanel.Size = new Size(1200, 803);
             scrollablePanel.TabIndex = 0;
             // 
+            // btnReturn
+            // 
+            btnReturn.BackColor = Color.Transparent;
+            btnReturn.BackgroundImage = (Image)resources.GetObject("btnReturn.BackgroundImage");
+            btnReturn.BackgroundImageLayout = ImageLayout.Center;
+            btnReturn.FlatStyle = FlatStyle.Flat;
+            btnReturn.ForeColor = Color.Transparent;
+            btnReturn.Location = new Point(50, 18);
+            btnReturn.Margin = new Padding(3, 2, 3, 2);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(40, 31);
+            btnReturn.TabIndex = 19;
+            btnReturn.UseVisualStyleBackColor = false;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // btnSearch
             // 
-            btnSearch.BackgroundImage = Properties.Resources.search;
+            btnSearch.BackgroundImage = Resources.search;
             btnSearch.BackgroundImageLayout = ImageLayout.Center;
             btnSearch.Location = new Point(1104, 65);
             btnSearch.Name = "btnSearch";
@@ -247,16 +267,6 @@
             btnXoaLichThiDaChon.Text = "Xóa Lịch Thi";
             btnXoaLichThiDaChon.Click += btnXoaLichThiDaChon_Click;
             // 
-            // back
-            // 
-            back.Location = new Point(50, 15);
-            back.Name = "back";
-            back.Size = new Size(72, 43);
-            back.TabIndex = 18;
-            back.Text = "Quay lại";
-            back.UseVisualStyleBackColor = true;
-            back.Click += back_Click;
-            // 
             // GiaHan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -270,6 +280,5 @@
             scrollablePanel.PerformLayout();
             ResumeLayout(false);
         }
-        private Button back;
     }
 }
