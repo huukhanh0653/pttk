@@ -15,14 +15,22 @@ namespace WinFormsApp1.Business
         {
             chiTietPhieuDangKyDAO = new ChiTietPhieuDangKyDAO();
         }
+
         public void AddChiTietPhieuDangKy(string maPhieuDangKy, string maKyThi, string maThiSinh)
         {
             chiTietPhieuDangKyDAO.addChiTietPhieuDangKy(Convert.ToInt32(maPhieuDangKy), Convert.ToInt32(maKyThi), Convert.ToInt32(maThiSinh));
         }
+
         public DataTable GetAllChiTietPhieuDangKy()
         {
             return chiTietPhieuDangKyDAO.getAllChiTietPhieuDangKy();
         }
+
+        public DataTable LayDSChiTietPhieuDK(string maPhieuDK)
+        {
+            return chiTietPhieuDangKyDAO.getChiTietPhieuDKByMaPhieuDK(maPhieuDK);
+        }
+
 
 
     }

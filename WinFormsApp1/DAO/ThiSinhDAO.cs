@@ -25,7 +25,6 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-
                 AppConfig.Command.CommandText = query;
                 AppConfig.Command.Parameters.Clear();
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
@@ -36,23 +35,26 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                 Debug.WriteLine("getAllThiSinh: " + ex.Message);
             }
-            finally
-            {
 
-            }
             return dataTable;
         }
 
-        public void addThiSinh(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, DateTime CreatedAt)
+        public int addThiSinh(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, DateTime CreatedAt)
         {
+
+            Debug.WriteLine("addThiSinh: HoTen=" + HoTen + " - NgaySinh=" + NgaySinh + " - SoDienThoai=" + SoDienThoai + " - Email=" + Email + " - CreatedAt=" + CreatedAt);
+
             string query = "INSERT INTO thi_sinh (ma_thi_sinh, ho_ten, ngay_sinh, so_dien_thoai, email, created_at) " +
                 "VALUES (@MaThiSinh, @HoTen, @NgaySinh, @SoDienThoai, @Email, @CreatedAt)";
+
+            int count = -1;
+
             try
             {
                 // Create ID for new record
                 AppConfig.Command.CommandText = "SELECT COUNT(*) FROM thi_sinh";
                 
-                int count = (Int32)AppConfig.Command.ExecuteScalar() + 1;
+                count = (Int32)AppConfig.Command.ExecuteScalar() + 1;
 
                 // Insert new record
                 AppConfig.Command.Parameters.Clear();
@@ -69,7 +71,11 @@ namespace WinFormsApp1.DAO
             {
                 // Handle exceptions
                 Debug.WriteLine("addThiSinh: " + ex.Message);
+                // If an error occurs, set count to -1
+                count = -1;
             }
+
+            return count;
 
         }
 
@@ -117,6 +123,7 @@ namespace WinFormsApp1.DAO
                 DataRow row = dataTable.Rows[0];
                 return row;
             }
+
             return null;
         }
 

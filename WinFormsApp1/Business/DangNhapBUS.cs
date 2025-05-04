@@ -9,11 +9,6 @@ using WinFormsApp1.DAO.Database;
 
 namespace WinFormsApp1.Business
 {
-    // global variable
-    public static class GlobalVariables
-    {
-        public static string maNhanVien = "NV001";
-    }
     internal class DangNhapBUS
     {
         #region entity_prop    

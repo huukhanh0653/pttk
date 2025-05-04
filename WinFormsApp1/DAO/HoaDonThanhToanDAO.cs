@@ -55,7 +55,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -78,7 +78,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -109,7 +109,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -131,7 +131,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -154,7 +154,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -178,7 +178,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -202,7 +202,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -226,7 +226,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -250,7 +250,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -274,7 +274,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {

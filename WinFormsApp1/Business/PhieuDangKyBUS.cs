@@ -12,10 +12,43 @@ namespace WinFormsApp1.Business
     {
         private PhieuDangKyDAO phieuDangKyDAO = new PhieuDangKyDAO();
         private NguoiDangKyDAO nguoiDangKyDAO = new NguoiDangKyDAO();
+        private ChiTietPhieuDangKyDAO chiTietPhieuDangKyDAO = new ChiTietPhieuDangKyDAO();
 
         public PhieuDangKyBUS() {}
 
+        public DataTable GetAllPhieuDangKy()
+        {
+            DataTable dataTable = phieuDangKyDAO.getAllPhieuDangKy();
+            return dataTable;
+        }
 
+        public DataTable GetAllPhieuDangKyAndChiTiet()
+        {
+            DataTable phieu = phieuDangKyDAO.getAllPhieuDangKy();
+            DataTable chitiet = chiTietPhieuDangKyDAO.getAllChiTietPhieuDangKy();
+
+            DataTable merge = phieu.Clone();
+
+            merge.Columns.Add("ma_thi_sinh", typeof(int));
+            merge.Columns.Add("ma_ky_thi", typeof(int));
+
+            foreach (DataRow row in merge.Rows)
+            {
+                DataRow[] foundRows = chitiet.Select("ma_phieu_dang_ky = " + row["ma_phieu_dang_ky"]);
+                if (foundRows.Length > 0)
+                {
+                    row["ma_thi_sinh"] = foundRows[0]["ma_thi_sinh"];
+                    row["ma_ky_thi"] = foundRows[0]["ma_ky_thi"];
+                }
+            }
+
+            return merge;
+        }
+
+        public int AddPhieuDangKy(string maPhieuDangKy, DateTime ngayDangKy, int maNguoiDangKy, double tongTien)
+        {
+            return phieuDangKyDAO.addPhieuDangKy(maPhieuDangKy, DateOnly.FromDateTime(ngayDangKy), maNguoiDangKy, tongTien);
+        }
         public DataRow LayTTPhieuDangKyByMaPhieu(string maPhieu)
         {
             DataRow datarow = phieuDangKyDAO.getTTPhieuDangKyByMaPhieu(maPhieu);

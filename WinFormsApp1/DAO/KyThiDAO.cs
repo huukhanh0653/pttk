@@ -103,7 +103,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 Debug.WriteLine("error in getAllKyThiByMaChungChi" + ex.Message);
-                //Console.WriteLine(ex.Message);
+                //Debug.WriteLine(ex.Message);
             }
             return dataTable;
         }
@@ -111,7 +111,7 @@ namespace WinFormsApp1.DAO
         public DataTable searchKyThi(string query)
         {
             DataTable dataTable = new DataTable();
-            string sql = "SELECT * FROM ky_thi WHERE ten_ky_thi LIKE @query OR dia_diem LIKE @query" +
+            string sql = "SELECT * FROM ky_thi WHERE ten_ky_thi LIKE @query OR dia_diem LIKE @query " +
                 "OR ma_chung_chi LIKE @query";
             try
             {

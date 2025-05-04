@@ -17,6 +17,9 @@ namespace WinFormsApp1.DAO
         }
         public void addChiTietPhieuDangKy(int maPhieuDangKy, int maKyThi, int maThiSinh)
         {
+
+            Debug.WriteLine("addChiTietPhieuDangKy: ma_phieu_dang_ky=" + maPhieuDangKy + " - ma_ky_thi=" + maKyThi + " - ma_thi_sinh=" + maThiSinh);
+
             string query = "INSERT INTO chi_tiet_phieu_dang_ky (ma_phieu_dang_ky, ma_thi_sinh, ma_ky_thi) VALUES (@MaPhieu, @MaThiSinh, @MaKyThi)";
             try
             {
@@ -65,7 +68,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("getAllChiTietPhieuDangKy: " + ex.Message);
             }
             return dataTable;
         }
@@ -100,7 +103,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("deleteChiTietPhieuDangKyByMaPhieu: " + ex.Message);
             }
         }
 
@@ -120,7 +123,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("getChiTietPhieuDKByMaPhieuDK: " + ex.Message);
             }
 
             return dataTable;
@@ -141,7 +144,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("getChiTietPhieuByMaThiSinh: " + ex.Message);
             }
 
             return dataTable;

@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnDangXuat = new Button();
             btnNhapDiem = new Button();
             btnGiaHan = new Button();
             btnCapPhatCC = new Button();
-            btnDangKyThi = new Button();
             button1 = new Button();
+            btnDangKyThi = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnDangXuat);
             panel1.Controls.Add(btnNhapDiem);
             panel1.Controls.Add(btnGiaHan);
             panel1.Controls.Add(btnCapPhatCC);
@@ -50,6 +52,17 @@
             panel1.Size = new Size(1050, 600);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnDangXuat
+            // 
+            btnDangXuat.Location = new Point(26, 547);
+            btnDangXuat.Margin = new Padding(3, 2, 3, 2);
+            btnDangXuat.Name = "btnDangXuat";
+            btnDangXuat.Size = new Size(116, 39);
+            btnDangXuat.TabIndex = 10;
+            btnDangXuat.Text = "Đăng xuất";
+            btnDangXuat.UseVisualStyleBackColor = true;
+            btnDangXuat.Click += btnDangXuat_Click;
             // 
             // btnNhapDiem
             // 
@@ -81,17 +94,7 @@
             btnCapPhatCC.TabIndex = 7;
             btnCapPhatCC.Text = "Cấp phát chứng chỉ";
             btnCapPhatCC.UseVisualStyleBackColor = true;
-            // 
-            // btnDangKyThi
-            // 
-            btnDangKyThi.Location = new Point(169, 166);
-            btnDangKyThi.Margin = new Padding(3, 2, 3, 2);
-            btnDangKyThi.Name = "btnDangKyThi";
-            btnDangKyThi.Size = new Size(217, 54);
-            btnDangKyThi.TabIndex = 5;
-            btnDangKyThi.Text = "Đăng ký dự thi";
-            btnDangKyThi.UseVisualStyleBackColor = true;
-            btnDangKyThi.Click += btnDangKyThi_Click;
+            btnCapPhatCC.Click += btnCapPhatCC_Click_1;
             // 
             // button1
             // 
@@ -103,6 +106,17 @@
             button1.Text = "Thanh toán phiếu đăng ký";
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnThanhToanPhieuDK_Click;
+            // 
+            // btnDangKyThi
+            // 
+            btnDangKyThi.Location = new Point(169, 166);
+            btnDangKyThi.Margin = new Padding(3, 2, 3, 2);
+            btnDangKyThi.Name = "btnDangKyThi";
+            btnDangKyThi.Size = new Size(217, 54);
+            btnDangKyThi.TabIndex = 5;
+            btnDangKyThi.Text = "Đăng ký dự thi";
+            btnDangKyThi.UseVisualStyleBackColor = true;
+            btnDangKyThi.Click += btnDangKyThi_Click;
             // 
             // Main
             // 
@@ -123,5 +137,6 @@
         private Button btnCapPhatCC;
         private Button btnDangKyThi;
         private Button button1;
+        private Button btnDangXuat;
     }
 }

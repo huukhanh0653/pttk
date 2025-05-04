@@ -60,16 +60,17 @@
             groupBox1 = new GroupBox();
             btnSearchKyThi = new Button();
             txtSearchKyThi = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvDSKyThi = new DataGridView();
             groupBox2 = new GroupBox();
             btnSearchThiSinh = new Button();
             txtSearchThiSinh = new TextBox();
-            dataGridView2 = new DataGridView();
+            dgvDSThiSinh = new DataGridView();
             lblTitle = new Label();
             btnReturn = new Button();
             btnSaveThiSinh = new Button();
             btnXoaThiSinh = new Button();
             btnXoaNguoiDangKy = new Button();
+            btnDangKy = new Button();
             grBoxNguoiDKy.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -81,9 +82,9 @@
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSKyThi).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSThiSinh).BeginInit();
             SuspendLayout();
             // 
             // grBoxNguoiDKy
@@ -94,7 +95,7 @@
             grBoxNguoiDKy.Controls.Add(panel7);
             grBoxNguoiDKy.Controls.Add(panel8);
             grBoxNguoiDKy.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            grBoxNguoiDKy.Location = new Point(50, 65);
+            grBoxNguoiDKy.Location = new Point(42, 86);
             grBoxNguoiDKy.Name = "grBoxNguoiDKy";
             grBoxNguoiDKy.Size = new Size(412, 202);
             grBoxNguoiDKy.TabIndex = 1;
@@ -237,9 +238,9 @@
             grBoxNgThi.Controls.Add(panel2);
             grBoxNgThi.Controls.Add(panel1);
             grBoxNgThi.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            grBoxNgThi.Location = new Point(727, 65);
+            grBoxNgThi.Location = new Point(42, 394);
             grBoxNgThi.Name = "grBoxNgThi";
-            grBoxNgThi.Size = new Size(420, 202);
+            grBoxNgThi.Size = new Size(420, 204);
             grBoxNgThi.TabIndex = 7;
             grBoxNgThi.TabStop = false;
             grBoxNgThi.Text = "Thông tin người thi";
@@ -355,11 +356,11 @@
             // 
             groupBox1.Controls.Add(btnSearchKyThi);
             groupBox1.Controls.Add(txtSearchKyThi);
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dgvDSKyThi);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(50, 308);
+            groupBox1.Location = new Point(487, 86);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1097, 218);
+            groupBox1.Size = new Size(666, 291);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Danh sách kỳ thi";
@@ -368,39 +369,40 @@
             // 
             btnSearchKyThi.BackgroundImage = Properties.Resources.search;
             btnSearchKyThi.BackgroundImageLayout = ImageLayout.Center;
-            btnSearchKyThi.Location = new Point(1048, 11);
+            btnSearchKyThi.Location = new Point(624, 15);
             btnSearchKyThi.Margin = new Padding(3, 2, 3, 2);
             btnSearchKyThi.Name = "btnSearchKyThi";
-            btnSearchKyThi.Size = new Size(33, 31);
+            btnSearchKyThi.Size = new Size(33, 27);
             btnSearchKyThi.TabIndex = 18;
             btnSearchKyThi.UseVisualStyleBackColor = true;
             // 
             // txtSearchKyThi
             // 
             txtSearchKyThi.ForeColor = Color.Black;
-            txtSearchKyThi.Location = new Point(759, 15);
+            txtSearchKyThi.Location = new Point(335, 15);
             txtSearchKyThi.Name = "txtSearchKyThi";
             txtSearchKyThi.Size = new Size(283, 25);
             txtSearchKyThi.TabIndex = 2;
             txtSearchKyThi.TextChanged += txtSearchKyThi_TextChanged;
             // 
-            // dataGridView1
+            // dgvDSKyThi
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1069, 166);
-            dataGridView1.TabIndex = 0;
+            dgvDSKyThi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSKyThi.Location = new Point(6, 46);
+            dgvDSKyThi.Name = "dgvDSKyThi";
+            dgvDSKyThi.Size = new Size(651, 239);
+            dgvDSKyThi.TabIndex = 0;
+            dgvDSKyThi.CellClick += dgvDSKyThi_CellClick;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(btnSearchThiSinh);
             groupBox2.Controls.Add(txtSearchThiSinh);
-            groupBox2.Controls.Add(dataGridView2);
+            groupBox2.Controls.Add(dgvDSThiSinh);
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(50, 532);
+            groupBox2.Location = new Point(487, 394);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1097, 226);
+            groupBox2.Size = new Size(666, 214);
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách thí sinh đăng ký";
@@ -409,28 +411,29 @@
             // 
             btnSearchThiSinh.BackgroundImage = Properties.Resources.search;
             btnSearchThiSinh.BackgroundImageLayout = ImageLayout.Center;
-            btnSearchThiSinh.Location = new Point(1048, 13);
+            btnSearchThiSinh.Location = new Point(624, 16);
             btnSearchThiSinh.Margin = new Padding(3, 2, 3, 2);
             btnSearchThiSinh.Name = "btnSearchThiSinh";
-            btnSearchThiSinh.Size = new Size(33, 31);
+            btnSearchThiSinh.Size = new Size(33, 27);
             btnSearchThiSinh.TabIndex = 19;
             btnSearchThiSinh.UseVisualStyleBackColor = true;
             // 
             // txtSearchThiSinh
             // 
             txtSearchThiSinh.ForeColor = Color.Black;
-            txtSearchThiSinh.Location = new Point(753, 17);
+            txtSearchThiSinh.Location = new Point(335, 16);
             txtSearchThiSinh.Name = "txtSearchThiSinh";
             txtSearchThiSinh.Size = new Size(283, 25);
             txtSearchThiSinh.TabIndex = 3;
+            txtSearchThiSinh.TextChanged += txtSearchThiSinh_TextChanged;
             // 
-            // dataGridView2
+            // dgvDSThiSinh
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(12, 49);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(1069, 171);
-            dataGridView2.TabIndex = 0;
+            dgvDSThiSinh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDSThiSinh.Location = new Point(6, 47);
+            dgvDSThiSinh.Name = "dgvDSThiSinh";
+            dgvDSThiSinh.Size = new Size(651, 157);
+            dgvDSThiSinh.TabIndex = 0;
             // 
             // lblTitle
             // 
@@ -463,7 +466,7 @@
             btnSaveThiSinh.BackColor = Color.Transparent;
             btnSaveThiSinh.BackgroundImageLayout = ImageLayout.Center;
             btnSaveThiSinh.ForeColor = Color.Black;
-            btnSaveThiSinh.Location = new Point(1040, 272);
+            btnSaveThiSinh.Location = new Point(355, 603);
             btnSaveThiSinh.Margin = new Padding(3, 2, 3, 2);
             btnSaveThiSinh.Name = "btnSaveThiSinh";
             btnSaveThiSinh.Size = new Size(107, 31);
@@ -477,7 +480,7 @@
             btnXoaThiSinh.BackColor = Color.Transparent;
             btnXoaThiSinh.BackgroundImageLayout = ImageLayout.Center;
             btnXoaThiSinh.ForeColor = Color.Black;
-            btnXoaThiSinh.Location = new Point(727, 272);
+            btnXoaThiSinh.Location = new Point(42, 603);
             btnXoaThiSinh.Margin = new Padding(3, 2, 3, 2);
             btnXoaThiSinh.Name = "btnXoaThiSinh";
             btnXoaThiSinh.Size = new Size(107, 31);
@@ -491,7 +494,7 @@
             btnXoaNguoiDangKy.BackColor = Color.Transparent;
             btnXoaNguoiDangKy.BackgroundImageLayout = ImageLayout.Center;
             btnXoaNguoiDangKy.ForeColor = Color.Black;
-            btnXoaNguoiDangKy.Location = new Point(50, 272);
+            btnXoaNguoiDangKy.Location = new Point(42, 293);
             btnXoaNguoiDangKy.Margin = new Padding(3, 2, 3, 2);
             btnXoaNguoiDangKy.Name = "btnXoaNguoiDangKy";
             btnXoaNguoiDangKy.Size = new Size(107, 31);
@@ -500,16 +503,31 @@
             btnXoaNguoiDangKy.UseVisualStyleBackColor = false;
             btnXoaNguoiDangKy.Click += btnXoaNguoiDangKy_Click;
             // 
+            // btnDangKy
+            // 
+            btnDangKy.BackColor = Color.Transparent;
+            btnDangKy.BackgroundImageLayout = ImageLayout.Center;
+            btnDangKy.ForeColor = Color.Black;
+            btnDangKy.Location = new Point(1046, 613);
+            btnDangKy.Margin = new Padding(3, 2, 3, 2);
+            btnDangKy.Name = "btnDangKy";
+            btnDangKy.Size = new Size(107, 31);
+            btnDangKy.TabIndex = 23;
+            btnDangKy.Text = "Đăng ký";
+            btnDangKy.UseVisualStyleBackColor = false;
+            btnDangKy.Click += btnDangKy_Click;
+            // 
             // DangKyDuThi
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnDangKy);
             Controls.Add(btnXoaNguoiDangKy);
             Controls.Add(btnXoaThiSinh);
+            Controls.Add(groupBox2);
             Controls.Add(btnSaveThiSinh);
             Controls.Add(btnReturn);
             Controls.Add(lblTitle);
-            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(grBoxNgThi);
             Controls.Add(button2);
@@ -539,10 +557,10 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSKyThi).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDSThiSinh).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -577,9 +595,9 @@
         private TextBox textBoxHoTenNgThi;
         private Label hoTenNguoiThi;
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvDSKyThi;
         private GroupBox groupBox2;
-        private DataGridView dataGridView2;
+        private DataGridView dgvDSThiSinh;
         private TextBox txtSearchKyThi;
         private TextBox txtSearchThiSinh;
         private Label lblTitle;
@@ -589,6 +607,6 @@
         private Button btnSaveThiSinh;
         private Button btnXoaThiSinh;
         private Button btnXoaNguoiDangKy;
-
+        private Button btnDangKy;
     }
 }

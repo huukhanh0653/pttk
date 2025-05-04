@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.Business;
+using WinFormsApp1.Screen;
 
 namespace WinFormsApp1
 {
@@ -55,6 +57,17 @@ namespace WinFormsApp1
         private void btnDangKyThi_Click(object sender, EventArgs e)
         {
             MainForm.Instance.SwitchUserControl(new DangKyDuThi());
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DangNhapBUS.Instance.dangXuat();
+            MainForm.Instance.SwitchUserControl(new DangNhap());
+        }
+
+        private void btnCapPhatCC_Click_1(object sender, EventArgs e)
+        {
+            MainForm.Instance.SwitchUserControl(new CapPhatChungChi());
         }
     }
 }

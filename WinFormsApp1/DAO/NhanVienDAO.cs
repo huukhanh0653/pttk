@@ -38,10 +38,6 @@ namespace WinFormsApp1.DAO
                 // Handle exceptions
                 Debug.WriteLine(ex.Message);
             }
-            finally
-            {
-              
-            }
         }
 
         public DataTable getAllNhanVien()

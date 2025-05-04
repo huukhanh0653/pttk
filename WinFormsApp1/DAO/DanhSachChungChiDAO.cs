@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using WinFormsApp1.DAO.Database;
+using System.Diagnostics;
 
 namespace WinFormsApp1.DAO
 {
@@ -23,20 +24,18 @@ namespace WinFormsApp1.DAO
                 
                 // Insert new record
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaChungChi", maChungChi);
                 AppConfig.Command.Parameters.AddWithValue("@TenChungChi", tenChungChi);
                 AppConfig.Command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine("addChungChi: " + ex.Message);
             }
-            finally
-            {
-                
-            }
+
         }
+
         public DataTable getAllChungChi()
         {
             string query = "SELECT * FROM danh_sach_chung_chi";
@@ -51,7 +50,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -66,8 +65,8 @@ namespace WinFormsApp1.DAO
             DataTable dataTable = new DataTable();
             try
             {
-                
                 AppConfig.Command.CommandText = query;
+                AppConfig.Command.Parameters.Clear();
                 AppConfig.Command.Parameters.AddWithValue("@MaChungChi", MaChungChi);
                 AppConfig.Adapter.SelectCommand = AppConfig.Command;
                 AppConfig.Adapter.Fill(dataTable);
@@ -75,12 +74,14 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
-            finally
+
+            if (dataTable.Rows.Count > 0)
             {
-                
+                Debug.WriteLine(dataTable.Rows[0]);
             }
+
             return dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
         }
 
@@ -100,13 +101,11 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
-            finally
-            {
-                
-            }
+
             return dataTable;
         }
+
     }
 }

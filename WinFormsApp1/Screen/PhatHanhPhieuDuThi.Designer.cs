@@ -157,7 +157,7 @@
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "PhatHanhPhieuDuThi";
-            Size = new Size(1050, 600);
+            Size = new Size(1059, 600);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

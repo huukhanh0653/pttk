@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="WinFormsApp1.Business.ChiTietPhieuDangKyBUS">
+    <Position X="0.5" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAABBAAAAAAA=</HashCode>
+      <FileName>Business\ChiTietPhieuDangKyBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.DangNhapBUS">
+    <Position X="6.25" Y="12" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>EAIECABAAAEAACAAAAAAAAAIAABAgAAASAAAAAAAAAA=</HashCode>
+      <FileName>Business\DangNhapBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.DanhSachChungChiBUS">
+    <Position X="6.25" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Business\DanhSachChungChiBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.HoaDonThanhToanBUS">
+    <Position X="0.5" Y="18.25" Width="7.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\HoaDonThanhToanBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.KyThiBUS">
+    <Position X="0.5" Y="2.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>ABEBAQAAABAAQAAMgEAAAAAAAAAAAkAAEgAACBAAIEA=</HashCode>
+      <FileName>Business\KyThiBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.NguoiDangKyBUS">
+    <Position X="0.5" Y="10.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAABAAAAgAAAAACAYAAAAA=</HashCode>
+      <FileName>Business\NguoiDangKyBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.PhieuDangKyBUS">
+    <Position X="6.25" Y="2.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQBAAAAAgAAAACAMAAAAAABAAAAAAAAEDEAAAAAAg=</HashCode>
+      <FileName>Business\PhieuDangKyBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.PhieuDuThiBUS">
+    <Position X="6.25" Y="16" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAQAAAAAAAAA=</HashCode>
+      <FileName>Business\PhieuDuThiBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.PhieuGiaHanBUS">
+    <Position X="6.25" Y="6.75" Width="4.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEBAAAAAAQqAAwECoEUEACAGQAQAAFAEEEAAABBAA=</HashCode>
+      <FileName>Business\PhieuGiaHanBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.Business.ThiSinhBUS">
+    <Position X="0.5" Y="13.5" Width="5.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAwAAAwQCghAAEAACAEAAAIAAEAABAAAAY=</HashCode>
+      <FileName>Business\ThiSinhBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.ChiTietPhieuDangKyDAO">
+    <Position X="0.5" Y="8.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAEAUAAAAAAAAABAAAAAAAACAAAAA=</HashCode>
+      <FileName>DAO\ChiTietPhieuDangKyDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.ChucVuNhanVienDAO">
+    <Position X="15" Y="3.25" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAgAAAA=</HashCode>
+      <FileName>DAO\ChucVuNhanVienDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.DanhSachChungChiDAO">
+    <Position X="10.75" Y="4.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAFAAAAA=</HashCode>
+      <FileName>DAO\DanhSachChungChiDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.HoaDonThanhToanDAO">
+    <Position X="10.75" Y="6.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAgAAAAAAgAAKAAAAAEAQAAAJAAAAAAAAAQ=</HashCode>
+      <FileName>DAO\HoaDonThanhToanDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.KyThiDAO">
+    <Position X="10.75" Y="12" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AJAAAAAAAAAAAAAEAAAAABAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>DAO\KyThiDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.NguoiDangKyDAO">
+    <Position X="15" Y="5.25" Width="7.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQCAgAAAAAAAAAABAAAAAAgAAIAAAAAAhAA=</HashCode>
+      <FileName>DAO\NguoiDangKyDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.NhanVienDAO">
+    <Position X="10.75" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAQAAAQAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\NhanVienDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.PhieuDangKyDAO">
+    <Position X="10.75" Y="14.25" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAAACACAgAAAAAgAEARAAAAAQAAAAAACAAAAACAAAQ=</HashCode>
+      <FileName>DAO\PhieuDangKyDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.PhieuDuThiDAO">
+    <Position X="15" Y="0.5" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAABAEAAAAEAAAAAAAAEEAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\PhieuDuThiDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.PhieuGiaHanDAO">
+    <Position X="15" Y="8" Width="15" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAgAAAgAgAAAAAAAAABAAAgAAAAAAA=</HashCode>
+      <FileName>DAO\PhieuGiaHanDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.TaiKhoanDAO">
+    <Position X="10.75" Y="2.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\TaiKhoanDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsApp1.DAO.ThiSinhDAO">
+    <Position X="10.75" Y="9.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAggAAAAAAAEIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAO\ThiSinhDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

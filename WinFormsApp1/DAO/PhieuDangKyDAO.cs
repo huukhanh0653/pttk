@@ -16,11 +16,9 @@ namespace WinFormsApp1.DAO
         public PhieuDangKyDAO()
         {
         }
-        public void addPhieuDangKy(string maNguoiDangKy, DateOnly ngayDangKy, int nguoiTiepNhan, double tongTien)
+        public int addPhieuDangKy(string maNguoiDangKy, DateOnly ngayDangKy, int nguoiTiepNhan, double tongTien)
         {
-            
             string query = "INSERT INTO phieu_dang_ky (ma_phieu_dang_ky, ma_nguoi_dang_ky, ngay_dang_ky, nguoi_tiep_nhan, tong_tien) VALUES (@MaPhieu, @MaNguoiDangKy, @NgayDangKy, @NguoiTiepNhan, @TongTien)";
-
 
             try
             {
@@ -37,11 +35,14 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.Parameters.AddWithValue("@NguoiTiepNhan", nguoiTiepNhan);
                 AppConfig.Command.Parameters.AddWithValue("@TongTien", tongTien);
                 AppConfig.Command.ExecuteNonQuery();
+
+                return count;
             }
             catch (Exception ex)
             {
                 // Handle exceptions
                 Debug.WriteLine("addPhieuDangKy" + ex.Message);
+                return -1; // or throw an exception
             }
         }
 

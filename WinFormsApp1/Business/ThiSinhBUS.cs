@@ -74,9 +74,9 @@ namespace WinFormsApp1.Business
             return thiSinhDAO.getAllThiSinh();
         }
 
-       public void addThiSinh(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, DateTime CreatedAt)
+       public int addThiSinh(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, DateTime CreatedAt)
         {
-            thiSinhDAO.addThiSinh(HoTen, NgaySinh, SoDienThoai, Email, CreatedAt);
+            return thiSinhDAO.addThiSinh(HoTen, NgaySinh, SoDienThoai, Email, CreatedAt);
         }
 
         public void updateThiSinh(int MaThiSinh, string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email)
@@ -89,15 +89,11 @@ namespace WinFormsApp1.Business
             return thiSinhDAO.searchThiSinh(searchTerm);
         }
 
-<<<<<<< HEAD
         public DataRow getThiSinhByMaThiSinh(int maThiSinh)
         {
             return thiSinhDAO.getThiSinhById(maThiSinh);
-=======
-        public DataTable searchThiSinh(string searchText)
-        {
-            return thiSinhDAO.searchThiSinh(searchText);
->>>>>>> b6ce5cd9de5ef299fdb5c8d9d519880bebd892a8
+
         }
+
     }
 }

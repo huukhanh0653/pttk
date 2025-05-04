@@ -52,7 +52,7 @@ namespace WinFormsApp1.DAO
             catch (Exception ex)
             {
                 // Handle exceptions
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
             finally
             {
@@ -62,7 +62,7 @@ namespace WinFormsApp1.DAO
         }
         
 
-        public void addNguoiDangKy(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
+        public int addNguoiDangKy(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
         {
             string query = "INSERT INTO nguoi_dang_ky (ma_nguoi_dang_ky, ho_ten, ngay_sinh, so_dien_thoai, email, don_vi) VALUES (@MaNguoiDangKy, @HoTen, @NgaySinh, @SoDienThoai, @Email, @DonVi)";
             try
@@ -77,7 +77,7 @@ namespace WinFormsApp1.DAO
                 {
                     // If a record with the same phone number exists, do not insert
                     Debug.WriteLine("A record with the same phone number already exists.");
-                    return;
+                    return -1;
                 }
 
                 // Create ID for new record
@@ -94,11 +94,13 @@ namespace WinFormsApp1.DAO
                 AppConfig.Command.Parameters.AddWithValue("@Email", Email);
                 AppConfig.Command.Parameters.AddWithValue("@DonVi", DonVi);
                 AppConfig.Command.ExecuteNonQuery();
+                return count;
             }
             catch (Exception ex)
             {
                 // Handle exceptions
                 Debug.WriteLine("addNguoiDangKy: " + ex.Message);
+                return -1;
             }
         }
 

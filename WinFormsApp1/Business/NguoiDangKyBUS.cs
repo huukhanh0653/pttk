@@ -15,7 +15,7 @@ namespace WinFormsApp1.Business
         private KyThiDAO kyThiDAO = new KyThiDAO();
         public NguoiDangKyBUS() { }
 
-        public DataTable dtbGetNguoiDangKyByMaThiSinh(string maThiSinh)
+        public DataTable GetNguoiDangKyByMaThiSinh(string maThiSinh)
         {
             DataTable dataTable = nguoiDangKyDAO.getNguoiDangKyByMaThiSinh(maThiSinh);
             dataTable.Columns.Add("thoi_gian_bat_dau", typeof(string));
@@ -41,6 +41,16 @@ namespace WinFormsApp1.Business
             
 
             return dataTable;
+        }
+
+        public int AddNguoiDangKy(string HoTen, DateOnly NgaySinh, string SoDienThoai, string Email, bool DonVi)
+        {
+            return nguoiDangKyDAO.addNguoiDangKy(HoTen, NgaySinh, SoDienThoai, Email, DonVi);
+        }
+
+        public DataTable GetAllNguoiDangKy()
+        {
+            return nguoiDangKyDAO.getAllNguoiDangKy();
         }
 
         public DataRow getTTNguoiDangKyByMaNguoiDangKy(string maNguoiDangKy)
